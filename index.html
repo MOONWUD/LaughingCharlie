@@ -37,13 +37,17 @@
   <!--===== js =====-->
   <script src="./assets/Js/jquery-3.7.1.min.js"></script>
   <script src="./assets/Js/jquery-ui.min.js"></script>
+  <script src="./assets/Js/gsap.min.js"></script>
+  <script src="./assets/Js/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js"></script>
+  <script defer src="./assets/Js/index.js"></script>
 
 </head>
 
 <body>
 
   <!--=============== header  -->
-  <header class="active">
+  <header>
     <div class="header">
       <div class="hmbrgMenu">
         <ul class="hmbrgBtn">
@@ -77,50 +81,54 @@
         </ul>
         <div class="hmbrgMenuBox"></div>
       </div>
-      <ul class="gnb">
-        <li>
-          <a href="#">
-            <img src="./assets/images/removePuppy_all.png" alt="btn">
-            <p>HOME</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./assets/images/remove_이지세이프클립.png" alt="btn">
-            <p>Walk</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./assets/images/remove_더수딩샴푸.png" alt="btn">
-            <p>Skin</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./assets/images/remove_야미텐탈잼.png" alt="btn">
-            <p>Dental</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./assets/images/remove_배변패드.png" alt="btn">
-            <p>Living</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./assets/images/remove_포글포그리볼.png" alt="btn">
-            <p>Toy</p>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="./assets/images/removePuppy_j.png" alt="btn">
-            <p>Pogle</p>
-          </a>
-        </li>
-      </ul>
+      <div class="slideWrap">
+        <div class="slideContainer">
+          <ul class="gnb">
+            <li>
+              <a href="#">
+                <img src="./assets/images/removePuppy_all.png" alt="btn">
+                <p>HOME</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./assets/images/remove_이지세이프클립.png" alt="btn">
+                <p>Walk</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./assets/images/remove_더수딩샴푸.png" alt="btn">
+                <p>Skin</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./assets/images/remove_야미텐탈잼.png" alt="btn">
+                <p>Dental</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./assets/images/remove_배변패드.png" alt="btn">
+                <p>Living</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./assets/images/remove_포글포그리볼.png" alt="btn">
+                <p>Toy</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="./assets/images/removePuppy_j.png" alt="btn">
+                <p>Pogle</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div class="headerIcon">
         <a href="#">
           <img src="./assets/images/search.png" alt="search">
@@ -139,11 +147,65 @@
   <!--=============== main  -->
   <main>
     <!--========== main  -->
-    <section class="main"></section>
+    <section class="main">
+      <div class="swiparWrapper">
+        <ul class="swiper">
+          <li class="swiperItem">
+            <img src="./assets/images/main_pc_1.png" alt="mainImg" class="mainImg">
+            <div class="textWrapper">
+              <h2 class="imgTitle">래핑찰리 상반기 결산</h2>
+              <p>여름땡-! 온라인 최대 할인 맛보기</p>
+              <p>06.17(월) - 06.21(금)</p>
+              <div class="shopNow">
+                <a href="#">Shop Now</a>
+                <div class="hoverBg"></div>
+              </div>
+            </div>
+          </li>
+          <li class="swiperItem">
+            <img src="./assets/images/main_pc_2.png" alt="mainImg" class="mainImg">
+            <div class="textWrapper">
+              <h2 class="imgTitle">스트레스 해소 휴지장난감</h2>
+              <p>300cm의 더 길이와 3단게 난이도로</p>
+              <p>더 오래 튼튼하게</p>
+              <div class="shopNow">
+                <a href="https://www.laughingcharlie.kr/product/detail.html?product_no=419" target="_blank">Shop Now</a>
+                <div class="hoverBg"></div>
+              </div>
+            </div>
+          </li>
+          <li class="swiperItem">
+            <img src="./assets/images/main_pc_3.png" alt="mainImg" class="mainImg">
+            <div class="textWrapper">
+              <h2 class="imgTitle">허그미 쿠션 출시!</h2>
+              <p>눕는  순산 -6°C! 꿀잠 치트키</p>
+              <p>런칭특가 2만원대로 구매하기</p>
+              <div class="shopNow">
+                <a href="https://www.laughingcharlie.kr/product/detail.html?product_no=398" target="_blank">Shop Now</a>
+                <div class="hoverBg"></div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
 
 
     <!--========== textSlide  -->
-    <section class="textSlide"></section>
+    <section class="textSlide">
+      <div class="firstText textWrapper">
+        <h2>Laughing</h2>
+        <img src="./assets/images/removePuppy_y.png" alt="puppy">
+      </div>
+      <div class="secondText textWrapper">
+        <h2>Charlie</h2>
+        <img src="./assets/images/removePuppy_f.png" alt="puppy">
+      </div>
+      <div class="lastText textWrapper">
+        <h2>Smile</h2>
+        <img src="./assets/images/removePuppy_j.png" alt="puppy">
+      </div>
+    </section>
 
 
     <!--========== walk  -->
@@ -182,9 +244,7 @@
 
 
   <!--=============== footer  -->
-  <footer>
-
-  </footer>
+  <footer></footer>
 
 
   <script></script>

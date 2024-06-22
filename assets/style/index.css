@@ -5,17 +5,18 @@
 /*=============== size */
 /*=============== weight */
 /*=============== font */
-/*==================================================== 모바일부터 시작한다 ! */
+/*==================================================== pc부터 시작한다 ! */
 /*=============== header */
 header {
   width: 100%;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
 }
 header .header {
-  margin: 35px 15px 50px;
+  margin: 20px 15vw 40px;
   display: grid;
-  grid-template-columns: 100px 1fr 100px;
+  grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
   align-items: center;
+  justify-content: space-between;
 }
 header .header .hmbrgMenu {
   justify-self: start;
@@ -23,114 +24,205 @@ header .header .hmbrgMenu {
 header .header .hmbrgMenu .hmbrgBtn {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: flex-start;
+  gap: 12px;
 }
 header .header .hmbrgMenu .hmbrgBtn li {
-  height: 2px;
-  width: 20px;
+  width: 30px;
+  height: 3px;
+  border-radius: 3px;
   background-color: #222222;
-  border-radius: 20px;
 }
 header .header .hmbrgMenu .hmbrgBtn li:last-child {
-  width: 16px;
+  width: 25px;
 }
 header .header .logo {
-  width: 150px;
   justify-self: center;
+  max-width: 150px;
+  min-width: 100px;
 }
 header .header .logo a img {
   width: 100%;
 }
 header .header .headerIcon {
-  display: flex;
-  gap: 28px;
   justify-self: end;
-}
-header .header .headerIcon a:nth-child(2) {
-  display: none;
+  display: flex;
+  gap: 45px;
 }
 header .nav {
-  margin: 0 15px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 header .nav .hmbrgMenu {
   display: none;
-  justify-self: start;
-}
-header .nav .hmbrgMenu .hmbrgBtn {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-header .nav .hmbrgMenu .hmbrgBtn li {
-  height: 2px;
-  width: 20px;
-  background-color: #222222;
-  border-radius: 20px;
-}
-header .nav .hmbrgMenu .hmbrgBtn li:last-child {
-  width: 16px;
 }
 header .nav .headerIcon {
-  display: flex;
-  gap: 28px;
-  justify-self: end;
   display: none;
 }
-header .nav .headerIcon a:nth-child(2) {
-  display: none;
-}
-header .nav .gnb {
-  display: flex;
-  gap: 30px;
-}
-header .nav .gnb li:nth-child(1) a img {
-  width: 85px;
-}
-header .nav .gnb li:nth-child(2) a img {
-  width: 35px;
-}
-header .nav .gnb li:nth-child(3) a img {
-  width: 25px;
-}
-header .nav .gnb li:nth-child(4) a img {
-  width: 21px;
-}
-header .nav .gnb li:nth-child(5) a img {
-  width: 45px;
-}
-header .nav .gnb li:nth-child(6) a img {
-  width: 50px;
-}
-header .nav .gnb li:nth-child(7) a img {
-  width: 63px;
-}
-header .nav .gnb li a {
-  display: grid;
-  grid-template-rows: 70px 1fr;
+header .nav .slideWrap .slideContainer .gnb {
   text-align: center;
-}
-header .nav .gnb li a p {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
   font-family: "Poetsen One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   color: #222222;
+}
+header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(2) a p {
+  background-color: #FFB400;
+}
+header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(3) a p {
+  background-color: #E94529;
+}
+header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(4) a p {
+  background-color: #FFD100;
+}
+header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(5) a p {
+  background-color: #FFB400;
+}
+header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(6) a p {
+  background-color: #FFD100;
+}
+header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(7) a p {
+  color: #fff;
+  background-color: #FF2108;
+}
+header .nav .slideWrap .slideContainer .gnb li:hover a p {
+  border-color: #000;
+  animation: menu 0.5s infinite;
+}
+@keyframes menu {
+  0% {
+    transform: rotate(3deg);
+  }
+  20% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(3deg);
+  }
+}
+header .nav .slideWrap .slideContainer .gnb li:nth-child(1) a p {
+  border: 2px solid #000;
+  background-color: #00AD4D;
+}
+header .nav .slideWrap .slideContainer .gnb li:nth-child(1) a img {
+  width: 85px;
+}
+header .nav .slideWrap .slideContainer .gnb li:nth-child(2) a img {
+  width: 35px;
+}
+header .nav .slideWrap .slideContainer .gnb li:nth-child(3) a img {
+  width: 25px;
+}
+header .nav .slideWrap .slideContainer .gnb li:nth-child(4) a img {
+  width: 21px;
+}
+header .nav .slideWrap .slideContainer .gnb li:nth-child(5) a img {
+  width: 45px;
+}
+header .nav .slideWrap .slideContainer .gnb li:nth-child(6) a img {
+  width: 50px;
+}
+header .nav .slideWrap .slideContainer .gnb li:nth-child(7) a p {
+  color: #FF2108;
+}
+header .nav .slideWrap .slideContainer .gnb li:nth-child(7) a img {
+  width: 63px;
+}
+header .nav .slideWrap .slideContainer .gnb li a {
+  display: grid;
+  grid-template-rows: 70px 1fr;
+  place-items: center;
+}
+header .nav .slideWrap .slideContainer .gnb li a p {
+  margin-top: 5px;
+  border-radius: 30px;
+  border: 2px solid transparent;
+  background-color: transparent;
+  padding: 5px 10px;
+}
+header.active {
+  transition: 0.8s;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 header.active .header {
   display: none;
 }
 header.active .nav {
-  padding: 15px 0;
   background-color: rgba(255, 255, 255, 0.5);
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(136, 136, 136, 0.5);
+  padding: 5px 15vw;
+  display: grid;
+  grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
   align-items: center;
+  justify-content: space-between;
 }
-header.active .nav .gnb li a {
+header.active .nav .headerIcon {
+  display: block;
+  justify-self: end;
+  display: flex;
+  gap: 45px;
+}
+header.active .nav .hmbrgMenu {
+  justify-self: start;
   display: block;
 }
-header.active .nav .gnb li a img {
+header.active .nav .hmbrgMenu .hmbrgBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 12px;
+}
+header.active .nav .hmbrgMenu .hmbrgBtn li {
+  width: 30px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: #222222;
+}
+header.active .nav .hmbrgMenu .hmbrgBtn li:last-child {
+  width: 25px;
+}
+header.active .nav .slideWrap .slideContainer .gnb {
+  gap: 30px;
+}
+header.active .nav .slideWrap .slideContainer .gnb li a img {
   display: none;
 }
 
 /*=============== main */
+main {
+  /*========== section main */
+  /*========== section textSlide */
+  /*========== section walk */
+  /*========== section pogle */
+  /*========== section textAni */
+  /*========== section best */
+  /*========== section magazine */
+  /*========== section sale */
+  /*========== section new */
+  /*========== section cutePuppy */
+}
+main .main .swiperWrapper .swiper .swiperItem {
+  position: relative;
+}
+main .main .swiperWrapper .swiper .swiperItem .mainImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main .main .swiperWrapper .swiper .swiperItem .textWrapper {
+  position: absolute;
+  top: 50%;
+  text-align: left;
+}
+
 /*=============== footer *//*# sourceMappingURL=index.css.map */
