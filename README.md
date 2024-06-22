@@ -12,7 +12,7 @@
   - og, favicon 설정 완료! 
   - 폰트 설정 완료 !
   - scss 변수 저장하기 완료!
-  - header 먼저 모바일 pc 다 작업해두기
+  - header 모바일 작업하기
 
 ### 240620_목 
   - text img 만들기
