@@ -1,6 +1,7 @@
 ### 240624_월
   - html 설계 완성하기 완료 !         
   - scss 완성하기 !
+  - main swiper 구현하기 !!!
 
       💥 header에 블러처리를 하고싶으나 filter로 블러처리하면 text까지 블러가 씌워짐   
             
