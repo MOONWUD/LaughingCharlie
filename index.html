@@ -40,6 +40,8 @@
   <script src="./assets/Js/gsap.min.js"></script>
   <script src="./assets/Js/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.0/js/swiper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script defer src="./assets/Js/index.js"></script>
 
 </head>
@@ -153,8 +155,10 @@
           <img src="./assets/images/main_pc_1.png" alt="mainImg" class="mainImg">
           <div class="textWrapper">
             <h2 class="imgTitle">래핑찰리 상반기 결산</h2>
-            <p>여름땡-! 온라인 최대 할인 맛보기</p>
-            <p>06.17(월) - 06.21(금)</p>
+            <p>
+              여름땡-! 온라인 최대 할인 맛보기<br>
+              06.17(월) - 06.21(금)
+            </p>
             <div class="shopNow">
               <div class="hoverBg"></div>
               <a href="#">Shop Now</a>
@@ -165,8 +169,10 @@
           <img src="./assets/images/main_pc_2.png" alt="mainImg" class="mainImg">
           <div class="textWrapper">
             <h2 class="imgTitle">스트레스 해소 휴지장난감</h2>
-            <p>300cm의 더 길이와 3단게 난이도로</p>
-            <p>더 오래 튼튼하게</p>
+            <p>
+              300cm의 더 길이와 3단게 난이도로<br>
+              더 오래 튼튼하게
+            </p>
             <div class="shopNow">
               <div class="hoverBg"></div>
               <a href="https://www.laughingcharlie.kr/product/detail.html?product_no=419" target="_blank">Shop Now</a>
@@ -177,8 +183,10 @@
           <img src="./assets/images/main_pc_3.png" alt="mainImg" class="mainImg">
           <div class="textWrapper">
             <h2 class="imgTitle">허그미 쿠션 출시!</h2>
-            <p>눕는 순산 -6°C! 꿀잠 치트키</p>
-            <p>런칭특가 2만원대로 구매하기</p>
+            <p>
+              눕는 순간 -6°C! 꿀잠 치트키<br>
+              런칭특가 2만원대로 구매하기
+            </p>
             <div class="shopNow">
               <div class="hoverBg"></div>
               <a href="https://www.laughingcharlie.kr/product/detail.html?product_no=398" target="_blank">Shop Now</a>
@@ -186,7 +194,7 @@
           </div>
         </li>
       </ul>
-      <ul class="slideBtn">
+      <ul class="swiperBtn">
         <li class="active"></li>
         <li></li>
         <li></li>
@@ -216,9 +224,9 @@
       <div class="left">
         <img src="./assets/images/walk.png" alt="walk">
         <div class="textWrapper">
-          <p>I When Charlie Smeiles, I When Charlie Smeiles, I When Charlie Smeiles, I When Charlie Smeiles, </p>
-          <h3>Let's Walk</h3>
-          <p>
+          <p class="slide">I When Charlie Smeiles, I When Charlie Smeiles, I When Charlie Smeiles, I When Charlie Smeiles, </p>
+          <h3 class="title">Let's Walk</h3>
+          <p class="subText">
             안전하고 신나는<br>
             산책을 위한 제품들
           </p>
@@ -229,7 +237,7 @@
           <img src="./assets/images/leftBtn.png" alt="left">
           <img src="./assets/images/rightBtn.png" alt="right">
         </div>
-        <div class="product">
+        <div class="product firstProduct">
           <div class="imgWrapper">
             <img src="./assets/images/p_포글허그백.png" alt="product">
             <div>상반기 인기템</div>
@@ -237,11 +245,13 @@
           <div class="textWrapper">
             <p class="category">Walk</p>
             <p class="name">포글 허그백 <span>(이너쿠션 100% 증정)</span></p>
-            <p class="discountRate">66%</p>
-            <p class="price">59,900원</p>
+            <div class="priceContainer">
+              <p class="discountRate">66%</p>
+              <p class="price">59,900원</p>
+            </div>
           </div>
         </div>
-        <div class="product">
+        <div class="product lastProduct">
           <div class="imgWrapper">
             <img src="./assets/images/p_이지슬링백.png" alt="product">
             <div>상반기 인기템</div>
@@ -249,8 +259,10 @@
           <div class="textWrapper">
             <p class="category">Walk</p>
             <p class="name">목 조임 방지 이지 슬링백 <span>(이너 쿠션 100% 증정)</span></p>
-            <p class="discountRate">45%</p>
-            <p class="price">59,900원</p>
+            <div class="priceContainer">
+              <p class="discountRate">45%</p>
+              <p class="price">59,900원</p>
+            </div>
           </div>
         </div>
       </div>
@@ -264,7 +276,7 @@
           <img src="./assets/images/leftBtn.png" alt="left">
           <img src="./assets/images/rightBtn.png" alt="right">
         </div>
-        <div class="product">
+        <div class="product firstProduct">
           <div class="imgWrapper">
             <img src="./assets/images/p_포글댕굴하우스.png" alt="product">
             <div>상반기 인기템</div>
@@ -272,11 +284,13 @@
           <div class="textWrapper">
             <p class="category">Pogle</p>
             <p class="name">포글 댕굴하우스</p>
-            <p class="discountRate">46%</p>
-            <p class="price">69,900원</p>
+            <div class="priceContainer">
+              <p class="discountRate">46%</p>
+              <p class="price">69,900원</p>
+            </div>
           </div>
         </div>
-        <div class="product">
+        <div class="product lastProduct">
           <div class="imgWrapper">
             <img src="./assets/images/p_포글포그리볼.png" alt="product">
             <div>상반기 인기템</div>
@@ -284,19 +298,21 @@
           <div class="textWrapper">
             <p class="category">Pogle</p>
             <p class="name">포글 포그리볼 <span>(움직이는 노즈워크 장난감)</span></p>
-            <p class="discountRate">64%</p>
-            <p class="price">19,900원</p>
+            <div class="priceContainer">
+              <p class="discountRate">64%</p>
+              <p class="price">19,900원</p>
+            </div>
           </div>
         </div>
       </div>
       <div class="right">
-        <img src="./assets/images/pogle.png" alt="walk">
+        <img src="./assets/images/pogle.png" alt="pogle">
         <div class="textWrapper">
-          <p>I When Charlie Smeiles, I When Charlie Smeiles, I When Charlie Smeiles, I When Charlie Smeiles, </p>
-          <h3>Pogle</h3>
-          <p>
+          <p class="slide">I When Charlie Smeiles, I When Charlie Smeiles, I When Charlie Smeiles, I When Charlie Smeiles, </p>
+          <h3 class="title">Pogle</h3>
+          <p class="subText">
             리빙제품부터 노즈워크까지<br>
-            찰리의 패밀리 브랜드 포클
+            찰리의 패밀리 브랜드 포글
           </p>
         </div>
       </div>

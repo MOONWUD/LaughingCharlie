@@ -1,10 +1,19 @@
 @import "./val.scss";
 
 /*==================================================== pc부터 시작한다 ! */
+*::selection {
+  background-color: rgba(0, 173, 78, 0.3);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 /*=============== header */
 header {
   width: 100%;
   margin-bottom: 20px;
+  z-index: 999999;
 
   .header {
     margin: 20px 15vw 40px;
@@ -259,6 +268,7 @@ header {
       justify-content: space-between;
       background-color: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(20px);
+
       .headerIcon {
         display: block;
         justify-self: end;
@@ -313,19 +323,392 @@ header {
 main {
 
   /*========== section main */
+  .main {
+    margin-bottom: 100px;
+    height: 100%;
+    width: 100%;
+    position: relative;
 
+    .swiper {
+      margin: 0 15vw;
+
+      .swiperItem {
+        display: grid;
+
+        img {
+          width: 100%;
+          border-radius: 40px;
+          grid-column: 1 /2;
+          grid-row: 1 / 2;
+        }
+
+        .textWrapper {
+          grid-column: 1 /2;
+          grid-row: 1 / 2;
+          align-self: center;
+          padding-left: 50px;
+
+          .imgTitle {
+            @include mainFont (50px, $w_xxl);
+            margin-bottom: 30px;
+          }
+
+          p {
+            @include mainFont ($s_xl, $w_md);
+            line-height: 1.5;
+            margin-bottom: 50px;
+          }
+
+          .shopNow {
+            position: relative;
+
+            a {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 120px;
+              height: 40px;
+              display: grid;
+              place-items: center;
+              @include titleFont ($s_md);
+              border: 1.5px solid $textColor;
+              background-color: #fff;
+              border-radius: 30px;
+            }
+
+            &:hover {
+              .hoverBg {
+                position: absolute;
+                top: 3px;
+                left: 1px;
+                width: 120px;
+                height: 40px;
+                background-color: $textColor;
+                border-radius: 30px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .swiperBtn {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+
+      li {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 1px solid $textColor;
+
+        &.active {
+          background-color: $textColor;
+        }
+      }
+    }
+  }
 
 
   /*========== section textSlide */
+  .textSlide {
+    margin: 0 15vw 100px;
+    display: grid;
+    grid-template-rows: repeat(3, 340px);
 
+    .textWrapper {
+      @include pointFont (300px);
+      width: 100%;
+      position: relative;
+
+      h2 {
+        height: 100%;
+        line-height: 1;
+      }
+    }
+
+    .firstText {
+      img {
+        width: 150px;
+        position: absolute;
+        top: 20px;
+        left: 50px;
+      }
+    }
+
+    .secondText {
+      img {
+        width: 170px;
+        position: absolute;
+        top: 60px;
+        left: 900px;
+      }
+    }
+
+    .lastText {
+      img {
+        width: 220px;
+        position: absolute;
+        top: -50px;
+        left: 200px;
+      }
+    }
+  }
 
 
   /*========== section walk */
+  .walk {
+    margin: 0 15vw 100px;
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: minmax(580px, 440px) 1fr;
 
+    .left {
+      display: grid;
+
+      img {
+        width: 100%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      .textWrapper {
+        overflow: hidden;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        width: 100%;
+        height: 763px;
+        border-radius: 600px;
+        text-align: center;
+
+        .slide {
+          border-top: 1px solid $textColor;
+          border-bottom: 1px solid $textColor;
+          background-color: #fff;
+          text-wrap: nowrap;
+          padding: 10px;
+          margin: 500px 0 40px;
+          @include mainFont ($s_md, $w_lg);
+        }
+
+        .title {
+          @include titleFont (40px);
+          margin-bottom: 30px;
+          color: #fff;
+        }
+
+        .subText {
+          @include mainFont ($s_md, $w_md);
+          color: #fff;
+          line-height: 1.5;
+          letter-spacing: 0.1em;
+        }
+      }
+    }
+
+    .right {
+      display: grid;
+      grid-template-columns: repeat(1fr 1fr);
+      grid-template-rows: 30px 1fr;
+      gap: 1vw;
+
+      .btnWrapper {
+        display: flex;
+        gap: 20px;
+      }
+
+      .product {
+        width: 100%;
+
+        .imgWrapper {
+          margin-bottom: 25px;
+          width: 100%;
+          position: relative;
+
+          img {
+            width: 100%;
+          }
+
+          div {
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            border: 1px solid $textColor;
+            border-radius: 50%;
+            background-color: $mainColor;
+            overflow: hidden;
+            width: 60px;
+            height: 30px;
+            text-wrap: nowrap;
+            transform: rotate(-30deg);
+          }
+        }
+
+        .textWrapper {
+          padding-left: 10px;
+
+          .category {
+            @include mainFont ($s_sm, $w_md);
+            margin-bottom: 4px;
+          }
+
+          .name {
+            @include mainFont ($s_md, $w_xl);
+            margin-bottom: 10px;
+          }
+
+          .priceContainer {
+            display: flex;
+            gap: 10px;
+            @include mainFont ($s_xl, $w_xl);
+
+            .discountRate {
+              color: $pointColor;
+            }
+          }
+        }
+      }
+
+      .firstProduct {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+
+      .lastProduct {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+    }
+  }
 
 
   /*========== section pogle */
+  .pogle {
+    margin: 0 15vw 100px;
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: 1fr minmax(580px, 440px);
 
+    .left {
+      display: grid;
+      grid-template-columns: repeat(1fr 1fr);
+      grid-template-rows: 30px 1fr;
+      gap: 1vw;
+
+      .btnWrapper {
+        display: flex;
+        gap: 20px;
+      }
+
+      .product {
+        width: 100%;
+
+        .imgWrapper {
+          margin-bottom: 25px;
+          width: 100%;
+          position: relative;
+
+          img {
+            width: 100%;
+          }
+
+          div {
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            border: 1px solid $textColor;
+            border-radius: 50%;
+            background-color: $mainColor;
+            overflow: hidden;
+            width: 60px;
+            height: 30px;
+            text-wrap: nowrap;
+            transform: rotate(-30deg);
+          }
+        }
+
+        .textWrapper {
+          padding-left: 10px;
+
+          .category {
+            @include mainFont ($s_sm, $w_md);
+            margin-bottom: 4px;
+          }
+
+          .name {
+            @include mainFont ($s_md, $w_xl);
+            margin-bottom: 10px;
+          }
+
+          .priceContainer {
+            display: flex;
+            gap: 10px;
+            @include mainFont ($s_xl, $w_xl);
+
+            .discountRate {
+              color: $pointColor;
+            }
+          }
+        }
+      }
+
+      .firstProduct {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+
+      .lastProduct {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+    }
+    
+    .right {
+      display: grid;
+
+      img {
+        width: 100%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      .textWrapper {
+        overflow: hidden;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        width: 100%;
+        height: 763px;
+        border-radius: 600px;
+        text-align: center;
+
+        .slide {
+          border-top: 1px solid $textColor;
+          border-bottom: 1px solid $textColor;
+          background-color: #fff;
+          text-wrap: nowrap;
+          padding: 10px;
+          margin: 500px 0 40px;
+          @include mainFont ($s_md, $w_lg);
+        }
+
+        .title {
+          @include titleFont (40px);
+          margin-bottom: 30px;
+        }
+
+        .subText {
+          @include mainFont ($s_md, $w_md);
+          line-height: 1.5;
+          letter-spacing: 0.1em;
+        }
+      }
+    }
+
+  }
 
 
   /*========== section textAni */

@@ -6,10 +6,22 @@
 /*=============== weight */
 /*=============== font */
 /*==================================================== pc부터 시작한다 ! */
+*::-moz-selection {
+  background-color: rgba(0, 173, 78, 0.3);
+}
+*::selection {
+  background-color: rgba(0, 173, 78, 0.3);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 /*=============== header */
 header {
   width: 100%;
   margin-bottom: 20px;
+  z-index: 999999;
 }
 header .header {
   margin: 20px 15vw 40px;
@@ -31,7 +43,7 @@ header .header .hmbrgMenu .hmbrgBtn li {
   width: 30px;
   height: 3px;
   border-radius: 3px;
-  background-color: #222222;
+  background-color: #111111;
 }
 header .header .hmbrgMenu .hmbrgBtn li:last-child {
   width: 25px;
@@ -66,7 +78,7 @@ header .nav .slideWrap .slideContainer .gnb {
   gap: 50px;
   font-family: "Poetsen One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
-  color: #222222;
+  color: #111111;
 }
 header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(2) a p {
   background-color: #FFB400;
@@ -188,7 +200,7 @@ header.active .nav .hmbrgMenu .hmbrgBtn li {
   width: 30px;
   height: 3px;
   border-radius: 3px;
-  background-color: #222222;
+  background-color: #111111;
 }
 header.active .nav .hmbrgMenu .hmbrgBtn li:last-child {
   width: 25px;
@@ -213,6 +225,363 @@ main {
   /*========== section new */
   /*========== section cutePuppy */
 }
+main .main {
+  margin-bottom: 100px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+main .main .swiper {
+  margin: 0 15vw;
+}
+main .main .swiper .swiperItem {
+  display: grid;
+}
+main .main .swiper .swiperItem img {
+  width: 100%;
+  border-radius: 40px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+main .main .swiper .swiperItem .textWrapper {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: center;
+  padding-left: 50px;
+}
+main .main .swiper .swiperItem .textWrapper .imgTitle {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 30px;
+}
+main .main .swiper .swiperItem .textWrapper p {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #111111;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+main .main .swiper .swiperItem .textWrapper .shopNow {
+  position: relative;
+}
+main .main .swiper .swiperItem .textWrapper .shopNow a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-family: "Poetsen One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  color: #111111;
+  border: 1.5px solid #111111;
+  background-color: #fff;
+  border-radius: 30px;
+}
+main .main .swiper .swiperItem .textWrapper .shopNow:hover .hoverBg {
+  position: absolute;
+  top: 3px;
+  left: 1px;
+  width: 120px;
+  height: 40px;
+  background-color: #111111;
+  border-radius: 30px;
+}
+main .main .swiperBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+main .main .swiperBtn li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #111111;
+}
+main .main .swiperBtn li.active {
+  background-color: #111111;
+}
+main .textSlide {
+  margin: 0 15vw 100px;
+  display: grid;
+  grid-template-rows: repeat(3, 340px);
+}
+main .textSlide .textWrapper {
+  font-family: "Bagel Fat One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 300px;
+  color: #111111;
+  width: 100%;
+  position: relative;
+}
+main .textSlide .textWrapper h2 {
+  height: 100%;
+  line-height: 1;
+}
+main .textSlide .firstText img {
+  width: 150px;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+main .textSlide .secondText img {
+  width: 170px;
+  position: absolute;
+  top: 60px;
+  left: 900px;
+}
+main .textSlide .lastText img {
+  width: 220px;
+  position: absolute;
+  top: -50px;
+  left: 200px;
+}
+main .walk {
+  margin: 0 15vw 100px;
+  display: grid;
+  gap: 1vw;
+  grid-template-columns: minmax(580px, 440px) 1fr;
+}
+main .walk .left {
+  display: grid;
+}
+main .walk .left img {
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+main .walk .left .textWrapper {
+  overflow: hidden;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 100%;
+  height: 763px;
+  border-radius: 600px;
+  text-align: center;
+}
+main .walk .left .textWrapper .slide {
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+  background-color: #fff;
+  text-wrap: nowrap;
+  padding: 10px;
+  margin: 500px 0 40px;
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111111;
+}
+main .walk .left .textWrapper .title {
+  font-family: "Poetsen One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 40px;
+  color: #111111;
+  margin-bottom: 30px;
+  color: #fff;
+}
+main .walk .left .textWrapper .subText {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #111111;
+  color: #fff;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
+main .walk .right {
+  display: grid;
+  grid-template-columns: repeat(1fr 1fr);
+  grid-template-rows: 30px 1fr;
+  gap: 1vw;
+}
+main .walk .right .btnWrapper {
+  display: flex;
+  gap: 20px;
+}
+main .walk .right .product {
+  width: 100%;
+}
+main .walk .right .product .imgWrapper {
+  margin-bottom: 25px;
+  width: 100%;
+  position: relative;
+}
+main .walk .right .product .imgWrapper img {
+  width: 100%;
+}
+main .walk .right .product .imgWrapper div {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  border: 1px solid #111111;
+  border-radius: 50%;
+  background-color: #00AD4D;
+  overflow: hidden;
+  width: 60px;
+  height: 30px;
+  text-wrap: nowrap;
+  transform: rotate(-30deg);
+}
+main .walk .right .product .textWrapper {
+  padding-left: 10px;
+}
+main .walk .right .product .textWrapper .category {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #111111;
+  margin-bottom: 4px;
+}
+main .walk .right .product .textWrapper .name {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 10px;
+}
+main .walk .right .product .textWrapper .priceContainer {
+  display: flex;
+  gap: 10px;
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #111111;
+}
+main .walk .right .product .textWrapper .priceContainer .discountRate {
+  color: #FF2108;
+}
+main .walk .right .firstProduct {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+main .walk .right .lastProduct {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+main .pogle {
+  margin: 0 15vw 100px;
+  display: grid;
+  gap: 1vw;
+  grid-template-columns: 1fr minmax(580px, 440px);
+}
+main .pogle .left {
+  display: grid;
+  grid-template-columns: repeat(1fr 1fr);
+  grid-template-rows: 30px 1fr;
+  gap: 1vw;
+}
+main .pogle .left .btnWrapper {
+  display: flex;
+  gap: 20px;
+}
+main .pogle .left .product {
+  width: 100%;
+}
+main .pogle .left .product .imgWrapper {
+  margin-bottom: 25px;
+  width: 100%;
+  position: relative;
+}
+main .pogle .left .product .imgWrapper img {
+  width: 100%;
+}
+main .pogle .left .product .imgWrapper div {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  border: 1px solid #111111;
+  border-radius: 50%;
+  background-color: #00AD4D;
+  overflow: hidden;
+  width: 60px;
+  height: 30px;
+  text-wrap: nowrap;
+  transform: rotate(-30deg);
+}
+main .pogle .left .product .textWrapper {
+  padding-left: 10px;
+}
+main .pogle .left .product .textWrapper .category {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #111111;
+  margin-bottom: 4px;
+}
+main .pogle .left .product .textWrapper .name {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 10px;
+}
+main .pogle .left .product .textWrapper .priceContainer {
+  display: flex;
+  gap: 10px;
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #111111;
+}
+main .pogle .left .product .textWrapper .priceContainer .discountRate {
+  color: #FF2108;
+}
+main .pogle .left .firstProduct {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+main .pogle .left .lastProduct {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+main .pogle .right {
+  display: grid;
+}
+main .pogle .right img {
+  width: 100%;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+main .pogle .right .textWrapper {
+  overflow: hidden;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 100%;
+  height: 763px;
+  border-radius: 600px;
+  text-align: center;
+}
+main .pogle .right .textWrapper .slide {
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+  background-color: #fff;
+  text-wrap: nowrap;
+  padding: 10px;
+  margin: 500px 0 40px;
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111111;
+}
+main .pogle .right .textWrapper .title {
+  font-family: "Poetsen One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 40px;
+  color: #111111;
+  margin-bottom: 30px;
+}
+main .pogle .right .textWrapper .subText {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #111111;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+}
 
 /*=============== footer */
 footer {
@@ -225,7 +594,7 @@ footer {
   font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 14px;
   font-weight: 300;
-  color: #222222;
+  color: #111111;
 }
 footer .left {
   color: #fff;

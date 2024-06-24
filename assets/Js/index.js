@@ -1,6 +1,5 @@
 
 /*========== header */
-/*===== header =====*/
 const main = $('main').offset().top - 50;
 $(window).on('scroll', ()=>{
   if(scrollY > main) {
