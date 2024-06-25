@@ -5,7 +5,7 @@
     - new
     - mo menu
   - java 구현하기  !         
-    - textSlide
+    - textSlide 완료 !
   - pc완성 목표로 화이팅  
     
 ### 240624_월
