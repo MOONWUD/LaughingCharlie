@@ -51,12 +51,14 @@
 
 /*=============== header */
 header {
+  transition: $transition;
   width: 100%;
   margin-bottom: 20px;
   z-index: 999999;
 
   .header {
-    margin: 20px 15vw 40px;
+    transition: $transition;
+    margin: 20px $margin 40px;
     display: grid;
     grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
     align-items: center;
@@ -302,7 +304,7 @@ header {
 
     .nav {
       box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.16);
-      padding: 5px 15vw;
+      padding: 5px $margin;
       display: grid;
       grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
       align-items: center;
@@ -372,7 +374,7 @@ main {
     .swiper {
       border-radius: 40px;
       position: relative;
-      margin: 0 15vw;
+      margin: 0 $margin;
       .swiperBtn {
         position: absolute;
         bottom: 20px;
@@ -444,11 +446,11 @@ main {
 
   /*========== section textSlide */
   .textSlide {
-    margin: 0 15vw 100px;
+    margin: 0 $margin 100px;
     display: grid;
     grid-template-rows: repeat(3, 340px);
     overflow: hidden;
-
+    transition: $transition;
     .textWrapper {
       @include pointFont (300px);
       width: 100%;
@@ -498,7 +500,7 @@ main {
 
   /*========== section walk */
   .walk {
-    margin: 0 15vw 100px;
+    margin: 0 $margin 100px;
     display: grid;
     gap: 1vw;
     grid-template-columns: minmax(580px, 440px) 1fr;
@@ -615,7 +617,7 @@ main {
               animation: walk 20s linear infinite;
 
               .slideItem {
-                @include mainFont ($s_sm, $w_lg);
+                @include mainFont ($s_sm, $w_xl);
                 width: 76px;
               }
             }
@@ -662,7 +664,7 @@ main {
 
   /*========== section pogle */
   .pogle {
-    margin: 0 15vw 100px;
+    margin: 0 $margin 100px;
     display: grid;
     gap: 1vw;
     grid-template-columns: 1fr minmax(440px, 580px);
@@ -721,7 +723,7 @@ main {
               animation: walk 20s linear infinite;
 
               .slideItem {
-                @include mainFont ($s_sm, $w_lg);
+                @include mainFont ($s_sm, $w_xl);
                 width: 76px;
               }
             }
@@ -827,7 +829,7 @@ main {
 
   /*========== section textAni */
   .textAni {
-    margin: 0 15vw 100px;
+    margin: 0 $margin 100px;
     overflow-y: hidden;
     padding-top: 20px;
 
@@ -997,7 +999,7 @@ main {
 
   /*========== section best */
   .best {
-    margin: 0 15vw 100px;
+    margin: 0 $margin 100px;
     display: grid;
     gap: 1vw;
     grid-template-columns: 1fr 3fr;
@@ -1112,13 +1114,15 @@ main {
 
   /*========== section magazine */
   .magazine {
-    margin: 0 15vw 100px;
+    margin: 0 $margin 100px;
     position: relative;
 
     img {
+      transition: $transition;
       position: sticky;
       top: 120px;
       left: 0;
+      width: 100%;
 
       &:nth-child(2) {
         top: 250px;
@@ -1129,7 +1133,7 @@ main {
 
   /*========== section sale */
   .sale {
-    margin: 0 15vw 100px;
+    margin: 0 $margin 100px;
 
     .titleWrapper {
       margin-bottom: 20px;
@@ -1155,6 +1159,9 @@ main {
       gap: 1vw;
 
       li {
+        img {
+          width: 100%;
+        }
         .textWrapper {
           margin-top: 15px;
           padding-left: 10px;
@@ -1186,25 +1193,26 @@ main {
 
   /*========== section new */
   .new {
-    overflow: hidden;
-    margin: 0 15vw 100px;
-
+    user-select: none;
+    margin: 0 $margin 100px;
+    
     .titleWrapper {
       margin-bottom: 20px;
-
+      
       p {
         @include mainFont ($s_lg, $w_md);
       }
-
+      
       h2 {
         @include mainFont (50px, $w_xxl);
       }
     }
-
+    
     .contentWrapper {
       display: grid;
-      place-items: center;
-
+      justify-content: center;
+      align-items: center;
+      grid-template-columns: 70vw;
       .textWrapper {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -1212,11 +1220,18 @@ main {
         @include pointFont (250px);
         line-height: 1;
       }
-
+      
       .productWrapper {
+        overflow: hidden;
+        display: flex;
+        gap: 50px;
+        width: 100%;
+        align-items: center;
+        height: 100%;
         grid-column: 1 / 2;
         grid-row: 1 / 2;
-        display: flex;
+        padding-left: 100px;
+        cursor: grab; /* 클릭 드래그 커서 설정 */
         li {
           &:hover {
             .priceWrapper {
@@ -1224,6 +1239,7 @@ main {
             }
           }
           .priceWrapper {
+            transition: 0.1s;
             display: grid;
             align-content: center;
             padding: 20px;
@@ -1256,10 +1272,44 @@ main {
 
           }
 
-          &:nth-child(1) {}
-          &:nth-child(1) {}
-          &:nth-child(1) {}
-          &:nth-child(1) {}
+          &:nth-child(1) {
+            margin: 0 50px;
+            transform: translateY(200px);
+            img {
+              transform: rotate(-6deg) scale(1.2);
+            }
+            .priceWrapper {
+              transform: rotate(6deg) translate(130px, -50px);
+            }
+          }
+          &:nth-child(2) {
+            margin: 0 50px;
+            transform: translateY(80px);
+            img {
+              transform: rotate(6deg) scale(1.2);
+            }
+            .priceWrapper {
+              transform: rotate(-3deg) translate(0px, 0px);
+            }
+          }
+          &:nth-child(3) {
+            transform: translateY(230px);
+            img {
+              transform: rotate(6deg) scale(1.2);
+            }
+            .priceWrapper {
+              transform: rotate(-3deg) translate(50px, -400px);
+            }
+          }
+          &:nth-child(4) {
+            transform: translateY(0px);
+            img {
+              transform: rotate(6deg);
+            }
+            .priceWrapper {
+              transform: rotate(5deg) translate(0px, -200px);
+            }
+          }
         }
       }
     }
@@ -1337,35 +1387,3 @@ footer {
 }
 
 
-
-
-/*==================================================== pcLg 시작한다 ! */
-@include desktopLg {}
-
-
-
-
-
-/*==================================================== pcMd 시작한다 ! */
-@include desktopMd {}
-
-
-
-
-
-/*==================================================== pcSm 시작한다 ! */
-@include desktopSm {}
-
-
-
-
-
-/*==================================================== tablet 시작한다 ! */
-@include tablet {}
-
-
-
-
-
-/*==================================================== mobile 시작한다 ! */
-@include mobile {}

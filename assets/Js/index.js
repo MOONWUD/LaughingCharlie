@@ -12,7 +12,7 @@ $(window).on('scroll', ()=>{
 
 /*========== section main */
 const swiper = new Swiper(".mySwiper", {
-  speed: 1000,
+  speed: 2000,
   loop:true,
   parallax: true, // 시간차 움직임
   autoplay: {
@@ -24,6 +24,7 @@ const swiper = new Swiper(".mySwiper", {
     clickable: true,
   },
 });
+
 
 
 /*========== section textSlide */
@@ -98,6 +99,7 @@ gsap.to(".textSlide .lastText img", {
 });
 
 
+
 /*========== section walk  */
 
 
@@ -122,6 +124,36 @@ gsap.to(".textSlide .lastText img", {
 
 
 
+/*========== section new */
+$(document).ready(function() {
+  var isDragging = false;
+  var startX, startScrollLeft;
+
+  $('#parent-container').on('mousedown', function(e) {
+      isDragging = true;
+      startX = e.pageX - $('#parent-container').scrollLeft();
+      startScrollLeft = $('#parent-container').scrollLeft();
+      $('#parent-container').css('cursor', 'grabbing'); // 드래그 중일 때 커서 모양 변경
+  });
+
+  $(document).mousemove(function(e) {
+      if (isDragging) {
+          var newScrollLeft = startX - e.pageX + startScrollLeft;
+          $('#parent-container').scrollLeft(newScrollLeft);
+
+      }
+  });
+
+  $(document).mouseup(function() {
+      isDragging = false;
+      $('#parent-container').css('cursor', 'grab'); // 드래그를 끝내면 커서 모양 원래대로 변경
+  });
+});
+
+
+
+
+
 /*========== section cutePuppy */
 gsap.to(".cutePuppy img", {
   scrollTrigger: {
@@ -132,7 +164,7 @@ gsap.to(".cutePuppy img", {
   // markers: true,
   },
   x: 0,
-  y: 800,
+  y: `80vh`,
 });
 
 /*========== footer */
