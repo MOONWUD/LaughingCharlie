@@ -4,7 +4,7 @@
     - main
     - new
     - mo menu
-  - java 구현하기  !
+  - java 구현하기  !         
     -textSlide
   - pc완성 목표로 화이팅  
     
