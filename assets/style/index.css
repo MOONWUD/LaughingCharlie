@@ -262,31 +262,39 @@ main .main {
   position: relative;
 }
 main .main .swiper {
+  border-radius: 40px;
+  position: relative;
   margin: 0 15vw;
 }
-main .main .swiper .swiperItem {
+main .main .swiper .swiperBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  --swiper-theme-color: #111;
+}
+main .main .swiper .swiper-wrapper .swiper-slide {
   display: grid;
 }
-main .main .swiper .swiperItem img {
+main .main .swiper .swiper-wrapper .swiper-slide img {
   width: 100%;
-  border-radius: 40px;
   grid-column: 1/2;
   grid-row: 1/2;
 }
-main .main .swiper .swiperItem .textWrapper {
+main .main .swiper .swiper-wrapper .swiper-slide .textWrapper {
   grid-column: 1/2;
   grid-row: 1/2;
   align-self: center;
   padding-left: 50px;
 }
-main .main .swiper .swiperItem .textWrapper .imgTitle {
+main .main .swiper .swiper-wrapper .swiper-slide .textWrapper .imgTitle {
   font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 50px;
   font-weight: 700;
   color: #111111;
   margin-bottom: 30px;
 }
-main .main .swiper .swiperItem .textWrapper p {
+main .main .swiper .swiper-wrapper .swiper-slide .textWrapper p {
   font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 22px;
   font-weight: 400;
@@ -294,10 +302,10 @@ main .main .swiper .swiperItem .textWrapper p {
   line-height: 1.5;
   margin-bottom: 50px;
 }
-main .main .swiper .swiperItem .textWrapper .shopNow {
+main .main .swiper .swiper-wrapper .swiper-slide .textWrapper .shopNow {
   position: relative;
 }
-main .main .swiper .swiperItem .textWrapper .shopNow a {
+main .main .swiper .swiper-wrapper .swiper-slide .textWrapper .shopNow a {
   position: absolute;
   top: 0;
   left: 0;
@@ -312,7 +320,7 @@ main .main .swiper .swiperItem .textWrapper .shopNow a {
   background-color: #fff;
   border-radius: 30px;
 }
-main .main .swiper .swiperItem .textWrapper .shopNow:hover .hoverBg {
+main .main .swiper .swiper-wrapper .swiper-slide .textWrapper .shopNow:hover .hoverBg {
   position: absolute;
   top: 3px;
   left: 1px;
@@ -321,27 +329,11 @@ main .main .swiper .swiperItem .textWrapper .shopNow:hover .hoverBg {
   background-color: #111111;
   border-radius: 30px;
 }
-main .main .swiperBtn {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-}
-main .main .swiperBtn li {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1px solid #111111;
-}
-main .main .swiperBtn li.active {
-  background-color: #111111;
-}
 main .textSlide {
   margin: 0 15vw 100px;
   display: grid;
   grid-template-rows: repeat(3, 340px);
+  overflow: hidden;
 }
 main .textSlide .textWrapper {
   font-family: "Bagel Fat One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -349,12 +341,19 @@ main .textSlide .textWrapper {
   color: #111111;
   width: 100%;
   position: relative;
+  transform: translateX(50px);
+  opacity: 0;
 }
 main .textSlide .textWrapper h2 {
   height: 100%;
   line-height: 1;
 }
+main .textSlide .textWrapper img {
+  opacity: 0;
+  transition: 0.1s;
+}
 main .textSlide .firstText img {
+  transform: translateY(-50px);
   width: 150px;
   position: absolute;
   top: 20px;
@@ -367,6 +366,7 @@ main .textSlide .secondText img {
   left: 900px;
 }
 main .textSlide .lastText img {
+  transform: translateY(-50px);
   width: 220px;
   position: absolute;
   top: -50px;
@@ -395,7 +395,23 @@ main .walk .left .textWrapper {
   border-radius: 600px;
   text-align: center;
 }
-main .walk .left .textWrapper .slide {
+main .walk .left .textWrapper .slideWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4200px;
+  animation: walkLeft 20s linear infinite;
+}
+@keyframes walkLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-2100px);
+  }
+}
+main .walk .left .textWrapper .slideWrapper .slide {
+  width: 700px;
   border-top: 1px solid #111111;
   border-bottom: 1px solid #111111;
   background-color: #fff;
@@ -441,18 +457,41 @@ main .walk .right .product .imgWrapper {
 main .walk .right .product .imgWrapper img {
   width: 100%;
 }
-main .walk .right .product .imgWrapper div {
+main .walk .right .product .imgWrapper .slideArea {
   position: absolute;
   top: 20px;
   left: 15px;
-  border: 1px solid #111111;
   border-radius: 50%;
+  border: 1px solid #111111;
   background-color: #00AD4D;
-  overflow: hidden;
   width: 60px;
   height: 30px;
-  text-wrap: nowrap;
   transform: rotate(-30deg);
+  overflow: hidden;
+}
+main .walk .right .product .imgWrapper .slideArea .slideContainer {
+  height: 30px;
+  align-items: center;
+  display: flex;
+  text-wrap: nowrap;
+  gap: 10px;
+  width: 456px;
+  animation: walk 20s linear infinite;
+}
+@keyframes walk {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-228px);
+  }
+}
+main .walk .right .product .imgWrapper .slideArea .slideContainer .slideItem {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+  width: 76px;
 }
 main .walk .right .product .textWrapper {
   padding-left: 10px;
@@ -517,18 +556,41 @@ main .pogle .left .product .imgWrapper {
 main .pogle .left .product .imgWrapper img {
   width: 100%;
 }
-main .pogle .left .product .imgWrapper div {
+main .pogle .left .product .imgWrapper .slideArea {
   position: absolute;
   top: 20px;
   left: 15px;
-  border: 1px solid #111111;
   border-radius: 50%;
+  border: 1px solid #111111;
   background-color: #00AD4D;
-  overflow: hidden;
   width: 60px;
   height: 30px;
-  text-wrap: nowrap;
   transform: rotate(-30deg);
+  overflow: hidden;
+}
+main .pogle .left .product .imgWrapper .slideArea .slideContainer {
+  height: 30px;
+  align-items: center;
+  display: flex;
+  text-wrap: nowrap;
+  gap: 10px;
+  width: 456px;
+  animation: walk 20s linear infinite;
+}
+@keyframes walk {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-228px);
+  }
+}
+main .pogle .left .product .imgWrapper .slideArea .slideContainer .slideItem {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+  width: 76px;
 }
 main .pogle .left .product .textWrapper {
   padding-left: 10px;
@@ -583,7 +645,23 @@ main .pogle .right .textWrapper {
   border-radius: 600px;
   text-align: center;
 }
-main .pogle .right .textWrapper .slide {
+main .pogle .right .textWrapper .slideWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4200px;
+  animation: pogleRight 20s linear infinite;
+}
+@keyframes pogleRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-2100px);
+  }
+}
+main .pogle .right .textWrapper .slideWrapper .slide {
+  width: 700px;
   border-top: 1px solid #111111;
   border-bottom: 1px solid #111111;
   background-color: #fff;
@@ -610,6 +688,141 @@ main .pogle .right .textWrapper .subText {
 }
 main .textAni {
   margin: 0 15vw 100px;
+  overflow-y: hidden;
+  padding-top: 20px;
+}
+main .textAni .textAniContainer {
+  width: 5400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  animation: textAni 20s linear infinite;
+}
+@keyframes textAni {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-2700px);
+  }
+}
+main .textAni .textAniContainer .textAniWrapper {
+  display: grid;
+  width: 1350px;
+}
+main .textAni .textAniContainer .textAniWrapper .text {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  font-family: "Bagel Fat One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 100px;
+  color: #111111;
+  z-index: 999;
+}
+main .textAni .textAniContainer .textAniWrapper .puppy {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 160px;
+  transform: translate(90px, -50px);
+  animation: puppy 1s infinite;
+}
+@keyframes puppy {
+  0% {
+    transform: translate(90px, -50px);
+  }
+  15% {
+    transform: translate(90px, -53px);
+  }
+  20% {
+    transform: translate(90px, -55px);
+  }
+  50% {
+    transform: translate(90px, -60px);
+  }
+  60% {
+    transform: translate(90px, -58px);
+  }
+  80% {
+    transform: translate(90px, -55px);
+  }
+  90% {
+    transform: translate(90px, -52px);
+  }
+  100% {
+    transform: translate(90px, -51px);
+  }
+}
+main .textAni .textAniContainer .textAniWrapper .star {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 120px;
+  transform: translate(580px, 0px);
+  animation: star 1s infinite;
+}
+@keyframes star {
+  0% {
+    transform: translate(580px, 0px) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(580px, 0px) scale(1.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(580px, 0px) scale(1);
+    opacity: 1;
+  }
+}
+main .textAni .textAniContainer .textAniWrapper .moveStar {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 47px;
+  transform: translate(1257px, 84px) rotate(0);
+  animation: rotate2 2s infinite;
+}
+@keyframes rotate2 {
+  0% {
+    transform: translate(1257px, 84px) rotate(0deg);
+  }
+  12% {
+    transform: translate(1257px, 84px) rotate(45deg);
+  }
+  25% {
+    transform: translate(1257px, 84px) rotate(90deg);
+  }
+  37% {
+    transform: translate(1257px, 84px) rotate(135deg);
+  }
+  50% {
+    transform: translate(1257px, 84px) rotate(180deg);
+  }
+  62% {
+    transform: translate(1257px, 84px) rotate(225deg);
+  }
+  75% {
+    transform: translate(1257px, 84px) rotate(270deg);
+  }
+  87% {
+    transform: translate(1257px, 84px) rotate(315deg);
+  }
+  100% {
+    transform: translate(1257px, 84px) rotate(360deg);
+  }
+}
+main .textAni .textAniContainer .textAniWrapper .decoration {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  width: 85px;
+  height: 47px;
+  border: 1px solid #111111;
+  border-radius: 50%;
+  background-color: #00AD4D;
+  font-family: "Poetsen One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  color: #111111;
+  display: grid;
+  place-items: center;
+  transform: translate(1070px, 7px);
 }
 main .best {
   margin: 0 15vw 100px;
@@ -791,7 +1004,81 @@ main .sale .productWrapper li .textWrapper .priceContainer .discountRate {
   color: #FF2108;
 }
 main .new {
+  overflow: hidden;
   margin: 0 15vw 100px;
+}
+main .new .titleWrapper {
+  margin-bottom: 20px;
+}
+main .new .titleWrapper p {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #111111;
+}
+main .new .titleWrapper h2 {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  color: #111111;
+}
+main .new .contentWrapper {
+  display: grid;
+  place-items: center;
+}
+main .new .contentWrapper .textWrapper {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  text-align: center;
+  font-family: "Bagel Fat One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 250px;
+  color: #111111;
+  line-height: 1;
+}
+main .new .contentWrapper .productWrapper {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: flex;
+}
+main .new .contentWrapper .productWrapper li:hover .priceWrapper {
+  opacity: 1;
+}
+main .new .contentWrapper .productWrapper li .priceWrapper {
+  display: grid;
+  align-content: center;
+  padding: 20px;
+  width: 250px;
+  height: 130px;
+  border-radius: 20px;
+  border: 1px solid #111111;
+  background-color: #fff;
+  box-shadow: 3px 3px #111111;
+  opacity: 0;
+}
+main .new .contentWrapper .productWrapper li .priceWrapper .category {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #111111;
+  margin-bottom: 4px;
+}
+main .new .contentWrapper .productWrapper li .priceWrapper .name {
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 10px;
+}
+main .new .contentWrapper .productWrapper li .priceWrapper .priceContainer {
+  display: flex;
+  gap: 10px;
+  font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #111111;
+}
+main .new .contentWrapper .productWrapper li .priceWrapper .priceContainer .discountRate {
+  color: #FF2108;
 }
 main .cutePuppy {
   width: 100%;

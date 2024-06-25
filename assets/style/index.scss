@@ -1,16 +1,44 @@
 @import "./val.scss";
 
 @keyframes rotate {
-  0% { transform: rotate(0deg);}
-  12% { transform: rotate(45deg);}
-  25% { transform: rotate(90deg);}
-  37% { transform: rotate(135deg);}
-  50% { transform: rotate(180deg);}
-  62% { transform: rotate(225deg);}
-  75% { transform: rotate(270deg);}
-  87% { transform: rotate(315deg);}
-  100% { transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+
+  12% {
+    transform: rotate(45deg);
+  }
+
+  25% {
+    transform: rotate(90deg);
+  }
+
+  37% {
+    transform: rotate(135deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  62% {
+    transform: rotate(225deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
+  }
+
+  87% {
+    transform: rotate(315deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
+
+// animation: rotate 2s infinite;
 
 /*==================================================== pc부터 시작한다 ! */
 *::selection {
@@ -79,6 +107,7 @@ header {
     width: 100%;
     margin-bottom: 20px;
     transition: 0.1s;
+
     .hmbrgMenu {
       display: none;
     }
@@ -340,86 +369,73 @@ main {
     height: 100%;
     width: 100%;
     position: relative;
-
     .swiper {
+      border-radius: 40px;
+      position: relative;
       margin: 0 15vw;
-
-      .swiperItem {
-        display: grid;
-
-        img {
-          width: 100%;
-          border-radius: 40px;
-          grid-column: 1 /2;
-          grid-row: 1 / 2;
-        }
-
-        .textWrapper {
-          grid-column: 1 /2;
-          grid-row: 1 / 2;
-          align-self: center;
-          padding-left: 50px;
-
-          .imgTitle {
-            @include mainFont (50px, $w_xxl);
-            margin-bottom: 30px;
+      .swiperBtn {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        --swiper-theme-color: #111;
+      }
+      .swiper-wrapper {
+        .swiper-slide {
+          display: grid;
+          img {
+            width: 100%;
+            grid-column: 1 /2;
+            grid-row: 1 / 2;
           }
-
-          p {
-            @include mainFont ($s_xl, $w_md);
-            line-height: 1.5;
-            margin-bottom: 50px;
-          }
-
-          .shopNow {
-            position: relative;
-
-            a {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 120px;
-              height: 40px;
-              display: grid;
-              place-items: center;
-              @include titleFont ($s_md);
-              border: 1.5px solid $textColor;
-              background-color: #fff;
-              border-radius: 30px;
+  
+          .textWrapper {
+            grid-column: 1 /2;
+            grid-row: 1 / 2;
+            align-self: center;
+            padding-left: 50px;
+  
+            .imgTitle {
+              @include mainFont (50px, $w_xxl);
+              margin-bottom: 30px;
             }
-
-            &:hover {
-              .hoverBg {
+  
+            p {
+              @include mainFont ($s_xl, $w_md);
+              line-height: 1.5;
+              margin-bottom: 50px;
+            }
+  
+            .shopNow {
+              position: relative;
+  
+              a {
                 position: absolute;
-                top: 3px;
-                left: 1px;
+                top: 0;
+                left: 0;
                 width: 120px;
                 height: 40px;
-                background-color: $textColor;
+                display: grid;
+                place-items: center;
+                @include titleFont ($s_md);
+                border: 1.5px solid $textColor;
+                background-color: #fff;
                 border-radius: 30px;
+              }
+  
+              &:hover {
+                .hoverBg {
+                  position: absolute;
+                  top: 3px;
+                  left: 1px;
+                  width: 120px;
+                  height: 40px;
+                  background-color: $textColor;
+                  border-radius: 30px;
+                }
               }
             }
           }
-        }
-      }
-    }
-
-    .swiperBtn {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-
-      li {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        border: 1px solid $textColor;
-
-        &.active {
-          background-color: $textColor;
         }
       }
     }
@@ -431,27 +447,34 @@ main {
     margin: 0 15vw 100px;
     display: grid;
     grid-template-rows: repeat(3, 340px);
+    overflow: hidden;
 
     .textWrapper {
       @include pointFont (300px);
       width: 100%;
       position: relative;
-
+      transform: translateX(50px);
+      opacity: 0;
       h2 {
         height: 100%;
         line-height: 1;
       }
+      img {
+        opacity: 0;
+        transition: 0.1s;
+      }
     }
-
+    
     .firstText {
       img {
+        transform: translateY(-50px);
         width: 150px;
         position: absolute;
         top: 20px;
         left: 50px;
       }
     }
-
+    
     .secondText {
       img {
         width: 170px;
@@ -460,9 +483,10 @@ main {
         left: 900px;
       }
     }
-
+    
     .lastText {
       img {
+        transform: translateY(-50px);
         width: 220px;
         position: absolute;
         top: -50px;
@@ -497,14 +521,32 @@ main {
         border-radius: 600px;
         text-align: center;
 
-        .slide {
-          border-top: 1px solid $textColor;
-          border-bottom: 1px solid $textColor;
-          background-color: #fff;
-          text-wrap: nowrap;
-          padding: 10px;
-          margin: 500px 0 40px;
-          @include mainFont ($s_md, $w_lg);
+        .slideWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: calc(700px * 6);
+          @keyframes walkLeft {
+            0% {
+              transform: translateX(0);
+            }
+
+            100% {
+              transform: translateX(calc(-700px * 3))
+            }
+          }
+
+          animation: walkLeft 20s linear infinite;
+          .slide {
+            width: 700px;
+            border-top: 1px solid $textColor;
+            border-bottom: 1px solid $textColor;
+            background-color: #fff;
+            text-wrap: nowrap;
+            padding: 10px;
+            margin: 500px 0 40px;
+            @include mainFont ($s_md, $w_lg);
+          }
         }
 
         .title {
@@ -542,18 +584,41 @@ main {
             width: 100%;
           }
 
-          div {
+          .slideArea {
             position: absolute;
             top: 20px;
             left: 15px;
-            border: 1px solid $textColor;
             border-radius: 50%;
+            border: 1px solid $textColor;
             background-color: $mainColor;
-            overflow: hidden;
             width: 60px;
             height: 30px;
-            text-wrap: nowrap;
             transform: rotate(-30deg);
+            overflow: hidden;
+            .slideContainer {
+              height: 30px;
+              align-items: center;
+              display: flex;
+              text-wrap: nowrap;
+              gap: 10px;
+              width: calc(76px * 6);
+              @keyframes walk {
+                0% {
+                  transform: translateX(0);
+                }
+    
+                100% {
+                  transform: translateX(calc(-76px * 3))
+                }
+              }
+
+              animation: walk 20s linear infinite;
+
+              .slideItem {
+                @include mainFont ($s_sm, $w_lg);
+                width: 76px;
+              }
+            }
           }
         }
 
@@ -625,18 +690,41 @@ main {
             width: 100%;
           }
 
-          div {
+          .slideArea {
             position: absolute;
             top: 20px;
             left: 15px;
-            border: 1px solid $textColor;
             border-radius: 50%;
+            border: 1px solid $textColor;
             background-color: $mainColor;
-            overflow: hidden;
             width: 60px;
             height: 30px;
-            text-wrap: nowrap;
             transform: rotate(-30deg);
+            overflow: hidden;
+            .slideContainer {
+              height: 30px;
+              align-items: center;
+              display: flex;
+              text-wrap: nowrap;
+              gap: 10px;
+              width: calc(76px * 6);
+              @keyframes walk {
+                0% {
+                  transform: translateX(0);
+                }
+    
+                100% {
+                  transform: translateX(calc(-76px * 3))
+                }
+              }
+
+              animation: walk 20s linear infinite;
+
+              .slideItem {
+                @include mainFont ($s_sm, $w_lg);
+                width: 76px;
+              }
+            }
           }
         }
 
@@ -694,14 +782,32 @@ main {
         border-radius: 600px;
         text-align: center;
 
-        .slide {
-          border-top: 1px solid $textColor;
-          border-bottom: 1px solid $textColor;
-          background-color: #fff;
-          text-wrap: nowrap;
-          padding: 10px;
-          margin: 500px 0 40px;
-          @include mainFont ($s_md, $w_lg);
+        .slideWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: calc(700px * 6);
+          @keyframes pogleRight {
+            0% {
+              transform: translateX(0);
+            }
+
+            100% {
+              transform: translateX(calc(-700px * 3))
+            }
+          }
+
+          animation: pogleRight 20s linear infinite;
+          .slide {
+            width: 700px;
+            border-top: 1px solid $textColor;
+            border-bottom: 1px solid $textColor;
+            background-color: #fff;
+            text-wrap: nowrap;
+            padding: 10px;
+            margin: 500px 0 40px;
+            @include mainFont ($s_md, $w_lg);
+          }
         }
 
         .title {
@@ -722,6 +828,170 @@ main {
   /*========== section textAni */
   .textAni {
     margin: 0 15vw 100px;
+    overflow-y: hidden;
+    padding-top: 20px;
+
+    .textAniContainer {
+      width: calc(1350px * 4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+
+      @keyframes textAni {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(calc(-1350px * 2))
+        }
+      }
+
+      animation: textAni 20s linear infinite;
+
+      .textAniWrapper {
+        display: grid;
+        width: 1350px;
+
+        .text {
+          grid-column: 1 / 2;
+          grid-row: 1 / 2;
+          @include pointFont (100px);
+          z-index: 999;
+        }
+
+        .puppy {
+          grid-column: 1 / 2;
+          grid-row: 1 / 2;
+          width: 160px;
+          transform: translate(90px, -50px);
+
+          @keyframes puppy {
+            0% {
+              transform: translate(90px, -50px);
+            }
+
+            15% {
+              transform: translate(90px, -53px);
+            }
+
+            20% {
+              transform: translate(90px, -55px);
+            }
+
+            50% {
+              transform: translate(90px, -60px);
+            }
+
+            60% {
+              transform: translate(90px, -58px);
+            }
+
+            80% {
+              transform: translate(90px, -55px);
+            }
+
+            90% {
+              transform: translate(90px, -52px);
+            }
+
+            100% {
+              transform: translate(90px, -51px);
+            }
+          }
+
+          animation: puppy 1s infinite;
+        }
+
+        .star {
+          grid-column: 1 / 2;
+          grid-row: 1 / 2;
+          width: 120px;
+          transform: translate(580px, 0px);
+
+          @keyframes star {
+            0% {
+              transform: translate(580px, 0px) scale(1);
+              opacity: 1;
+            }
+
+            50% {
+              transform: translate(580px, 0px) scale(1.1);
+              opacity: 0.5;
+            }
+
+            100% {
+              transform: translate(580px, 0px) scale(1);
+              opacity: 1;
+            }
+          }
+
+          animation: star 1s infinite;
+        }
+
+        .moveStar {
+          grid-column: 1 / 2;
+          grid-row: 1 / 2;
+          width: 47px;
+          transform: translate(1257px, 84px) rotate(0);
+
+          @keyframes rotate2 {
+            0% {
+              transform: translate(1257px, 84px) rotate(0deg);
+            }
+
+            12% {
+              transform: translate(1257px, 84px) rotate(45deg);
+            }
+
+            25% {
+              transform: translate(1257px, 84px) rotate(90deg);
+            }
+
+            37% {
+              transform: translate(1257px, 84px) rotate(135deg);
+            }
+
+            50% {
+              transform: translate(1257px, 84px) rotate(180deg);
+            }
+
+            62% {
+              transform: translate(1257px, 84px) rotate(225deg);
+            }
+
+            75% {
+              transform: translate(1257px, 84px) rotate(270deg);
+            }
+
+            87% {
+              transform: translate(1257px, 84px) rotate(315deg);
+            }
+
+            100% {
+              transform: translate(1257px, 84px) rotate(360deg);
+            }
+          }
+
+          animation: rotate2 2s infinite;
+        }
+
+        .decoration {
+          grid-column: 1 / 2;
+          grid-row: 1 / 2;
+          width: 85px;
+          height: 47px;
+          border: 1px solid $textColor;
+          border-radius: 50%;
+          background-color: $mainColor;
+          @include titleFont ($s_lg);
+          display: grid;
+          place-items: center;
+          transform: translate(1070px, 7px);
+        }
+      }
+    }
   }
 
 
@@ -731,6 +1001,7 @@ main {
     display: grid;
     gap: 1vw;
     grid-template-columns: 1fr 3fr;
+
 
     .left {
       .titleWrapper {
@@ -843,10 +1114,12 @@ main {
   .magazine {
     margin: 0 15vw 100px;
     position: relative;
+
     img {
       position: sticky;
       top: 120px;
       left: 0;
+
       &:nth-child(2) {
         top: 250px;
       }
@@ -857,6 +1130,7 @@ main {
   /*========== section sale */
   .sale {
     margin: 0 15vw 100px;
+
     .titleWrapper {
       margin-bottom: 20px;
 
@@ -868,15 +1142,18 @@ main {
         @include mainFont (50px, $w_xxl);
       }
     }
+
     .btnWrapper {
       display: flex;
       gap: 20px;
       margin-bottom: 70px;
     }
+
     .productWrapper {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1vw;
+
       li {
         .textWrapper {
           margin-top: 15px;
@@ -909,7 +1186,83 @@ main {
 
   /*========== section new */
   .new {
+    overflow: hidden;
     margin: 0 15vw 100px;
+
+    .titleWrapper {
+      margin-bottom: 20px;
+
+      p {
+        @include mainFont ($s_lg, $w_md);
+      }
+
+      h2 {
+        @include mainFont (50px, $w_xxl);
+      }
+    }
+
+    .contentWrapper {
+      display: grid;
+      place-items: center;
+
+      .textWrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        text-align: center;
+        @include pointFont (250px);
+        line-height: 1;
+      }
+
+      .productWrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: flex;
+        li {
+          &:hover {
+            .priceWrapper {
+              opacity: 1;
+            }
+          }
+          .priceWrapper {
+            display: grid;
+            align-content: center;
+            padding: 20px;
+            width: 250px;
+            height: 130px;
+            border-radius: 20px;
+            border: 1px solid $textColor;
+            background-color: #fff;
+            box-shadow: 3px 3px $textColor;
+            opacity: 0;
+            .category {
+              @include mainFont ($s_sm, $w_md);
+              margin-bottom: 4px;
+            }
+
+            .name {
+              @include mainFont ($s_md, $w_xl);
+              margin-bottom: 10px;
+            }
+
+            .priceContainer {
+              display: flex;
+              gap: 10px;
+              @include mainFont ($s_xl, $w_xl);
+
+              .discountRate {
+                color: $pointColor;
+              }
+            }
+
+          }
+
+          &:nth-child(1) {}
+          &:nth-child(1) {}
+          &:nth-child(1) {}
+          &:nth-child(1) {}
+        }
+      }
+    }
   }
 
 
@@ -918,6 +1271,7 @@ main {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+
     img {
       width: 200px;
       transform: rotate(-10deg) translate(70vw, 250px);
