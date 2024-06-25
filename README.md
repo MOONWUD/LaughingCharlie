@@ -1,7 +1,7 @@
 ### 240625_화
   - scss 완성하기 완료 !! (애니메이션까지 완료 ~) 
   - swiper 구현하기 !!!
-    - main
+    - main 완료 !!
     - new
     - mo menu
   - java 구현하기  !         
