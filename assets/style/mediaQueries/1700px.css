@@ -1,0 +1,1190 @@
+@charset "UTF-8";
+/*=============== fontlink */
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Poetsen+One&display=swap");
+/*=============== color */
+/*=============== size */
+/*=============== weight */
+/*=============== font */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  12% {
+    transform: rotate(45deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  37% {
+    transform: rotate(135deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  62% {
+    transform: rotate(225deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  87% {
+    transform: rotate(315deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*==================================================== 1700px 시작한다 ! */
+@media (max-width: 1700px) {
+  /*=============== header */
+  header {
+    transition: 0.5;
+    width: 100%;
+    margin-bottom: 20px;
+    z-index: 999999;
+  }
+  header .header {
+    transition: 0.5;
+    margin: 20px 10vw 40px;
+    display: grid;
+    grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
+    align-items: center;
+    justify-content: space-between;
+  }
+  header .header .hmbrgMenu {
+    justify-self: start;
+  }
+  header .header .hmbrgMenu .hmbrgBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  header .header .hmbrgMenu .hmbrgBtn li {
+    width: 30px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #111111;
+  }
+  header .header .hmbrgMenu .hmbrgBtn li:last-child {
+    width: 25px;
+  }
+  header .header .logo {
+    justify-self: center;
+    max-width: 150px;
+    min-width: 100px;
+  }
+  header .header .logo a img {
+    width: 100%;
+  }
+  header .header .headerIcon {
+    justify-self: end;
+    display: flex;
+    gap: 45px;
+  }
+  header .nav {
+    width: 100%;
+    margin-bottom: 20px;
+    transition: 0.1s;
+  }
+  header .nav .hmbrgMenu {
+    display: none;
+  }
+  header .nav .headerIcon {
+    display: none;
+  }
+  header .nav .slideWrap .slideContainer .gnb {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    font-family: "Poetsen One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: #111111;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(2) a p {
+    background-color: #FFB400;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(3) a p {
+    background-color: #E94529;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(4) a p {
+    background-color: #FFD100;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(5) a p {
+    background-color: #FFB400;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(6) a p {
+    background-color: #FFD100;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(7) a p {
+    color: #fff;
+    background-color: #FF2108;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:hover a p {
+    border-color: #000;
+    animation: menu 0.5s infinite;
+  }
+  @keyframes menu {
+    0% {
+      transform: rotate(3deg);
+    }
+    20% {
+      transform: rotate(2deg);
+    }
+    50% {
+      transform: rotate(-2deg);
+    }
+    80% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(3deg);
+    }
+  }
+  header .nav .slideWrap .slideContainer .gnb li:nth-child(1) a p {
+    border: 2px solid #000;
+    background-color: #00AD4D;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:nth-child(1) a img {
+    width: 85px;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:nth-child(2) a img {
+    width: 35px;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:nth-child(3) a img {
+    width: 25px;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:nth-child(4) a img {
+    width: 21px;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:nth-child(5) a img {
+    width: 45px;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:nth-child(6) a img {
+    width: 50px;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:nth-child(7) a p {
+    color: #FF2108;
+  }
+  header .nav .slideWrap .slideContainer .gnb li:nth-child(7) a img {
+    width: 63px;
+  }
+  header .nav .slideWrap .slideContainer .gnb li a {
+    display: grid;
+    grid-template-rows: 70px 1fr;
+    place-items: center;
+  }
+  header .nav .slideWrap .slideContainer .gnb li a p {
+    margin-top: 5px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    background-color: transparent;
+    padding: 5px 10px;
+  }
+  header.active {
+    transition: 0.8s;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  header.active .header {
+    display: none;
+  }
+  header.active .nav {
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.16);
+    padding: 5px 10vw;
+    display: grid;
+    grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+  }
+  header.active .nav .headerIcon {
+    display: block;
+    justify-self: end;
+    display: flex;
+    gap: 45px;
+  }
+  header.active .nav .hmbrgMenu {
+    justify-self: start;
+    display: block;
+  }
+  header.active .nav .hmbrgMenu .hmbrgBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+  header.active .nav .hmbrgMenu .hmbrgBtn li {
+    width: 30px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #111111;
+  }
+  header.active .nav .hmbrgMenu .hmbrgBtn li:last-child {
+    width: 25px;
+  }
+  header.active .nav .slideWrap .slideContainer .gnb {
+    gap: 30px;
+  }
+  header.active .nav .slideWrap .slideContainer .gnb li a img {
+    display: none;
+  }
+  /*=============== main */
+  main {
+    /*========== section main */
+    /*========== section textSlide */
+    /*========== section walk */
+    /*========== section pogle */
+    /*========== section textAni */
+    /*========== section best */
+    /*========== section magazine */
+    /*========== section sale */
+    /*========== section new */
+    /*========== section cutePuppy */
+  }
+  main .main {
+    margin-bottom: 100px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  main .main .swiper {
+    border-radius: 40px;
+    position: relative;
+    margin: 0 10vw;
+  }
+  main .main .swiper .swiperBtn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    --swiper-theme-color: #111;
+  }
+  main .main .swiper .swiper-wrapper .swiper-slide {
+    display: grid;
+  }
+  main .main .swiper .swiper-wrapper .swiper-slide img {
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  main .main .swiper .swiper-wrapper .swiper-slide .textWrapper {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+    padding-left: 50px;
+  }
+  main .main .swiper .swiper-wrapper .swiper-slide .textWrapper .imgTitle {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 30px;
+  }
+  main .main .swiper .swiper-wrapper .swiper-slide .textWrapper p {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #111111;
+    line-height: 1.5;
+    margin-bottom: 50px;
+  }
+  main .main .swiper .swiper-wrapper .swiper-slide .textWrapper .shopNow {
+    position: relative;
+  }
+  main .main .swiper .swiper-wrapper .swiper-slide .textWrapper .shopNow a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    font-family: "Poetsen One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: #111111;
+    border: 1.5px solid #111111;
+    background-color: #fff;
+    border-radius: 30px;
+  }
+  main .main .swiper .swiper-wrapper .swiper-slide .textWrapper .shopNow:hover .hoverBg {
+    position: absolute;
+    top: 3px;
+    left: 1px;
+    width: 120px;
+    height: 40px;
+    background-color: #111111;
+    border-radius: 30px;
+  }
+  main .textSlide {
+    margin: 0 10vw 100px;
+    display: grid;
+    grid-template-rows: repeat(3, 340px);
+    overflow: hidden;
+    transition: 0.5;
+  }
+  main .textSlide .textWrapper {
+    font-family: "Bagel Fat One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 300px;
+    color: #111111;
+    width: 100%;
+    position: relative;
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  main .textSlide .textWrapper h2 {
+    height: 100%;
+    line-height: 1;
+  }
+  main .textSlide .textWrapper img {
+    opacity: 0;
+    transition: 0.1s;
+  }
+  main .textSlide .firstText img {
+    transform: translateY(-50px);
+    width: 150px;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+  }
+  main .textSlide .secondText img {
+    width: 170px;
+    position: absolute;
+    top: 60px;
+    left: 900px;
+  }
+  main .textSlide .lastText img {
+    transform: translateY(-50px);
+    width: 220px;
+    position: absolute;
+    top: -50px;
+    left: 200px;
+  }
+  main .walk {
+    margin: 0 10vw 100px;
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: minmax(580px, 440px) 1fr;
+  }
+  main .walk .left {
+    display: grid;
+  }
+  main .walk .left img {
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  main .walk .left .textWrapper {
+    overflow: hidden;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: 763px;
+    border-radius: 600px;
+    text-align: center;
+  }
+  main .walk .left .textWrapper .slideWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4200px;
+    animation: walkLeft 20s linear infinite;
+  }
+  @keyframes walkLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-2100px);
+    }
+  }
+  main .walk .left .textWrapper .slideWrapper .slide {
+    width: 700px;
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #111111;
+    background-color: #fff;
+    text-wrap: nowrap;
+    padding: 10px;
+    margin: 500px 0 40px;
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #111111;
+  }
+  main .walk .left .textWrapper .title {
+    font-family: "Poetsen One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 40px;
+    color: #111111;
+    margin-bottom: 30px;
+  }
+  main .walk .left .textWrapper .subText {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #111111;
+    line-height: 1.5;
+  }
+  main .walk .right {
+    display: grid;
+    grid-template-columns: repeat(1fr 1fr);
+    grid-template-rows: 30px 1fr;
+    gap: 1vw;
+  }
+  main .walk .right .btnWrapper {
+    display: flex;
+    gap: 20px;
+  }
+  main .walk .right .product {
+    width: 100%;
+  }
+  main .walk .right .product .imgWrapper {
+    margin-bottom: 25px;
+    width: 100%;
+    position: relative;
+  }
+  main .walk .right .product .imgWrapper img {
+    width: 100%;
+  }
+  main .walk .right .product .imgWrapper .slideArea {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    border-radius: 50%;
+    border: 1px solid #111111;
+    background-color: #00AD4D;
+    width: 60px;
+    height: 30px;
+    transform: rotate(-30deg);
+    overflow: hidden;
+  }
+  main .walk .right .product .imgWrapper .slideArea .slideContainer {
+    height: 30px;
+    align-items: center;
+    display: flex;
+    text-wrap: nowrap;
+    gap: 10px;
+    width: 456px;
+    animation: walk 20s linear infinite;
+  }
+  @keyframes walk {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-228px);
+    }
+  }
+  main .walk .right .product .imgWrapper .slideArea .slideContainer .slideItem {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+    width: 76px;
+  }
+  main .walk .right .product .textWrapper {
+    padding-left: 10px;
+  }
+  main .walk .right .product .textWrapper .category {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #111111;
+    margin-bottom: 4px;
+  }
+  main .walk .right .product .textWrapper .name {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 10px;
+  }
+  main .walk .right .product .textWrapper .priceContainer {
+    display: flex;
+    gap: 10px;
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #111111;
+  }
+  main .walk .right .product .textWrapper .priceContainer .discountRate {
+    color: #FF2108;
+  }
+  main .walk .right .firstProduct {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  main .walk .right .lastProduct {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  main .pogle {
+    margin: 0 10vw 100px;
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: 1fr minmax(440px, 580px);
+  }
+  main .pogle .left {
+    display: grid;
+    grid-template-columns: repeat(1fr 1fr);
+    grid-template-rows: 30px 1fr;
+    gap: 1vw;
+  }
+  main .pogle .left .btnWrapper {
+    display: flex;
+    gap: 20px;
+  }
+  main .pogle .left .product {
+    width: 100%;
+  }
+  main .pogle .left .product .imgWrapper {
+    margin-bottom: 25px;
+    width: 100%;
+    position: relative;
+  }
+  main .pogle .left .product .imgWrapper img {
+    width: 100%;
+  }
+  main .pogle .left .product .imgWrapper .slideArea {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    border-radius: 50%;
+    border: 1px solid #111111;
+    background-color: #00AD4D;
+    width: 60px;
+    height: 30px;
+    transform: rotate(-30deg);
+    overflow: hidden;
+  }
+  main .pogle .left .product .imgWrapper .slideArea .slideContainer {
+    height: 30px;
+    align-items: center;
+    display: flex;
+    text-wrap: nowrap;
+    gap: 10px;
+    width: 456px;
+    animation: walk 20s linear infinite;
+  }
+  @keyframes walk {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-228px);
+    }
+  }
+  main .pogle .left .product .imgWrapper .slideArea .slideContainer .slideItem {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+    width: 76px;
+  }
+  main .pogle .left .product .textWrapper {
+    padding-left: 10px;
+  }
+  main .pogle .left .product .textWrapper .category {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #111111;
+    margin-bottom: 4px;
+  }
+  main .pogle .left .product .textWrapper .name {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 10px;
+  }
+  main .pogle .left .product .textWrapper .priceContainer {
+    display: flex;
+    gap: 10px;
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #111111;
+  }
+  main .pogle .left .product .textWrapper .priceContainer .discountRate {
+    color: #FF2108;
+  }
+  main .pogle .left .firstProduct {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  main .pogle .left .lastProduct {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  main .pogle .right {
+    display: grid;
+  }
+  main .pogle .right img {
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  main .pogle .right .textWrapper {
+    overflow: hidden;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: 763px;
+    border-radius: 600px;
+    text-align: center;
+  }
+  main .pogle .right .textWrapper .slideWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4200px;
+    animation: pogleRight 20s linear infinite;
+  }
+  @keyframes pogleRight {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-2100px);
+    }
+  }
+  main .pogle .right .textWrapper .slideWrapper .slide {
+    width: 700px;
+    border-top: 1px solid #111111;
+    border-bottom: 1px solid #111111;
+    background-color: #fff;
+    text-wrap: nowrap;
+    padding: 10px;
+    margin: 500px 0 40px;
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #111111;
+  }
+  main .pogle .right .textWrapper .title {
+    font-family: "Poetsen One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 40px;
+    color: #111111;
+    margin-bottom: 30px;
+  }
+  main .pogle .right .textWrapper .subText {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #111111;
+    line-height: 1.5;
+  }
+  main .textAni {
+    margin: 0 10vw 100px;
+    overflow-y: hidden;
+    padding-top: 20px;
+  }
+  main .textAni .textAniContainer {
+    width: 5400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    animation: textAni 20s linear infinite;
+  }
+  @keyframes textAni {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-2700px);
+    }
+  }
+  main .textAni .textAniContainer .textAniWrapper {
+    display: grid;
+    width: 1350px;
+  }
+  main .textAni .textAniContainer .textAniWrapper .text {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-family: "Bagel Fat One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 100px;
+    color: #111111;
+    z-index: 999;
+  }
+  main .textAni .textAniContainer .textAniWrapper .puppy {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 160px;
+    transform: translate(90px, -50px);
+    animation: puppy 1s infinite;
+  }
+  @keyframes puppy {
+    0% {
+      transform: translate(90px, -50px);
+    }
+    15% {
+      transform: translate(90px, -53px);
+    }
+    20% {
+      transform: translate(90px, -55px);
+    }
+    50% {
+      transform: translate(90px, -60px);
+    }
+    60% {
+      transform: translate(90px, -58px);
+    }
+    80% {
+      transform: translate(90px, -55px);
+    }
+    90% {
+      transform: translate(90px, -52px);
+    }
+    100% {
+      transform: translate(90px, -51px);
+    }
+  }
+  main .textAni .textAniContainer .textAniWrapper .star {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 120px;
+    transform: translate(580px, 0px);
+    animation: star 1s infinite;
+  }
+  @keyframes star {
+    0% {
+      transform: translate(580px, 0px) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(580px, 0px) scale(1.1);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translate(580px, 0px) scale(1);
+      opacity: 1;
+    }
+  }
+  main .textAni .textAniContainer .textAniWrapper .moveStar {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 47px;
+    transform: translate(1257px, 84px) rotate(0);
+    animation: rotate2 2s infinite;
+  }
+  @keyframes rotate2 {
+    0% {
+      transform: translate(1257px, 84px) rotate(0deg);
+    }
+    12% {
+      transform: translate(1257px, 84px) rotate(45deg);
+    }
+    25% {
+      transform: translate(1257px, 84px) rotate(90deg);
+    }
+    37% {
+      transform: translate(1257px, 84px) rotate(135deg);
+    }
+    50% {
+      transform: translate(1257px, 84px) rotate(180deg);
+    }
+    62% {
+      transform: translate(1257px, 84px) rotate(225deg);
+    }
+    75% {
+      transform: translate(1257px, 84px) rotate(270deg);
+    }
+    87% {
+      transform: translate(1257px, 84px) rotate(315deg);
+    }
+    100% {
+      transform: translate(1257px, 84px) rotate(360deg);
+    }
+  }
+  main .textAni .textAniContainer .textAniWrapper .decoration {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 85px;
+    height: 47px;
+    border: 1px solid #111111;
+    border-radius: 50%;
+    background-color: #00AD4D;
+    font-family: "Poetsen One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    color: #111111;
+    display: grid;
+    place-items: center;
+    transform: translate(1070px, 7px);
+  }
+  main .best {
+    margin: 0 10vw 100px;
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: 1fr 3fr;
+  }
+  main .best .left .titleWrapper {
+    margin-bottom: 10px;
+  }
+  main .best .left .titleWrapper p {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #111111;
+  }
+  main .best .left .titleWrapper h2 {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #111111;
+  }
+  main .best .left .btnWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  main .best .left .btnWrapper li {
+    width: 100px;
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    border: 1px solid #111111;
+    border-radius: 30px;
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111111;
+  }
+  main .best .left .btnWrapper li:hover {
+    border-radius: 50%;
+  }
+  main .best .left .btnWrapper li.show {
+    background-color: #00AD4D;
+  }
+  main .best .right {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5vw 1vw;
+  }
+  main .best .right li .imgWrapper {
+    margin-bottom: 25px;
+    width: 100%;
+    position: relative;
+  }
+  main .best .right li .imgWrapper img {
+    width: 100%;
+  }
+  main .best .right li .imgWrapper .star {
+    display: grid;
+    position: absolute;
+    top: 20px;
+    left: 15px;
+  }
+  main .best .right li .imgWrapper .star img {
+    width: 60px;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    animation: rotate 2s infinite;
+  }
+  main .best .right li .imgWrapper .star p {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111111;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    z-index: 9;
+  }
+  main .best .right li .textWrapper {
+    padding-left: 10px;
+  }
+  main .best .right li .textWrapper .category {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #111111;
+    margin-bottom: 4px;
+  }
+  main .best .right li .textWrapper .name {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 10px;
+  }
+  main .best .right li .textWrapper .priceContainer {
+    display: flex;
+    gap: 10px;
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #111111;
+  }
+  main .best .right li .textWrapper .priceContainer .discountRate {
+    color: #FF2108;
+  }
+  main .magazine {
+    margin: 0 10vw 100px;
+    position: relative;
+  }
+  main .magazine img {
+    transition: 0.5;
+    position: sticky;
+    top: 120px;
+    left: 0;
+    width: 100%;
+  }
+  main .magazine img:nth-child(2) {
+    top: 250px;
+  }
+  main .sale {
+    margin: 0 10vw 100px;
+  }
+  main .sale .titleWrapper {
+    margin-bottom: 20px;
+  }
+  main .sale .titleWrapper p {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #111111;
+  }
+  main .sale .titleWrapper h2 {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #111111;
+  }
+  main .sale .btnWrapper {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 70px;
+  }
+  main .sale .productWrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vw;
+  }
+  main .sale .productWrapper li img {
+    width: 100%;
+  }
+  main .sale .productWrapper li .textWrapper {
+    margin-top: 15px;
+    padding-left: 10px;
+  }
+  main .sale .productWrapper li .textWrapper .category {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #111111;
+    margin-bottom: 4px;
+  }
+  main .sale .productWrapper li .textWrapper .name {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 10px;
+  }
+  main .sale .productWrapper li .textWrapper .priceContainer {
+    display: flex;
+    gap: 10px;
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #111111;
+  }
+  main .sale .productWrapper li .textWrapper .priceContainer .discountRate {
+    color: #FF2108;
+  }
+  main .new {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    margin: 0 10vw 100px;
+  }
+  main .new .titleWrapper {
+    margin-bottom: 20px;
+  }
+  main .new .titleWrapper p {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #111111;
+  }
+  main .new .titleWrapper h2 {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #111111;
+  }
+  main .new .contentWrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 70vw;
+  }
+  main .new .contentWrapper .textWrapper {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    text-align: center;
+    font-family: "Bagel Fat One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 250px;
+    color: #111111;
+    line-height: 1;
+  }
+  main .new .contentWrapper .productWrapper {
+    overflow: hidden;
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    align-items: center;
+    height: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding-left: 100px;
+    cursor: grab;
+    /* 클릭 드래그 커서 설정 */
+  }
+  main .new .contentWrapper .productWrapper li:hover .priceWrapper {
+    opacity: 1;
+  }
+  main .new .contentWrapper .productWrapper li .priceWrapper {
+    transition: 0.1s;
+    display: grid;
+    align-content: center;
+    padding: 20px;
+    width: 250px;
+    height: 130px;
+    border-radius: 20px;
+    border: 1px solid #111111;
+    background-color: #fff;
+    box-shadow: 3px 3px #111111;
+    opacity: 0;
+  }
+  main .new .contentWrapper .productWrapper li .priceWrapper .category {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #111111;
+    margin-bottom: 4px;
+  }
+  main .new .contentWrapper .productWrapper li .priceWrapper .name {
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 10px;
+  }
+  main .new .contentWrapper .productWrapper li .priceWrapper .priceContainer {
+    display: flex;
+    gap: 10px;
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #111111;
+  }
+  main .new .contentWrapper .productWrapper li .priceWrapper .priceContainer .discountRate {
+    color: #FF2108;
+  }
+  main .new .contentWrapper .productWrapper li:nth-child(1) {
+    margin: 0 50px;
+    transform: translateY(200px);
+  }
+  main .new .contentWrapper .productWrapper li:nth-child(1) img {
+    transform: rotate(-6deg) scale(1.2);
+  }
+  main .new .contentWrapper .productWrapper li:nth-child(1) .priceWrapper {
+    transform: rotate(6deg) translate(130px, -50px);
+  }
+  main .new .contentWrapper .productWrapper li:nth-child(2) {
+    margin: 0 50px;
+    transform: translateY(80px);
+  }
+  main .new .contentWrapper .productWrapper li:nth-child(2) img {
+    transform: rotate(6deg) scale(1.2);
+  }
+  main .new .contentWrapper .productWrapper li:nth-child(2) .priceWrapper {
+    transform: rotate(-3deg) translate(0px, 0px);
+  }
+  main .new .contentWrapper .productWrapper li:nth-child(3) {
+    transform: translateY(230px);
+  }
+  main .new .contentWrapper .productWrapper li:nth-child(3) img {
+    transform: rotate(6deg) scale(1.2);
+  }
+  main .new .contentWrapper .productWrapper li:nth-child(3) .priceWrapper {
+    transform: rotate(-3deg) translate(50px, -400px);
+  }
+  main .new .contentWrapper .productWrapper li:nth-child(4) {
+    transform: translateY(0px);
+  }
+  main .new .contentWrapper .productWrapper li:nth-child(4) img {
+    transform: rotate(6deg);
+  }
+  main .new .contentWrapper .productWrapper li:nth-child(4) .priceWrapper {
+    transform: rotate(5deg) translate(0px, -200px);
+  }
+  main .cutePuppy {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  main .cutePuppy img {
+    width: 200px;
+    transform: rotate(-10deg) translate(70vw, 250px);
+  }
+  /*=============== footer */
+  footer {
+    width: 100%;
+    background-color: #00AD4D;
+    border-radius: 30px 30px 0 0;
+    padding: 35px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #111111;
+  }
+  footer .left {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  footer .left .detailsBtn {
+    display: flex;
+    gap: 12px;
+  }
+  footer .left .detailsBtn li {
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+  }
+  footer .left .notice {
+    display: flex;
+    gap: 12px;
+    font-weight: 500;
+  }
+  footer .left .sns {
+    display: flex;
+    gap: 12px;
+  }
+  footer .right {
+    justify-self: end;
+    text-align: right;
+    color: #fff;
+  }
+  footer .right .call {
+    margin-bottom: 80px;
+  }
+  footer .right .call h3 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+}/*# sourceMappingURL=1700px.css.map */

@@ -1033,6 +1033,7 @@ main .new .titleWrapper h2 {
   color: #111111;
 }
 main .new .contentWrapper {
+  width: 100%;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -1057,7 +1058,8 @@ main .new .contentWrapper .productWrapper {
   grid-column: 1/2;
   grid-row: 1/2;
   padding-left: 100px;
-  cursor: grab; /* 클릭 드래그 커서 설정 */
+  cursor: grab;
+  /* 클릭 드래그 커서 설정 */
 }
 main .new .contentWrapper .productWrapper li:hover .priceWrapper {
   opacity: 1;
@@ -1197,4 +1199,12 @@ footer .right .call h3 {
   font-size: 40px;
   font-weight: 600;
   margin-bottom: 5px;
-}/*# sourceMappingURL=index.css.map */
+}
+
+/*
+  1700px
+  1550px
+  1300px
+  1100px
+  440px
+*//*# sourceMappingURL=index.css.map */

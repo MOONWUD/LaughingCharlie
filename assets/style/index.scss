@@ -1,43 +1,5 @@
 @import "./val.scss";
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  12% {
-    transform: rotate(45deg);
-  }
-
-  25% {
-    transform: rotate(90deg);
-  }
-
-  37% {
-    transform: rotate(135deg);
-  }
-
-  50% {
-    transform: rotate(180deg);
-  }
-
-  62% {
-    transform: rotate(225deg);
-  }
-
-  75% {
-    transform: rotate(270deg);
-  }
-
-  87% {
-    transform: rotate(315deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 // animation: rotate 2s infinite;
 
 /*==================================================== pc부터 시작한다 ! */
@@ -371,10 +333,12 @@ main {
     height: 100%;
     width: 100%;
     position: relative;
+
     .swiper {
       border-radius: 40px;
       position: relative;
       margin: 0 $margin;
+
       .swiperBtn {
         position: absolute;
         bottom: 20px;
@@ -382,35 +346,37 @@ main {
         transform: translateX(-50%);
         --swiper-theme-color: #111;
       }
+
       .swiper-wrapper {
         .swiper-slide {
           display: grid;
+
           img {
             width: 100%;
             grid-column: 1 /2;
             grid-row: 1 / 2;
           }
-  
+
           .textWrapper {
             grid-column: 1 /2;
             grid-row: 1 / 2;
             align-self: center;
             padding-left: 50px;
-  
+
             .imgTitle {
               @include mainFont (50px, $w_xxl);
               margin-bottom: 30px;
             }
-  
+
             p {
               @include mainFont ($s_xl, $w_md);
               line-height: 1.5;
               margin-bottom: 50px;
             }
-  
+
             .shopNow {
               position: relative;
-  
+
               a {
                 position: absolute;
                 top: 0;
@@ -424,7 +390,7 @@ main {
                 background-color: #fff;
                 border-radius: 30px;
               }
-  
+
               &:hover {
                 .hoverBg {
                   position: absolute;
@@ -451,22 +417,25 @@ main {
     grid-template-rows: repeat(3, 340px);
     overflow: hidden;
     transition: $transition;
+
     .textWrapper {
       @include pointFont (300px);
       width: 100%;
       position: relative;
       transform: translateX(50px);
       opacity: 0;
+
       h2 {
         height: 100%;
         line-height: 1;
       }
+
       img {
         opacity: 0;
         transition: 0.1s;
       }
     }
-    
+
     .firstText {
       img {
         transform: translateY(-50px);
@@ -476,7 +445,7 @@ main {
         left: 50px;
       }
     }
-    
+
     .secondText {
       img {
         width: 170px;
@@ -485,7 +454,7 @@ main {
         left: 900px;
       }
     }
-    
+
     .lastText {
       img {
         transform: translateY(-50px);
@@ -528,6 +497,7 @@ main {
           justify-content: center;
           align-items: center;
           width: calc(700px * 6);
+
           @keyframes walkLeft {
             0% {
               transform: translateX(0);
@@ -539,6 +509,7 @@ main {
           }
 
           animation: walkLeft 20s linear infinite;
+
           .slide {
             width: 700px;
             border-top: 1px solid $textColor;
@@ -597,6 +568,7 @@ main {
             height: 30px;
             transform: rotate(-30deg);
             overflow: hidden;
+
             .slideContainer {
               height: 30px;
               align-items: center;
@@ -604,11 +576,12 @@ main {
               text-wrap: nowrap;
               gap: 10px;
               width: calc(76px * 6);
+
               @keyframes walk {
                 0% {
                   transform: translateX(0);
                 }
-    
+
                 100% {
                   transform: translateX(calc(-76px * 3))
                 }
@@ -703,6 +676,7 @@ main {
             height: 30px;
             transform: rotate(-30deg);
             overflow: hidden;
+
             .slideContainer {
               height: 30px;
               align-items: center;
@@ -710,11 +684,12 @@ main {
               text-wrap: nowrap;
               gap: 10px;
               width: calc(76px * 6);
+
               @keyframes walk {
                 0% {
                   transform: translateX(0);
                 }
-    
+
                 100% {
                   transform: translateX(calc(-76px * 3))
                 }
@@ -789,6 +764,7 @@ main {
           justify-content: center;
           align-items: center;
           width: calc(700px * 6);
+
           @keyframes pogleRight {
             0% {
               transform: translateX(0);
@@ -800,6 +776,7 @@ main {
           }
 
           animation: pogleRight 20s linear infinite;
+
           .slide {
             width: 700px;
             border-top: 1px solid $textColor;
@@ -1162,6 +1139,7 @@ main {
         img {
           width: 100%;
         }
+
         .textWrapper {
           margin-top: 15px;
           padding-left: 10px;
@@ -1195,24 +1173,26 @@ main {
   .new {
     user-select: none;
     margin: 0 $margin 100px;
-    
+
     .titleWrapper {
       margin-bottom: 20px;
-      
+
       p {
         @include mainFont ($s_lg, $w_md);
       }
-      
+
       h2 {
         @include mainFont (50px, $w_xxl);
       }
     }
-    
+
     .contentWrapper {
+      width: 100%;
       display: grid;
       justify-content: center;
       align-items: center;
       grid-template-columns: 70vw;
+
       .textWrapper {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
@@ -1220,7 +1200,7 @@ main {
         @include pointFont (250px);
         line-height: 1;
       }
-      
+
       .productWrapper {
         overflow: hidden;
         display: flex;
@@ -1231,13 +1211,16 @@ main {
         grid-column: 1 / 2;
         grid-row: 1 / 2;
         padding-left: 100px;
-        cursor: grab; /* 클릭 드래그 커서 설정 */
+        cursor: grab;
+
+        /* 클릭 드래그 커서 설정 */
         li {
           &:hover {
             .priceWrapper {
               opacity: 1;
             }
           }
+
           .priceWrapper {
             transition: 0.1s;
             display: grid;
@@ -1250,6 +1233,7 @@ main {
             background-color: #fff;
             box-shadow: 3px 3px $textColor;
             opacity: 0;
+
             .category {
               @include mainFont ($s_sm, $w_md);
               margin-bottom: 4px;
@@ -1275,37 +1259,48 @@ main {
           &:nth-child(1) {
             margin: 0 50px;
             transform: translateY(200px);
+
             img {
               transform: rotate(-6deg) scale(1.2);
             }
+
             .priceWrapper {
               transform: rotate(6deg) translate(130px, -50px);
             }
           }
+
           &:nth-child(2) {
             margin: 0 50px;
             transform: translateY(80px);
+
             img {
               transform: rotate(6deg) scale(1.2);
             }
+
             .priceWrapper {
               transform: rotate(-3deg) translate(0px, 0px);
             }
           }
+
           &:nth-child(3) {
             transform: translateY(230px);
+
             img {
               transform: rotate(6deg) scale(1.2);
             }
+
             .priceWrapper {
               transform: rotate(-3deg) translate(50px, -400px);
             }
           }
+
           &:nth-child(4) {
             transform: translateY(0px);
+
             img {
               transform: rotate(6deg);
             }
+
             .priceWrapper {
               transform: rotate(5deg) translate(0px, -200px);
             }
@@ -1387,3 +1382,13 @@ footer {
 }
 
 
+
+
+
+/*
+  1700px
+  1550px
+  1300px
+  1100px
+  440px
+*/
