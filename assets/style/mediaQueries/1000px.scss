@@ -1,12 +1,12 @@
 @import "../val.scss";
 
 /*==================================================== 1500px 시작한다 ! */
-@media (max-width: 1550px) {
-  $margin: 5vw;
+@media (max-width: 1000px) {
+  $margin: 2vw;
 
   /*=============== header */
   header {
-    .header_pc{
+    .header_pc {
       transition: $transition;
       width: 100%;
       margin-bottom: 20px;
@@ -261,23 +261,22 @@
         .nav {
           box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.16);
           padding: 5px $margin;
-          display: grid;
-          grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
+          display: flex;
           align-items: center;
-          justify-content: space-between;
+          justify-content: center;
           background-color: rgba(255, 255, 255, 0.7);
           backdrop-filter: blur(20px);
   
           .headerIcon {
-            display: block;
             justify-self: end;
             display: flex;
             gap: 45px;
+            display: none;
           }
   
           .hmbrgMenu {
             justify-self: start;
-            display: block;
+            display: none;
   
             .hmbrgBtn {
               display: flex;
@@ -411,12 +410,12 @@
     .textSlide {
       margin: 0 $margin 100px;
       display: grid;
-      grid-template-rows: repeat(3, 340px);
+      grid-template-rows: repeat(3, 220px);
       overflow: hidden;
       transition: $transition;
 
       .textWrapper {
-        @include pointFont (300px);
+        @include pointFont (200px);
         width: 100%;
         position: relative;
         transform: translateX(50px);
@@ -436,29 +435,29 @@
       .firstText {
         img {
           transform: translateY(-50px);
-          width: 150px;
+          width: 130px;
           position: absolute;
-          top: 20px;
-          left: 50px;
+          top: 0px;
+          left: 40px;
         }
       }
 
       .secondText {
         img {
-          width: 170px;
+          width: 130px;
           position: absolute;
-          top: 60px;
-          left: 900px;
+          top: 30px;
+          left: 580px;
         }
       }
 
       .lastText {
         img {
           transform: translateY(-50px);
-          width: 220px;
+          width: 180px;
           position: absolute;
           top: -50px;
-          left: 200px;
+          left: 120px;
         }
       }
     }
@@ -469,7 +468,7 @@
       margin: 0 $margin 100px;
       display: grid;
       gap: 1vw;
-      grid-template-columns: minmax(580px, 440px) 1fr;
+      grid-template-columns: 440px 1fr;
 
       .left {
         display: grid;
@@ -485,7 +484,7 @@
           grid-column: 1 / 2;
           grid-row: 1 / 2;
           width: 100%;
-          height: 763px;
+          height: 578.83px;
           border-radius: 600px;
           text-align: center;
 
@@ -514,7 +513,7 @@
               background-color: #fff;
               text-wrap: nowrap;
               padding: 10px;
-              margin: 500px 0 40px;
+              margin: 350px 0 20px;
               @include mainFont ($s_md, $w_lg);
             }
           }
@@ -605,6 +604,9 @@
             .name {
               @include mainFont ($s_md, $w_xl);
               margin-bottom: 10px;
+              span {
+                display: none;
+              }
             }
 
             .priceContainer {
@@ -629,6 +631,7 @@
           grid-row: 2 / 3;
         }
       }
+
       .bottom {
         display: none;
       }
@@ -640,7 +643,7 @@
       margin: 0 $margin 100px;
       display: grid;
       gap: 1vw;
-      grid-template-columns: 1fr minmax(440px, 580px);
+      grid-template-columns: 1fr 440px;
 
       .left {
         display: grid;
@@ -716,6 +719,9 @@
             .name {
               @include mainFont ($s_md, $w_xl);
               margin-bottom: 10px;
+              span {
+                display: none;
+              }
             }
 
             .priceContainer {
@@ -755,7 +761,7 @@
           grid-column: 1 / 2;
           grid-row: 1 / 2;
           width: 100%;
-          height: 763px;
+          height: 578.83px;
           border-radius: 600px;
           text-align: center;
 
@@ -784,7 +790,7 @@
               background-color: #fff;
               text-wrap: nowrap;
               padding: 10px;
-              margin: 500px 0 40px;
+              margin: 350px 0 20px;
               @include mainFont ($s_md, $w_lg);
             }
           }
@@ -1078,6 +1084,9 @@
             .name {
               @include mainFont ($s_md, $w_xl);
               margin-bottom: 10px;
+              span {
+                display: none;
+              }
             }
 
             .priceContainer {
@@ -1160,6 +1169,9 @@
             .name {
               @include mainFont ($s_md, $w_xl);
               margin-bottom: 10px;
+              span {
+                display: none;
+              }
             }
 
             .priceContainer {
@@ -1243,7 +1255,7 @@
           grid-column: 1 / 2;
           grid-row: 1 / 2;
           text-align: center;
-          @include pointFont (185px);
+          @include pointFont (150px);
           line-height: 1;
         }
 
@@ -1267,8 +1279,8 @@
               }
 
               img {
-                width: 500px;
-
+                width: 370px;
+                margin: 80px;
               }
 
               .priceWrapper {

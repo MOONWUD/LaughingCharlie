@@ -2,311 +2,312 @@
 
 /*==================================================== 1700px 시작한다 ! */
 @media (max-width: 1700px) {
-  $margin: 10vw;
+  $margin: 11vw;
 
   /*=============== header */
-
   header {
-    transition: $transition;
-    width: 100%;
-    margin-bottom: 20px;
-    z-index: 999999;
-
-    .header {
+    .header_pc {
       transition: $transition;
-      margin: 20px $margin 40px;
-      display: grid;
-      grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
-      align-items: center;
-      justify-content: space-between;
-
-      .hmbrgMenu {
-        justify-self: start;
-
-        .hmbrgBtn {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          gap: 12px;
-
-          li {
-            width: 30px;
-            height: 3px;
-            border-radius: 3px;
-            background-color: $textColor;
-
-            &:last-child {
-              width: 25px;
-            }
-          }
-        }
-      }
-
-      .logo {
-        justify-self: center;
-        max-width: 150px;
-        min-width: 100px;
-
-        a {
-          img {
-            width: 100%;
-          }
-        }
-      }
-
-      .headerIcon {
-        justify-self: end;
-        display: flex;
-        gap: 45px;
-      }
-    }
-
-    .nav {
       width: 100%;
       margin-bottom: 20px;
-      transition: 0.1s;
-
-      .hmbrgMenu {
-        display: none;
-      }
-
-      .headerIcon {
-        display: none;
-      }
-
-      .slideWrap {
-        .slideContainer {
-          .gnb {
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            @include titleFont ();
-
-            li {
-              &:hover {
-                &:nth-child(2) {
-                  a {
-                    p {
-                      background-color: $subColor2;
-                    }
-                  }
-                }
-
-                &:nth-child(3) {
-                  a {
-                    p {
-                      background-color: $subColor3;
-                    }
-                  }
-                }
-
-                &:nth-child(4) {
-                  a {
-                    p {
-                      background-color: $subColor1;
-                    }
-                  }
-                }
-
-                &:nth-child(5) {
-                  a {
-                    p {
-                      background-color: $subColor2;
-                    }
-                  }
-                }
-
-                &:nth-child(6) {
-                  a {
-                    p {
-                      background-color: $subColor1;
-                    }
-                  }
-                }
-
-                &:nth-child(7) {
-                  a {
-                    p {
-                      color: #fff;
-                      background-color: $pointColor;
-                    }
-                  }
-                }
-
-                a {
-                  p {
-                    border-color: #000;
-                    animation: menu 0.5s infinite;
-
-                    @keyframes menu {
-                      0% {
-                        transform: rotate(3deg);
-                      }
-
-                      20% {
-                        transform: rotate(2deg);
-                      }
-
-                      50% {
-                        transform: rotate(-2deg);
-                      }
-
-                      80% {
-                        transform: rotate(0deg);
-                      }
-
-                      100% {
-                        transform: rotate(3deg);
-                      }
-                    }
-                  }
-                }
-              }
-
-              &:nth-child(1) {
-                a {
-                  p {
-                    border: 2px solid #000;
-                    background-color: $mainColor;
-                  }
-
-                  img {
-                    width: 85px;
-                  }
-                }
-              }
-
-              &:nth-child(2) {
-                a {
-                  img {
-                    width: 35px;
-                  }
-                }
-              }
-
-              &:nth-child(3) {
-                a {
-                  img {
-                    width: 25px;
-                  }
-                }
-              }
-
-              &:nth-child(4) {
-                a {
-                  img {
-                    width: 21px;
-                  }
-                }
-              }
-
-              &:nth-child(5) {
-                a {
-                  img {
-                    width: 45px;
-                  }
-                }
-              }
-
-              &:nth-child(6) {
-                a {
-                  img {
-                    width: 50px;
-                  }
-                }
-              }
-
-              &:nth-child(7) {
-                a {
-                  p {
-                    color: $pointColor;
-                  }
-
-                  img {
-                    width: 63px;
-                  }
-                }
-              }
-
-              a {
-                display: grid;
-                grid-template-rows: 70px 1fr;
-                place-items: center;
-
-                p {
-                  margin-top: 5px;
-                  border-radius: 30px;
-                  border: 2px solid transparent;
-                  background-color: transparent;
-                  padding: 5px 10px;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    &.active {
-      transition: 0.8s;
-      position: fixed;
-      top: 0;
-      left: 0;
-
+      z-index: 999999;
+  
       .header {
-        display: none;
-      }
-
-      .nav {
-        box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.16);
-        padding: 5px $margin;
+        transition: $transition;
+        margin: 20px $margin 40px;
         display: grid;
         grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
         align-items: center;
         justify-content: space-between;
-        background-color: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(20px);
-
-        .headerIcon {
-          display: block;
-          justify-self: end;
-          display: flex;
-          gap: 45px;
-        }
-
+  
         .hmbrgMenu {
           justify-self: start;
-          display: block;
-
+  
           .hmbrgBtn {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             gap: 12px;
-
+  
             li {
               width: 30px;
               height: 3px;
               border-radius: 3px;
               background-color: $textColor;
-
+  
               &:last-child {
                 width: 25px;
               }
             }
           }
         }
-
+  
+        .logo {
+          justify-self: center;
+          max-width: 150px;
+          min-width: 100px;
+  
+          a {
+            img {
+              width: 100%;
+            }
+          }
+        }
+  
+        .headerIcon {
+          justify-self: end;
+          display: flex;
+          gap: 45px;
+        }
+      }
+  
+      .nav {
+        width: 100%;
+        margin-bottom: 20px;
+        transition: 0.1s;
+  
+        .hmbrgMenu {
+          display: none;
+        }
+  
+        .headerIcon {
+          display: none;
+        }
+  
         .slideWrap {
           .slideContainer {
             .gnb {
-              gap: 30px;
-
+              text-align: center;
+              display: flex;
+              justify-content: center;
+              gap: 50px;
+              @include titleFont ();
+  
               li {
+                &:hover {
+                  &:nth-child(2) {
+                    a {
+                      p {
+                        background-color: $subColor2;
+                      }
+                    }
+                  }
+  
+                  &:nth-child(3) {
+                    a {
+                      p {
+                        background-color: $subColor3;
+                      }
+                    }
+                  }
+  
+                  &:nth-child(4) {
+                    a {
+                      p {
+                        background-color: $subColor1;
+                      }
+                    }
+                  }
+  
+                  &:nth-child(5) {
+                    a {
+                      p {
+                        background-color: $subColor2;
+                      }
+                    }
+                  }
+  
+                  &:nth-child(6) {
+                    a {
+                      p {
+                        background-color: $subColor1;
+                      }
+                    }
+                  }
+  
+                  &:nth-child(7) {
+                    a {
+                      p {
+                        color: #fff;
+                        background-color: $pointColor;
+                      }
+                    }
+                  }
+  
+                  a {
+                    p {
+                      border-color: #000;
+                      animation: menu 0.5s infinite;
+  
+                      @keyframes menu {
+                        0% {
+                          transform: rotate(3deg);
+                        }
+  
+                        20% {
+                          transform: rotate(2deg);
+                        }
+  
+                        50% {
+                          transform: rotate(-2deg);
+                        }
+  
+                        80% {
+                          transform: rotate(0deg);
+                        }
+  
+                        100% {
+                          transform: rotate(3deg);
+                        }
+                      }
+                    }
+                  }
+                }
+  
+                &:nth-child(1) {
+                  a {
+                    p {
+                      border: 2px solid #000;
+                      background-color: $mainColor;
+                    }
+  
+                    img {
+                      width: 85px;
+                    }
+                  }
+                }
+  
+                &:nth-child(2) {
+                  a {
+                    img {
+                      width: 35px;
+                    }
+                  }
+                }
+  
+                &:nth-child(3) {
+                  a {
+                    img {
+                      width: 25px;
+                    }
+                  }
+                }
+  
+                &:nth-child(4) {
+                  a {
+                    img {
+                      width: 21px;
+                    }
+                  }
+                }
+  
+                &:nth-child(5) {
+                  a {
+                    img {
+                      width: 45px;
+                    }
+                  }
+                }
+  
+                &:nth-child(6) {
+                  a {
+                    img {
+                      width: 50px;
+                    }
+                  }
+                }
+  
+                &:nth-child(7) {
+                  a {
+                    p {
+                      color: $pointColor;
+                    }
+  
+                    img {
+                      width: 63px;
+                    }
+                  }
+                }
+  
                 a {
-                  img {
-                    display: none;
+                  display: grid;
+                  grid-template-rows: 70px 1fr;
+                  place-items: center;
+  
+                  p {
+                    margin-top: 5px;
+                    border-radius: 30px;
+                    border: 2px solid transparent;
+                    background-color: transparent;
+                    padding: 5px 10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  
+      &.active {
+        transition: 0.8s;
+        position: fixed;
+        top: 0;
+        left: 0;
+  
+        .header {
+          display: none;
+        }
+  
+        .nav {
+          box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.16);
+          padding: 5px $margin;
+          display: grid;
+          grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
+          align-items: center;
+          justify-content: space-between;
+          background-color: rgba(255, 255, 255, 0.7);
+          backdrop-filter: blur(20px);
+  
+          .headerIcon {
+            display: block;
+            justify-self: end;
+            display: flex;
+            gap: 45px;
+          }
+  
+          .hmbrgMenu {
+            justify-self: start;
+            display: block;
+  
+            .hmbrgBtn {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              gap: 12px;
+  
+              li {
+                width: 30px;
+                height: 3px;
+                border-radius: 3px;
+                background-color: $textColor;
+  
+                &:last-child {
+                  width: 25px;
+                }
+              }
+            }
+          }
+  
+          .slideWrap {
+            .slideContainer {
+              .gnb {
+                gap: 30px;
+  
+                li {
+                  a {
+                    img {
+                      display: none;
+                    }
                   }
                 }
               }
@@ -322,8 +323,9 @@
   main {
 
     /*========== section main */
+
     .main {
-      margin-bottom: 100px;
+      margin-bottom: 150px;
       height: 100%;
       width: 100%;
       position: relative;
@@ -405,6 +407,7 @@
 
 
     /*========== section textSlide */
+
     .textSlide {
       margin: 0 $margin 100px;
       display: grid;
@@ -626,6 +629,9 @@
           grid-row: 2 / 3;
         }
       }
+      .bottom {
+        display: none;
+      }
     }
 
 
@@ -795,10 +801,14 @@
         }
       }
 
+      .bottom {
+        display: none;
+      }
     }
 
 
     /*========== section textAni */
+
     .textAni {
       margin: 0 $margin 100px;
       overflow-y: hidden;
@@ -969,6 +979,7 @@
 
 
     /*========== section best */
+
     .best {
       margin: 0 $margin 100px;
       display: grid;
@@ -1084,6 +1095,7 @@
 
 
     /*========== section magazine */
+
     .magazine {
       margin: 0 $margin 100px;
       position: relative;
@@ -1103,6 +1115,7 @@
 
 
     /*========== section sale */
+
     .sale {
       margin: 0 $margin 100px;
 
@@ -1163,7 +1176,45 @@
     }
 
 
+
     /*========== section new */
+    .cursor {
+      position: fixed;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition-property: background, transform;
+      pointer-events: none;
+
+      &.on {
+        .bg {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .bg {
+        opacity: 0;
+        position: absolute;
+        left: -52px;
+        top: -52px;
+        transform: scale(0);
+        width: 130px;
+        height: 60px;
+        border-radius: 50%;
+        border: 1px solid $textColor;
+        background-color: $mainColor;
+        @include titleFont ($s_md);
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(3, 1fr);
+        transition: 0.1s;
+
+        img {
+          width: 15px;
+        }
+      }
+    }
+
     .new {
       user-select: none;
       margin: 0 $margin 100px;
@@ -1181,121 +1232,77 @@
       }
 
       .contentWrapper {
+        width: 100%;
         display: grid;
-        justify-content: center;
         align-items: center;
         grid-template-columns: 70vw;
+        overflow: hidden;
 
         .textWrapper {
           grid-column: 1 / 2;
           grid-row: 1 / 2;
           text-align: center;
-          @include pointFont (250px);
+          @include pointFont (200px);
           line-height: 1;
         }
 
-        .productWrapper {
-          overflow: hidden;
-          display: flex;
-          gap: 50px;
+        .newSwiper {
           width: 100%;
-          align-items: center;
           height: 100%;
           grid-column: 1 / 2;
           grid-row: 1 / 2;
-          padding-left: 100px;
-          cursor: grab;
 
-          /* 클릭 드래그 커서 설정 */
-          li {
-            &:hover {
-              .priceWrapper {
-                opacity: 1;
-              }
-            }
+          .productWrapper {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            cursor: none;
 
-            .priceWrapper {
-              transition: 0.1s;
-              display: grid;
-              align-content: center;
-              padding: 20px;
-              width: 250px;
-              height: 130px;
-              border-radius: 20px;
-              border: 1px solid $textColor;
-              background-color: #fff;
-              box-shadow: 3px 3px $textColor;
-              opacity: 0;
-
-              .category {
-                @include mainFont ($s_sm, $w_md);
-                margin-bottom: 4px;
-              }
-
-              .name {
-                @include mainFont ($s_md, $w_xl);
-                margin-bottom: 10px;
-              }
-
-              .priceContainer {
-                display: flex;
-                gap: 10px;
-                @include mainFont ($s_xl, $w_xl);
-
-                .discountRate {
-                  color: $pointColor;
+            li {
+              &:hover {
+                .priceWrapper {
+                  opacity: 1;
                 }
               }
 
-            }
-
-            &:nth-child(1) {
-              margin: 0 50px;
-              transform: translateY(200px);
-
               img {
-                transform: rotate(-6deg) scale(1.2);
+                width: 500px;
+
               }
 
               .priceWrapper {
-                transform: rotate(6deg) translate(130px, -50px);
-              }
-            }
+                transition: 0.1s;
+                display: grid;
+                align-content: center;
+                padding: 20px;
+                width: 250px;
+                height: 130px;
+                border-radius: 20px;
+                border: 1px solid $textColor;
+                background-color: #fff;
+                box-shadow: 3px 3px $textColor;
+                opacity: 0;
 
-            &:nth-child(2) {
-              margin: 0 50px;
-              transform: translateY(80px);
+                .category {
+                  @include mainFont ($s_sm, $w_md);
+                  margin-bottom: 4px;
+                }
 
-              img {
-                transform: rotate(6deg) scale(1.2);
-              }
+                .name {
+                  @include mainFont ($s_md, $w_xl);
+                  margin-bottom: 10px;
+                }
 
-              .priceWrapper {
-                transform: rotate(-3deg) translate(0px, 0px);
-              }
-            }
+                .priceContainer {
+                  display: flex;
+                  gap: 10px;
+                  @include mainFont ($s_xl, $w_xl);
 
-            &:nth-child(3) {
-              transform: translateY(230px);
+                  .discountRate {
+                    color: $pointColor;
+                  }
+                }
 
-              img {
-                transform: rotate(6deg) scale(1.2);
-              }
-
-              .priceWrapper {
-                transform: rotate(-3deg) translate(50px, -400px);
-              }
-            }
-
-            &:nth-child(4) {
-              transform: translateY(0px);
-
-              img {
-                transform: rotate(6deg);
-              }
-
-              .priceWrapper {
-                transform: rotate(5deg) translate(0px, -200px);
               }
             }
           }
@@ -1305,6 +1312,7 @@
 
 
     /*========== section cutePuppy */
+
     .cutePuppy {
       width: 100%;
       height: 100vh;
@@ -1319,6 +1327,7 @@
   }
 
   /*=============== footer */
+
   footer {
     width: 100%;
     background-color: $mainColor;

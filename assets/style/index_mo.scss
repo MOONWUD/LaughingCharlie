@@ -1,318 +1,332 @@
-@import "../val.scss";
+@import "./val.scss";
 
 /*==================================================== 1500px 시작한다 ! */
-@media (max-width: 1550px) {
-  $margin: 5vw;
+@media (max-width: 440px) {
+  $margin: 0vw;
 
   /*=============== header */
   header {
-    .header_pc{
+    .header_pc {
+      display: none;
+    }
+
+    .header_mo {
+      display: block;
       transition: $transition;
       width: 100%;
       margin-bottom: 20px;
       z-index: 999999;
-  
+
       .header {
         transition: $transition;
-        margin: 20px $margin 40px;
+        margin: 40px 2vw 40px;
         display: grid;
-        grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
+        grid-template-columns: 40px 1fr 40px;
         align-items: center;
         justify-content: space-between;
-  
+
         .hmbrgMenu {
           justify-self: start;
-  
+
           .hmbrgBtn {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            gap: 12px;
-  
+            gap: 8px;
+
             li {
-              width: 30px;
-              height: 3px;
+              width: 20px;
+              height: 2px;
               border-radius: 3px;
               background-color: $textColor;
-  
+
               &:last-child {
-                width: 25px;
+                width: 16px;
               }
             }
           }
         }
-  
+
         .logo {
           justify-self: center;
-          max-width: 150px;
-          min-width: 100px;
-  
+          width: 150px;
+
           a {
             img {
               width: 100%;
             }
           }
         }
-  
+
         .headerIcon {
           justify-self: end;
           display: flex;
-          gap: 45px;
+          gap: 25px;
+
+          a {
+            &.moNone {
+              display: none;
+            }
+
+            img {
+              width: 18px;
+            }
+          }
         }
       }
-  
+
       .nav {
         width: 100%;
         margin-bottom: 20px;
         transition: 0.1s;
-  
+
         .hmbrgMenu {
           display: none;
         }
-  
+
         .headerIcon {
           display: none;
         }
-  
-        .slideWrap {
-          .slideContainer {
-            .gnb {
-              text-align: center;
-              display: flex;
-              justify-content: center;
-              gap: 50px;
-              @include titleFont ();
-  
-              li {
-                &:hover {
-                  &:nth-child(2) {
-                    a {
-                      p {
-                        background-color: $subColor2;
-                      }
-                    }
-                  }
-  
-                  &:nth-child(3) {
-                    a {
-                      p {
-                        background-color: $subColor3;
-                      }
-                    }
-                  }
-  
-                  &:nth-child(4) {
-                    a {
-                      p {
-                        background-color: $subColor1;
-                      }
-                    }
-                  }
-  
-                  &:nth-child(5) {
-                    a {
-                      p {
-                        background-color: $subColor2;
-                      }
-                    }
-                  }
-  
-                  &:nth-child(6) {
-                    a {
-                      p {
-                        background-color: $subColor1;
-                      }
-                    }
-                  }
-  
-                  &:nth-child(7) {
-                    a {
-                      p {
-                        color: #fff;
-                        background-color: $pointColor;
-                      }
-                    }
-                  }
-  
-                  a {
-                    p {
-                      border-color: #000;
-                      animation: menu 0.5s infinite;
-  
-                      @keyframes menu {
-                        0% {
-                          transform: rotate(3deg);
-                        }
-  
-                        20% {
-                          transform: rotate(2deg);
-                        }
-  
-                        50% {
-                          transform: rotate(-2deg);
-                        }
-  
-                        80% {
-                          transform: rotate(0deg);
-                        }
-  
-                        100% {
-                          transform: rotate(3deg);
-                        }
-                      }
-                    }
-                  }
-                }
-  
-                &:nth-child(1) {
-                  a {
-                    p {
-                      border: 2px solid #000;
-                      background-color: $mainColor;
-                    }
-  
-                    img {
-                      width: 85px;
-                    }
-                  }
-                }
-  
+
+        .navSwiper {
+          width: 100%;
+          height: 100%;
+
+          .swiper-wrapper {
+            text-align: center;
+            display: flex;
+            justify-content: start;
+            gap: 0;
+            @include titleFont ($s_sm);
+            padding-left: 2.5vw;
+
+            li {
+              &:hover {
                 &:nth-child(2) {
                   a {
-                    img {
-                      width: 35px;
+                    p {
+                      background-color: $subColor2;
                     }
                   }
                 }
-  
+
                 &:nth-child(3) {
                   a {
-                    img {
-                      width: 25px;
+                    p {
+                      background-color: $subColor3;
                     }
                   }
                 }
-  
+
                 &:nth-child(4) {
                   a {
-                    img {
-                      width: 21px;
+                    p {
+                      background-color: $subColor1;
                     }
                   }
                 }
-  
+
                 &:nth-child(5) {
                   a {
-                    img {
-                      width: 45px;
+                    p {
+                      background-color: $subColor2;
                     }
                   }
                 }
-  
+
                 &:nth-child(6) {
                   a {
-                    img {
-                      width: 50px;
+                    p {
+                      background-color: $subColor1;
                     }
                   }
                 }
-  
+
                 &:nth-child(7) {
                   a {
                     p {
-                      color: $pointColor;
-                    }
-  
-                    img {
-                      width: 63px;
+                      color: #fff;
+                      background-color: $pointColor;
                     }
                   }
                 }
-  
+
                 a {
-                  display: grid;
-                  grid-template-rows: 70px 1fr;
-                  place-items: center;
-  
                   p {
-                    margin-top: 5px;
-                    border-radius: 30px;
-                    border: 2px solid transparent;
-                    background-color: transparent;
-                    padding: 5px 10px;
+                    border-color: #000;
+                    animation: menu 0.5s infinite;
+
+                    @keyframes menu {
+                      0% {
+                        transform: rotate(3deg);
+                      }
+
+                      20% {
+                        transform: rotate(2deg);
+                      }
+
+                      50% {
+                        transform: rotate(-2deg);
+                      }
+
+                      80% {
+                        transform: rotate(0deg);
+                      }
+
+                      100% {
+                        transform: rotate(3deg);
+                      }
+                    }
                   }
+                }
+              }
+
+              &:nth-child(1) {
+                a {
+                  p {
+                    border: 2px solid #000;
+                    background-color: $mainColor;
+                  }
+
+                  img {
+                    width: 75px;
+                  }
+                }
+              }
+
+              &:nth-child(2) {
+                a {
+                  img {
+                    width: 35px;
+                  }
+                }
+              }
+
+              &:nth-child(3) {
+                a {
+                  img {
+                    width: 25px;
+                  }
+                }
+              }
+
+              &:nth-child(4) {
+                a {
+                  img {
+                    width: 21px;
+                  }
+                }
+              }
+
+              &:nth-child(5) {
+                a {
+                  img {
+                    width: 45px;
+                  }
+                }
+              }
+
+              &:nth-child(6) {
+                a {
+                  img {
+                    width: 50px;
+                  }
+                }
+              }
+
+              &:nth-child(7) {
+                a {
+                  p {
+                    color: $pointColor;
+                  }
+
+                  img {
+                    width: 63px;
+                  }
+                }
+              }
+
+              a {
+                display: grid;
+                grid-template-rows: 70px 1fr;
+                place-items: center;
+
+                p {
+                  margin-top: 5px;
+                  border-radius: 30px;
+                  border: 2px solid transparent;
+                  background-color: transparent;
+                  padding: 5px 10px;
                 }
               }
             }
           }
         }
+
+
       }
-  
+
       &.active {
-        transition: 0.8s;
+        transition: 0.1s;
         position: fixed;
         top: 0;
         left: 0;
-  
+
         .header {
           display: none;
         }
-  
+
         .nav {
           box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.16);
-          padding: 5px $margin;
-          display: grid;
-          grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
+          padding: 0 2vw;
+          display: flex;
           align-items: center;
-          justify-content: space-between;
-          background-color: rgba(255, 255, 255, 0.7);
+          justify-content: start;
           backdrop-filter: blur(20px);
-  
+          background-color: rgba(255, 255, 255, 0.6);
+
           .headerIcon {
-            display: block;
             justify-self: end;
             display: flex;
             gap: 45px;
+            display: none;
           }
-  
+
           .hmbrgMenu {
             justify-self: start;
-            display: block;
-  
+            display: none;
+
             .hmbrgBtn {
               display: flex;
               flex-direction: column;
               justify-content: flex-start;
               gap: 12px;
-  
+
               li {
                 width: 30px;
                 height: 3px;
                 border-radius: 3px;
                 background-color: $textColor;
-  
+
                 &:last-child {
                   width: 25px;
                 }
               }
             }
           }
-  
-          .slideWrap {
-            .slideContainer {
-              .gnb {
-                gap: 30px;
-  
-                li {
-                  a {
-                    img {
-                      display: none;
-                    }
+          
+          .navSwiper {
+            .swiper-wrapper {
+              .swiper-slide {
+                a {
+                  img {
+                    display: none;
                   }
                 }
               }
             }
           }
+
         }
       }
     }
@@ -325,7 +339,7 @@
     /*========== section main */
 
     .main {
-      margin-bottom: 150px;
+      margin-bottom: 80px;
       height: 100%;
       width: 100%;
       position: relative;
@@ -353,21 +367,29 @@
               grid-row: 1 / 2;
             }
 
+            .mainImg_pc {
+              display: none;
+            }
+
+            .mainImg_mo {
+              display: block;
+            }
+
             .textWrapper {
-              grid-column: 1 /2;
+              grid-column: 1 / 2;
               grid-row: 1 / 2;
-              align-self: center;
-              padding-left: 50px;
+              align-self: end;
+              padding: 0 0 130px 30px;
 
               .imgTitle {
-                @include mainFont (50px, $w_xxl);
-                margin-bottom: 30px;
+                @include mainFont (30px, $w_xxl);
+                margin-bottom: 10px;
               }
 
               p {
-                @include mainFont ($s_xl, $w_md);
+                @include mainFont ($s_sm, $w_md);
                 line-height: 1.5;
-                margin-bottom: 50px;
+                margin-bottom: 10px;
               }
 
               .shopNow {
@@ -409,14 +431,14 @@
     /*========== section textSlide */
 
     .textSlide {
-      margin: 0 $margin 100px;
+      margin: 0 3vw 80px;
       display: grid;
-      grid-template-rows: repeat(3, 340px);
-      overflow: hidden;
+      grid-template-rows: repeat(3, 100px);
+      overflow: visible;
       transition: $transition;
 
       .textWrapper {
-        @include pointFont (300px);
+        @include pointFont (90px);
         width: 100%;
         position: relative;
         transform: translateX(50px);
@@ -436,29 +458,29 @@
       .firstText {
         img {
           transform: translateY(-50px);
-          width: 150px;
+          width: 60px;
           position: absolute;
-          top: 20px;
-          left: 50px;
+          top: -5px;
+          left: 10px;
         }
       }
 
       .secondText {
         img {
-          width: 170px;
+          width: 80px;
           position: absolute;
-          top: 60px;
-          left: 900px;
+          top: 3px;
+          left: 250px;
         }
       }
 
       .lastText {
         img {
           transform: translateY(-50px);
-          width: 220px;
+          width: 80px;
           position: absolute;
-          top: -50px;
-          left: 200px;
+          top: -30px;
+          left: 55px;
         }
       }
     }
@@ -468,8 +490,9 @@
     .walk {
       margin: 0 $margin 100px;
       display: grid;
-      gap: 1vw;
-      grid-template-columns: minmax(580px, 440px) 1fr;
+      gap: 2vw;
+      grid-template-columns: 1fr;
+      grid-template-rows: 578.83px 1fr 1fr;
 
       .left {
         display: grid;
@@ -485,7 +508,7 @@
           grid-column: 1 / 2;
           grid-row: 1 / 2;
           width: 100%;
-          height: 763px;
+          height: 578.83px;
           border-radius: 600px;
           text-align: center;
 
@@ -505,7 +528,7 @@
               }
             }
 
-            animation: walkLeft 20s linear infinite;
+            animation: walkLeft 30s linear infinite;
 
             .slide {
               width: 700px;
@@ -514,32 +537,30 @@
               background-color: #fff;
               text-wrap: nowrap;
               padding: 10px;
-              margin: 500px 0 40px;
+              margin: 350px 0 20px;
               @include mainFont ($s_md, $w_lg);
             }
           }
 
           .title {
-            @include titleFont (40px);
-            margin-bottom: 30px;
+            @include titleFont (35px);
+            margin-bottom: 20px;
           }
 
           .subText {
-            @include mainFont ($s_md, $w_md);
+            @include mainFont ($s_sm, $w_md);
             line-height: 1.5;
           }
         }
       }
 
       .right {
-        display: grid;
-        grid-template-columns: repeat(1fr 1fr);
-        grid-template-rows: 30px 1fr;
-        gap: 1vw;
+        display: flex;
+        margin-bottom: 30px;
 
         .btnWrapper {
-          display: flex;
           gap: 20px;
+          display: none;
         }
 
         .product {
@@ -556,23 +577,23 @@
 
             .slideArea {
               position: absolute;
-              top: 20px;
-              left: 15px;
+              top: 13px;
+              left: 10px;
               border-radius: 50%;
               border: 1px solid $textColor;
               background-color: $mainColor;
-              width: 60px;
-              height: 30px;
+              width: 35px;
+              height: 20px;
               transform: rotate(-30deg);
               overflow: hidden;
 
               .slideContainer {
-                height: 30px;
+                height: 20px;
                 align-items: center;
                 display: flex;
                 text-wrap: nowrap;
                 gap: 10px;
-                width: calc(76px * 6);
+                width: calc(36px * 6);
 
                 @keyframes walk {
                   0% {
@@ -580,14 +601,14 @@
                   }
 
                   100% {
-                    transform: translateX(calc(-76px * 3))
+                    transform: translateX(calc(-36px * 3))
                   }
                 }
 
                 animation: walk 20s linear infinite;
 
                 .slideItem {
-                  @include mainFont ($s_sm, $w_xl);
+                  @include mainFont (8px, $w_xl);
                   width: 76px;
                 }
               }
@@ -595,22 +616,27 @@
           }
 
           .textWrapper {
+            margin-top: 15px;
             padding-left: 10px;
 
             .category {
-              @include mainFont ($s_sm, $w_md);
+              @include mainFont ($s_xs, $w_md);
               margin-bottom: 4px;
             }
 
             .name {
-              @include mainFont ($s_md, $w_xl);
+              @include mainFont ($s_sm, $w_xl);
               margin-bottom: 10px;
+
+              span {
+                display: none;
+              }
             }
 
             .priceContainer {
               display: flex;
               gap: 10px;
-              @include mainFont ($s_xl, $w_xl);
+              @include mainFont ($s_md, $w_xl);
 
               .discountRate {
                 color: $pointColor;
@@ -618,19 +644,6 @@
             }
           }
         }
-
-        .firstProduct {
-          grid-column: 1 / 2;
-          grid-row: 2 / 3;
-        }
-
-        .lastProduct {
-          grid-column: 2 / 3;
-          grid-row: 2 / 3;
-        }
-      }
-      .bottom {
-        display: none;
       }
     }
 
@@ -639,18 +652,25 @@
     .pogle {
       margin: 0 $margin 100px;
       display: grid;
-      gap: 1vw;
-      grid-template-columns: 1fr minmax(440px, 580px);
+      gap: 2vw;
+      grid-template-columns: 1fr;
+      grid-template-rows: 578.83px 1fr 1fr;
 
-      .left {
+      
+      .top {
+        grid-row: 2 / 3;
+        margin-bottom: 30px;
+      }
+      
+      .bottom {
         display: grid;
-        grid-template-columns: repeat(1fr 1fr);
-        grid-template-rows: 30px 1fr;
-        gap: 1vw;
+        grid-row: 3 / 4;
+      }
+      .left {
+        display: flex;
 
         .btnWrapper {
-          display: flex;
-          gap: 20px;
+          display: none;
         }
 
         .product {
@@ -667,23 +687,23 @@
 
             .slideArea {
               position: absolute;
-              top: 20px;
-              left: 15px;
+              top: 13px;
+              left: 10px;
               border-radius: 50%;
               border: 1px solid $textColor;
               background-color: $mainColor;
-              width: 60px;
-              height: 30px;
+              width: 35px;
+              height: 20px;
               transform: rotate(-30deg);
               overflow: hidden;
 
               .slideContainer {
-                height: 30px;
+                height: 20px;
                 align-items: center;
                 display: flex;
                 text-wrap: nowrap;
                 gap: 10px;
-                width: calc(76px * 6);
+                width: calc(36px * 6);
 
                 @keyframes walk {
                   0% {
@@ -691,14 +711,14 @@
                   }
 
                   100% {
-                    transform: translateX(calc(-76px * 3))
+                    transform: translateX(calc(-36px * 3))
                   }
                 }
 
                 animation: walk 20s linear infinite;
 
                 .slideItem {
-                  @include mainFont ($s_sm, $w_xl);
+                  @include mainFont (8px, $w_xl);
                   width: 76px;
                 }
               }
@@ -706,22 +726,27 @@
           }
 
           .textWrapper {
+            margin-top: 15px;
             padding-left: 10px;
 
             .category {
-              @include mainFont ($s_sm, $w_md);
+              @include mainFont ($s_xs, $w_md);
               margin-bottom: 4px;
             }
 
             .name {
-              @include mainFont ($s_md, $w_xl);
+              @include mainFont ($s_sm, $w_xl);
               margin-bottom: 10px;
+
+              span {
+                display: none;
+              }
             }
 
             .priceContainer {
               display: flex;
               gap: 10px;
-              @include mainFont ($s_xl, $w_xl);
+              @include mainFont ($s_md, $w_xl);
 
               .discountRate {
                 color: $pointColor;
@@ -729,18 +754,8 @@
             }
           }
         }
-
-        .firstProduct {
-          grid-column: 1 / 2;
-          grid-row: 2 / 3;
-        }
-
-        .lastProduct {
-          grid-column: 2 / 3;
-          grid-row: 2 / 3;
-        }
       }
-
+      
       .right {
         display: grid;
 
@@ -755,7 +770,7 @@
           grid-column: 1 / 2;
           grid-row: 1 / 2;
           width: 100%;
-          height: 763px;
+          height: 578.83px;
           border-radius: 600px;
           text-align: center;
 
@@ -775,7 +790,7 @@
               }
             }
 
-            animation: pogleRight 20s linear infinite;
+            animation: pogleRight 30s linear infinite;
 
             .slide {
               width: 700px;
@@ -784,25 +799,21 @@
               background-color: #fff;
               text-wrap: nowrap;
               padding: 10px;
-              margin: 500px 0 40px;
+              margin: 350px 0 20px;
               @include mainFont ($s_md, $w_lg);
             }
           }
 
           .title {
-            @include titleFont (40px);
-            margin-bottom: 30px;
+            @include titleFont (35px);
+            margin-bottom: 20px;
           }
 
           .subText {
-            @include mainFont ($s_md, $w_md);
+            @include mainFont ($s_sm, $w_md);
             line-height: 1.5;
           }
         }
-      }
-
-      .bottom {
-        display: none;
       }
 
     }
@@ -811,16 +822,16 @@
     /*========== section textAni */
 
     .textAni {
-      margin: 0 $margin 100px;
+      margin: 0 $margin 20px;
       overflow-y: hidden;
       padding-top: 20px;
 
       .textAniContainer {
-        width: calc(1350px * 4);
+        width: calc(800px * 4);
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 200px;
+        height: 150px;
 
         @keyframes textAni {
           0% {
@@ -828,7 +839,7 @@
           }
 
           100% {
-            transform: translateX(calc(-1350px * 2))
+            transform: translateX(calc(-800px * 2))
           }
         }
 
@@ -836,52 +847,52 @@
 
         .textAniWrapper {
           display: grid;
-          width: 1350px;
+          width: 800px;
 
           .text {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
-            @include pointFont (100px);
+            @include pointFont (60px);
             z-index: 999;
           }
 
           .puppy {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
-            width: 160px;
-            transform: translate(90px, -50px);
+            width: 100px;
+            transform: translate(90px, 30px);
 
             @keyframes puppy {
               0% {
-                transform: translate(90px, -50px);
+                transform: translate(90px, -30px);
               }
 
               15% {
-                transform: translate(90px, -53px);
+                transform: translate(90px, -33px);
               }
 
               20% {
-                transform: translate(90px, -55px);
+                transform: translate(90px, -35px);
               }
 
               50% {
-                transform: translate(90px, -60px);
+                transform: translate(90px, -40px);
               }
 
               60% {
-                transform: translate(90px, -58px);
+                transform: translate(90px, -38px);
               }
 
               80% {
-                transform: translate(90px, -55px);
+                transform: translate(90px, -35px);
               }
 
               90% {
-                transform: translate(90px, -52px);
+                transform: translate(90px, -32px);
               }
 
               100% {
-                transform: translate(90px, -51px);
+                transform: translate(90px, -31px);
               }
             }
 
@@ -891,7 +902,7 @@
           .star {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
-            width: 120px;
+            width: 80px;
             transform: translate(580px, 0px);
 
             @keyframes star {
@@ -917,44 +928,44 @@
           .moveStar {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
-            width: 47px;
-            transform: translate(1257px, 84px) rotate(0);
+            width: 25px;
+            transform: translate(755px, 30px) rotate(0);
 
             @keyframes rotate2 {
               0% {
-                transform: translate(1257px, 84px) rotate(0deg);
+                transform: translate(755px, 50px) rotate(0deg);
               }
 
               12% {
-                transform: translate(1257px, 84px) rotate(45deg);
+                transform: translate(755px, 50px) rotate(45deg);
               }
 
               25% {
-                transform: translate(1257px, 84px) rotate(90deg);
+                transform: translate(755px, 50px) rotate(90deg);
               }
 
               37% {
-                transform: translate(1257px, 84px) rotate(135deg);
+                transform: translate(755px, 50px) rotate(135deg);
               }
 
               50% {
-                transform: translate(1257px, 84px) rotate(180deg);
+                transform: translate(755px, 50px) rotate(180deg);
               }
 
               62% {
-                transform: translate(1257px, 84px) rotate(225deg);
+                transform: translate(755px, 50px) rotate(225deg);
               }
 
               75% {
-                transform: translate(1257px, 84px) rotate(270deg);
+                transform: translate(755px, 50px) rotate(270deg);
               }
 
               87% {
-                transform: translate(1257px, 84px) rotate(315deg);
+                transform: translate(755px, 50px) rotate(315deg);
               }
 
               100% {
-                transform: translate(1257px, 84px) rotate(360deg);
+                transform: translate(755px, 50px) rotate(360deg);
               }
             }
 
@@ -964,15 +975,15 @@
           .decoration {
             grid-column: 1 / 2;
             grid-row: 1 / 2;
-            width: 85px;
-            height: 47px;
+            width: 60px;
+            height: 30px;
             border: 1px solid $textColor;
             border-radius: 50%;
             background-color: $mainColor;
-            @include titleFont ($s_lg);
+            @include titleFont ($s_sm);
             display: grid;
             place-items: center;
-            transform: translate(1070px, 7px);
+            transform: translate(400px, 4px);
           }
         }
       }
@@ -984,26 +995,32 @@
     .best {
       margin: 0 $margin 100px;
       display: grid;
-      gap: 1vw;
-      grid-template-columns: 1fr 3fr;
+      gap: 30px;
+      grid-template-columns: 1fr;
+      grid-template-rows: 130px 520px;
+      // overflow: hidden;
 
 
       .left {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        margin: 0 0 10px 3vw;
+
         .titleWrapper {
-          margin-bottom: 10px;
+          margin-bottom: 15px;
 
           p {
-            @include mainFont ($s_lg, $w_md);
+            @include mainFont ($s_sm, $w_md);
           }
 
           h2 {
-            @include mainFont (50px, $w_xxl);
+            @include mainFont (40px, $w_xxl);
           }
         }
 
         .btnWrapper {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           gap: 10px;
 
           li {
@@ -1026,71 +1043,90 @@
         }
       }
 
-      .right {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 5vw 1vw;
+      .best_mo {
+        display: block;
+        height: 100%;
+        width: 100%;
 
-        li {
-          .imgWrapper {
-            margin-bottom: 25px;
-            width: 100%;
-            position: relative;
+        .right {
+          width: calc(315px*2);
+          display: flex;
+          gap: 0;
+          align-self: center;
+          justify-self: start;
 
-            img {
-              width: 100%;
-            }
+          .swiper-slide {
+            width: 315px;
+            height: 100%;
 
-            .star {
-              display: grid;
-              position: absolute;
-              top: 20px;
-              left: 15px;
+            .imgWrapper {
+              margin-bottom: 25px;
+              width: 315px;
+              position: relative;
 
               img {
-                width: 60px;
-                grid-column: 1 / 2;
-                grid-row: 1 / 2;
-                animation: rotate 2s infinite;
+                width: 100%;
               }
 
-              p {
-                grid-column: 1 / 2;
-                grid-row: 1 / 2;
-                @include mainFont ($s_sm, $w_xxl);
-                color: #fff;
+              .star {
                 display: grid;
-                place-items: center;
-                z-index: 9;
+                position: absolute;
+                top: 20px;
+                left: 15px;
+
+                img {
+                  width: 60px;
+                  grid-column: 1 / 2;
+                  grid-row: 1 / 2;
+                  animation: rotate 2s infinite;
+                }
+
+                p {
+                  grid-column: 1 / 2;
+                  grid-row: 1 / 2;
+                  @include mainFont ($s_sm, $w_xxl);
+                  color: #fff;
+                  display: grid;
+                  place-items: center;
+                  z-index: 9;
+                }
               }
             }
-          }
 
-          .textWrapper {
-            padding-left: 10px;
+            .textWrapper {
+              margin-top: 15px;
+              padding-left: 10px;
 
-            .category {
-              @include mainFont ($s_sm, $w_md);
-              margin-bottom: 4px;
-            }
+              .category {
+                @include mainFont ($s_xs, $w_md);
+                margin-bottom: 4px;
+              }
 
-            .name {
-              @include mainFont ($s_md, $w_xl);
-              margin-bottom: 10px;
-            }
+              .name {
+                @include mainFont ($s_sm, $w_xl);
+                margin-bottom: 10px;
 
-            .priceContainer {
-              display: flex;
-              gap: 10px;
-              @include mainFont ($s_xl, $w_xl);
+                span {
+                  display: none;
+                }
+              }
 
-              .discountRate {
-                color: $pointColor;
+              .priceContainer {
+                display: flex;
+                gap: 10px;
+                @include mainFont ($s_md, $w_xl);
+
+                .discountRate {
+                  color: $pointColor;
+                }
               }
             }
           }
         }
+      }
+
+      .best_pc {
+        display: none;
       }
     }
 
@@ -1101,6 +1137,14 @@
       margin: 0 $margin 100px;
       position: relative;
 
+      .magazine_mo {
+        display: block;
+      }
+
+      .magazine_pc {
+        display: none;
+      }
+
       img {
         transition: $transition;
         position: sticky;
@@ -1109,7 +1153,7 @@
         width: 100%;
 
         &:nth-child(2) {
-          top: 250px;
+          top: 200px;
         }
       }
     }
@@ -1121,14 +1165,15 @@
       margin: 0 $margin 100px;
 
       .titleWrapper {
-        margin-bottom: 20px;
+        margin: 0 0 20px 3vw;
+
 
         p {
-          @include mainFont ($s_lg, $w_md);
+          @include mainFont ($s_sm, $w_md);
         }
 
         h2 {
-          @include mainFont (50px, $w_xxl);
+          @include mainFont (40px, $w_xxl);
         }
       }
 
@@ -1136,12 +1181,14 @@
         display: flex;
         gap: 20px;
         margin-bottom: 70px;
+        display: none;
       }
 
       .productWrapper {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1vw;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 50px 1vw;
 
         li {
           img {
@@ -1153,19 +1200,23 @@
             padding-left: 10px;
 
             .category {
-              @include mainFont ($s_sm, $w_md);
+              @include mainFont ($s_xs, $w_md);
               margin-bottom: 4px;
             }
 
             .name {
-              @include mainFont ($s_md, $w_xl);
+              @include mainFont ($s_sm, $w_xl);
               margin-bottom: 10px;
+
+              span {
+                display: none;
+              }
             }
 
             .priceContainer {
               display: flex;
               gap: 10px;
-              @include mainFont ($s_xl, $w_xl);
+              @include mainFont ($s_md, $w_xl);
 
               .discountRate {
                 color: $pointColor;
@@ -1218,17 +1269,18 @@
 
     .new {
       user-select: none;
-      margin: 0 $margin 100px;
+      margin: 0 $margin 0;
 
       .titleWrapper {
-        margin-bottom: 20px;
+        margin: 0 0 20px 3vw;
+
 
         p {
-          @include mainFont ($s_lg, $w_md);
+          @include mainFont ($s_sm, $w_md);
         }
 
         h2 {
-          @include mainFont (50px, $w_xxl);
+          @include mainFont (40px, $w_xxl);
         }
       }
 
@@ -1236,14 +1288,14 @@
         width: 100%;
         display: grid;
         align-items: center;
-        grid-template-columns: 70vw;
+        grid-template-columns: 100%;
         overflow: hidden;
 
         .textWrapper {
           grid-column: 1 / 2;
           grid-row: 1 / 2;
           text-align: center;
-          @include pointFont (185px);
+          @include pointFont (130px);
           line-height: 1;
         }
 
@@ -1267,8 +1319,8 @@
               }
 
               img {
-                width: 500px;
-
+                width: 300px;
+                margin: 100px;
               }
 
               .priceWrapper {
@@ -1316,12 +1368,12 @@
 
     .cutePuppy {
       width: 100%;
-      height: 100vh;
+      height: 80vh;
       overflow: hidden;
 
       img {
-        width: 200px;
-        transform: rotate(-10deg) translate(70vw, 250px);
+        width: 96px;
+        transform: rotate(-10deg) translate(80vw, 150px);
       }
     }
 
@@ -1333,18 +1385,24 @@
     width: 100%;
     background-color: $mainColor;
     border-radius: 30px 30px 0 0;
-    padding: 35px;
+    padding: 35px 20px 20px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    gap: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     @include mainFont ($s_sm, $w_sm);
 
     .left {
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      display: grid;
+      grid-template-columns: 1fr 33px;
+      grid-template-rows: repeat(3, 1fr);
+      align-items: center;
+      gap: 20px;
 
       .detailsBtn {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
         display: flex;
         gap: 12px;
 
@@ -1356,30 +1414,61 @@
       }
 
       .notice {
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
         display: flex;
         gap: 12px;
         font-weight: 500;
       }
 
       .sns {
-        display: flex;
+        display: none;
         gap: 12px;
+      }
+
+      .moNone {
+        display: none;
+      }
+
+      p {
+        align-self: end;
+        font-size: 13px;
+      }
+
+      a {
+        align-self: end;
+
+        .goToUp {
+          display: block;
+        }
       }
     }
 
     .right {
+      width: 100%;
+      grid-row: 1 / 2;
       justify-self: end;
-      text-align: right;
+      text-align: start;
       color: #fff;
 
       .call {
-        margin-bottom: 80px;
+        margin-bottom: 0;
 
         h3 {
           font-size: 40px;
-          font-weight: 600;
-          margin-bottom: 5px;
+          font-weight: 500;
+          margin-bottom: 20px;
         }
+
+        p {
+          @include mainFont ($s_sm, $w_sm);
+          color: #fff;
+          line-height: 1.4;
+        }
+      }
+
+      .goToUp {
+        display: none;
       }
     }
   }

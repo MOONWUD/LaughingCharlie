@@ -35,7 +35,7 @@
   }
 }
 /*==================================================== 1500px 시작한다 ! */
-@media (max-width: 1550px) {
+@media (max-width: 1300px) {
   /*=============== header */
   header .header_pc {
     transition: 0.5;
@@ -45,7 +45,7 @@
   }
   header .header_pc .header {
     transition: 0.5;
-    margin: 20px 5vw 40px;
+    margin: 20px 2vw 40px;
     display: grid;
     grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
     align-items: center;
@@ -193,24 +193,23 @@
   }
   header .header_pc.active .nav {
     box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.16);
-    padding: 5px 5vw;
-    display: grid;
-    grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
+    padding: 5px 2vw;
+    display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background-color: rgba(255, 255, 255, 0.7);
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
   }
   header .header_pc.active .nav .headerIcon {
-    display: block;
     justify-self: end;
     display: flex;
     gap: 45px;
+    display: none;
   }
   header .header_pc.active .nav .hmbrgMenu {
     justify-self: start;
-    display: block;
+    display: none;
   }
   header .header_pc.active .nav .hmbrgMenu .hmbrgBtn {
     display: flex;
@@ -255,7 +254,7 @@
   main .main .swiper {
     border-radius: 40px;
     position: relative;
-    margin: 0 5vw;
+    margin: 0 2vw;
   }
   main .main .swiper .swiperBtn {
     position: absolute;
@@ -321,7 +320,7 @@
     border-radius: 30px;
   }
   main .textSlide {
-    margin: 0 5vw 100px;
+    margin: 0 2vw 100px;
     display: grid;
     grid-template-rows: repeat(3, 340px);
     overflow: hidden;
@@ -365,7 +364,7 @@
     left: 200px;
   }
   main .walk {
-    margin: 0 5vw 100px;
+    margin: 0 2vw 100px;
     display: grid;
     gap: 1vw;
     grid-template-columns: minmax(580px, 440px) 1fr;
@@ -525,7 +524,7 @@
     display: none;
   }
   main .pogle {
-    margin: 0 5vw 100px;
+    margin: 0 2vw 100px;
     display: grid;
     gap: 1vw;
     grid-template-columns: 1fr minmax(440px, 580px);
@@ -685,7 +684,7 @@
     display: none;
   }
   main .textAni {
-    margin: 0 5vw 100px;
+    margin: 0 2vw 100px;
     overflow-y: hidden;
     padding-top: 20px;
   }
@@ -823,7 +822,7 @@
     transform: translate(1070px, 7px);
   }
   main .best {
-    margin: 0 5vw 100px;
+    margin: 0 2vw 100px;
     display: grid;
     gap: 1vw;
     grid-template-columns: 1fr 3fr;
@@ -933,7 +932,7 @@
     color: #FF2108;
   }
   main .magazine {
-    margin: 0 5vw 100px;
+    margin: 0 2vw 100px;
     position: relative;
   }
   main .magazine img {
@@ -947,7 +946,7 @@
     top: 250px;
   }
   main .sale {
-    margin: 0 5vw 100px;
+    margin: 0 2vw 100px;
   }
   main .sale .titleWrapper {
     margin-bottom: 20px;
@@ -1043,7 +1042,7 @@
     -webkit-user-select: none;
        -moz-user-select: none;
             user-select: none;
-    margin: 0 5vw 100px;
+    margin: 0 2vw 100px;
   }
   main .new .titleWrapper {
     margin-bottom: 20px;
@@ -1191,4 +1190,4 @@
     font-weight: 600;
     margin-bottom: 5px;
   }
-}/*# sourceMappingURL=1500px.css.map */
+}/*# sourceMappingURL=1300px.css.map */

@@ -1,13 +1,26 @@
 /*========== header */
-const main = $('main').offset().top - 50;
+const mainPc = $('main').offset().top - 50;
 $(window).on('scroll', ()=>{
-  if(scrollY > main) {
-    $('header').addClass('active');
+  if(scrollY > mainPc) {
+    $('.header_pc').addClass('active');
   } else {
-    $('header').removeClass('active');
+    $('.header_pc').removeClass('active');
   }
 });
-
+const mainMo = $('main').offset().top - 50;
+$(window).on('scroll', ()=>{
+  if(scrollY > mainMo) {
+    $('.header_mo').addClass('active');
+  } else {
+    $('.header_mo').removeClass('active');
+  }
+});
+const navSwiper = new Swiper(".navSwiper", {
+  slidesPerView: 6, // 한 번에 표시할 슬라이드 수
+  spaceBetween: 10, // 슬라이드 간의 간격  
+  loop: false, //슬라이드 루프(무한 회전) 활성화
+  mousewheel: false,
+});
 
 
 /*========== section main */
@@ -31,7 +44,7 @@ const swiper = new Swiper(".mySwiper", {
 gsap.to(".textSlide .firstText", {
   scrollTrigger: {
     trigger: '.textSlide .firstText',
-    start: "0% 100%",
+    start: "0% 90%",
     end: "100% 80%",
     scrub: 1,
   // markers: true,
@@ -42,7 +55,7 @@ gsap.to(".textSlide .firstText", {
 gsap.to(".textSlide .firstText img", {
   scrollTrigger: {
     trigger: '.textSlide .firstText',
-    start: "0% 98%",
+    start: "0% 88%",
     end: "100% 80%",
     scrub: 1,
   // markers: true,
@@ -113,7 +126,12 @@ gsap.to(".textSlide .lastText img", {
 
 
 /*========== section best */
-
+const bestSwiper = new Swiper(".bestSwiper", {
+  slidesPerView: 2, // 한 번에 표시할 슬라이드 수
+  spaceBetween: 10, // 슬라이드 간의 간격  
+  loop: false, //슬라이드 루프(무한 회전) 활성화
+  mousewheel: false,
+});
 
 
 /*========== section magazine */
@@ -125,31 +143,34 @@ gsap.to(".textSlide .lastText img", {
 
 
 /*========== section new */
-$(document).ready(function() {
-  var isDragging = false;
-  var startX, startScrollLeft;
 
-  $('#parent-container').on('mousedown', function(e) {
-      isDragging = true;
-      startX = e.pageX - $('#parent-container').scrollLeft();
-      startScrollLeft = $('#parent-container').scrollLeft();
-      $('#parent-container').css('cursor', 'grabbing'); // 드래그 중일 때 커서 모양 변경
-  });
-
-  $(document).mousemove(function(e) {
-      if (isDragging) {
-          var newScrollLeft = startX - e.pageX + startScrollLeft;
-          $('#parent-container').scrollLeft(newScrollLeft);
-
-      }
-  });
-
-  $(document).mouseup(function() {
-      isDragging = false;
-      $('#parent-container').css('cursor', 'grab'); // 드래그를 끝내면 커서 모양 원래대로 변경
-  });
+// 가로 드래그
+const newSwiper = new Swiper(".newSwiper", {
+  slidesPerView: 2, // 한 번에 표시할 슬라이드 수
+  spaceBetween: 50, // 슬라이드 간의 간격  
+  loop: true, //슬라이드 루프(무한 회전) 활성화
+  mousewheel: false,
 });
 
+
+// 마우스 커서
+var cursor = document.querySelector(".cursor");
+var img_slide = document.querySelectorAll(".new .contentWrapper");
+function cursorEvent(e){
+    cursor.style.top = e.pageY - scrollY + "px";
+    cursor.style.left = e.pageX + "px";
+}
+window.addEventListener('mousemove', cursorEvent);
+img_slide.forEach(link =>{
+    if ( link !== img_slide ){
+        link.addEventListener("mouseleave", () => {
+            cursor.classList.remove("on");
+        });
+        link.addEventListener("mouseover", () => {
+            cursor.classList.add("on");
+        });
+    }  
+});
 
 
 
@@ -166,5 +187,7 @@ gsap.to(".cutePuppy img", {
   x: 0,
   y: `80vh`,
 });
+
+
 
 /*========== footer */

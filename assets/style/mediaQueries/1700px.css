@@ -37,63 +37,63 @@
 /*==================================================== 1700px 시작한다 ! */
 @media (max-width: 1700px) {
   /*=============== header */
-  header {
+  header .header_pc {
     transition: 0.5;
     width: 100%;
     margin-bottom: 20px;
     z-index: 999999;
   }
-  header .header {
+  header .header_pc .header {
     transition: 0.5;
-    margin: 20px 10vw 40px;
+    margin: 20px 11vw 40px;
     display: grid;
     grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
     align-items: center;
     justify-content: space-between;
   }
-  header .header .hmbrgMenu {
+  header .header_pc .header .hmbrgMenu {
     justify-self: start;
   }
-  header .header .hmbrgMenu .hmbrgBtn {
+  header .header_pc .header .hmbrgMenu .hmbrgBtn {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 12px;
   }
-  header .header .hmbrgMenu .hmbrgBtn li {
+  header .header_pc .header .hmbrgMenu .hmbrgBtn li {
     width: 30px;
     height: 3px;
     border-radius: 3px;
     background-color: #111111;
   }
-  header .header .hmbrgMenu .hmbrgBtn li:last-child {
+  header .header_pc .header .hmbrgMenu .hmbrgBtn li:last-child {
     width: 25px;
   }
-  header .header .logo {
+  header .header_pc .header .logo {
     justify-self: center;
     max-width: 150px;
     min-width: 100px;
   }
-  header .header .logo a img {
+  header .header_pc .header .logo a img {
     width: 100%;
   }
-  header .header .headerIcon {
+  header .header_pc .header .headerIcon {
     justify-self: end;
     display: flex;
     gap: 45px;
   }
-  header .nav {
+  header .header_pc .nav {
     width: 100%;
     margin-bottom: 20px;
     transition: 0.1s;
   }
-  header .nav .hmbrgMenu {
+  header .header_pc .nav .hmbrgMenu {
     display: none;
   }
-  header .nav .headerIcon {
+  header .header_pc .nav .headerIcon {
     display: none;
   }
-  header .nav .slideWrap .slideContainer .gnb {
+  header .header_pc .nav .slideWrap .slideContainer .gnb {
     text-align: center;
     display: flex;
     justify-content: center;
@@ -102,26 +102,26 @@
     font-size: 16px;
     color: #111111;
   }
-  header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(2) a p {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:hover:nth-child(2) a p {
     background-color: #FFB400;
   }
-  header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(3) a p {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:hover:nth-child(3) a p {
     background-color: #E94529;
   }
-  header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(4) a p {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:hover:nth-child(4) a p {
     background-color: #FFD100;
   }
-  header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(5) a p {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:hover:nth-child(5) a p {
     background-color: #FFB400;
   }
-  header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(6) a p {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:hover:nth-child(6) a p {
     background-color: #FFD100;
   }
-  header .nav .slideWrap .slideContainer .gnb li:hover:nth-child(7) a p {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:hover:nth-child(7) a p {
     color: #fff;
     background-color: #FF2108;
   }
-  header .nav .slideWrap .slideContainer .gnb li:hover a p {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:hover a p {
     border-color: #000;
     animation: menu 0.5s infinite;
   }
@@ -142,58 +142,58 @@
       transform: rotate(3deg);
     }
   }
-  header .nav .slideWrap .slideContainer .gnb li:nth-child(1) a p {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:nth-child(1) a p {
     border: 2px solid #000;
     background-color: #00AD4D;
   }
-  header .nav .slideWrap .slideContainer .gnb li:nth-child(1) a img {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:nth-child(1) a img {
     width: 85px;
   }
-  header .nav .slideWrap .slideContainer .gnb li:nth-child(2) a img {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:nth-child(2) a img {
     width: 35px;
   }
-  header .nav .slideWrap .slideContainer .gnb li:nth-child(3) a img {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:nth-child(3) a img {
     width: 25px;
   }
-  header .nav .slideWrap .slideContainer .gnb li:nth-child(4) a img {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:nth-child(4) a img {
     width: 21px;
   }
-  header .nav .slideWrap .slideContainer .gnb li:nth-child(5) a img {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:nth-child(5) a img {
     width: 45px;
   }
-  header .nav .slideWrap .slideContainer .gnb li:nth-child(6) a img {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:nth-child(6) a img {
     width: 50px;
   }
-  header .nav .slideWrap .slideContainer .gnb li:nth-child(7) a p {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:nth-child(7) a p {
     color: #FF2108;
   }
-  header .nav .slideWrap .slideContainer .gnb li:nth-child(7) a img {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li:nth-child(7) a img {
     width: 63px;
   }
-  header .nav .slideWrap .slideContainer .gnb li a {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li a {
     display: grid;
     grid-template-rows: 70px 1fr;
     place-items: center;
   }
-  header .nav .slideWrap .slideContainer .gnb li a p {
+  header .header_pc .nav .slideWrap .slideContainer .gnb li a p {
     margin-top: 5px;
     border-radius: 30px;
     border: 2px solid transparent;
     background-color: transparent;
     padding: 5px 10px;
   }
-  header.active {
+  header .header_pc.active {
     transition: 0.8s;
     position: fixed;
     top: 0;
     left: 0;
   }
-  header.active .header {
+  header .header_pc.active .header {
     display: none;
   }
-  header.active .nav {
+  header .header_pc.active .nav {
     box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.16);
-    padding: 5px 10vw;
+    padding: 5px 11vw;
     display: grid;
     grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
     align-items: center;
@@ -202,35 +202,35 @@
     -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
   }
-  header.active .nav .headerIcon {
+  header .header_pc.active .nav .headerIcon {
     display: block;
     justify-self: end;
     display: flex;
     gap: 45px;
   }
-  header.active .nav .hmbrgMenu {
+  header .header_pc.active .nav .hmbrgMenu {
     justify-self: start;
     display: block;
   }
-  header.active .nav .hmbrgMenu .hmbrgBtn {
+  header .header_pc.active .nav .hmbrgMenu .hmbrgBtn {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 12px;
   }
-  header.active .nav .hmbrgMenu .hmbrgBtn li {
+  header .header_pc.active .nav .hmbrgMenu .hmbrgBtn li {
     width: 30px;
     height: 3px;
     border-radius: 3px;
     background-color: #111111;
   }
-  header.active .nav .hmbrgMenu .hmbrgBtn li:last-child {
+  header .header_pc.active .nav .hmbrgMenu .hmbrgBtn li:last-child {
     width: 25px;
   }
-  header.active .nav .slideWrap .slideContainer .gnb {
+  header .header_pc.active .nav .slideWrap .slideContainer .gnb {
     gap: 30px;
   }
-  header.active .nav .slideWrap .slideContainer .gnb li a img {
+  header .header_pc.active .nav .slideWrap .slideContainer .gnb li a img {
     display: none;
   }
   /*=============== main */
@@ -247,7 +247,7 @@
     /*========== section cutePuppy */
   }
   main .main {
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     height: 100%;
     width: 100%;
     position: relative;
@@ -255,7 +255,7 @@
   main .main .swiper {
     border-radius: 40px;
     position: relative;
-    margin: 0 10vw;
+    margin: 0 11vw;
   }
   main .main .swiper .swiperBtn {
     position: absolute;
@@ -321,7 +321,7 @@
     border-radius: 30px;
   }
   main .textSlide {
-    margin: 0 10vw 100px;
+    margin: 0 11vw 100px;
     display: grid;
     grid-template-rows: repeat(3, 340px);
     overflow: hidden;
@@ -365,7 +365,7 @@
     left: 200px;
   }
   main .walk {
-    margin: 0 10vw 100px;
+    margin: 0 11vw 100px;
     display: grid;
     gap: 1vw;
     grid-template-columns: minmax(580px, 440px) 1fr;
@@ -521,8 +521,11 @@
     grid-column: 2/3;
     grid-row: 2/3;
   }
+  main .walk .bottom {
+    display: none;
+  }
   main .pogle {
-    margin: 0 10vw 100px;
+    margin: 0 11vw 100px;
     display: grid;
     gap: 1vw;
     grid-template-columns: 1fr minmax(440px, 580px);
@@ -678,8 +681,11 @@
     color: #111111;
     line-height: 1.5;
   }
+  main .pogle .bottom {
+    display: none;
+  }
   main .textAni {
-    margin: 0 10vw 100px;
+    margin: 0 11vw 100px;
     overflow-y: hidden;
     padding-top: 20px;
   }
@@ -817,7 +823,7 @@
     transform: translate(1070px, 7px);
   }
   main .best {
-    margin: 0 10vw 100px;
+    margin: 0 11vw 100px;
     display: grid;
     gap: 1vw;
     grid-template-columns: 1fr 3fr;
@@ -927,7 +933,7 @@
     color: #FF2108;
   }
   main .magazine {
-    margin: 0 10vw 100px;
+    margin: 0 11vw 100px;
     position: relative;
   }
   main .magazine img {
@@ -941,7 +947,7 @@
     top: 250px;
   }
   main .sale {
-    margin: 0 10vw 100px;
+    margin: 0 11vw 100px;
   }
   main .sale .titleWrapper {
     margin-bottom: 20px;
@@ -1000,11 +1006,44 @@
   main .sale .productWrapper li .textWrapper .priceContainer .discountRate {
     color: #FF2108;
   }
+  main .cursor {
+    position: fixed;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition-property: background, transform;
+    pointer-events: none;
+  }
+  main .cursor.on .bg {
+    opacity: 1;
+    transform: scale(1);
+  }
+  main .cursor .bg {
+    opacity: 0;
+    position: absolute;
+    left: -52px;
+    top: -52px;
+    transform: scale(0);
+    width: 130px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #111111;
+    background-color: #00AD4D;
+    font-family: "Poetsen One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    color: #111111;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    transition: 0.1s;
+  }
+  main .cursor .bg img {
+    width: 15px;
+  }
   main .new {
     -webkit-user-select: none;
        -moz-user-select: none;
             user-select: none;
-    margin: 0 10vw 100px;
+    margin: 0 11vw 100px;
   }
   main .new .titleWrapper {
     margin-bottom: 20px;
@@ -1022,37 +1061,40 @@
     color: #111111;
   }
   main .new .contentWrapper {
+    width: 100%;
     display: grid;
-    justify-content: center;
     align-items: center;
     grid-template-columns: 70vw;
+    overflow: hidden;
   }
   main .new .contentWrapper .textWrapper {
     grid-column: 1/2;
     grid-row: 1/2;
     text-align: center;
     font-family: "Bagel Fat One", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 250px;
+    font-size: 200px;
     color: #111111;
     line-height: 1;
   }
-  main .new .contentWrapper .productWrapper {
-    overflow: hidden;
-    display: flex;
-    gap: 50px;
+  main .new .contentWrapper .newSwiper {
     width: 100%;
-    align-items: center;
     height: 100%;
     grid-column: 1/2;
     grid-row: 1/2;
-    padding-left: 100px;
-    cursor: grab;
-    /* 클릭 드래그 커서 설정 */
   }
-  main .new .contentWrapper .productWrapper li:hover .priceWrapper {
+  main .new .contentWrapper .newSwiper .productWrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: none;
+  }
+  main .new .contentWrapper .newSwiper .productWrapper li:hover .priceWrapper {
     opacity: 1;
   }
-  main .new .contentWrapper .productWrapper li .priceWrapper {
+  main .new .contentWrapper .newSwiper .productWrapper li img {
+    width: 500px;
+  }
+  main .new .contentWrapper .newSwiper .productWrapper li .priceWrapper {
     transition: 0.1s;
     display: grid;
     align-content: center;
@@ -1065,21 +1107,21 @@
     box-shadow: 3px 3px #111111;
     opacity: 0;
   }
-  main .new .contentWrapper .productWrapper li .priceWrapper .category {
+  main .new .contentWrapper .newSwiper .productWrapper li .priceWrapper .category {
     font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 14px;
     font-weight: 400;
     color: #111111;
     margin-bottom: 4px;
   }
-  main .new .contentWrapper .productWrapper li .priceWrapper .name {
+  main .new .contentWrapper .newSwiper .productWrapper li .priceWrapper .name {
     font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     font-size: 16px;
     font-weight: 600;
     color: #111111;
     margin-bottom: 10px;
   }
-  main .new .contentWrapper .productWrapper li .priceWrapper .priceContainer {
+  main .new .contentWrapper .newSwiper .productWrapper li .priceWrapper .priceContainer {
     display: flex;
     gap: 10px;
     font-family: "Pretendard", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -1087,46 +1129,8 @@
     font-weight: 600;
     color: #111111;
   }
-  main .new .contentWrapper .productWrapper li .priceWrapper .priceContainer .discountRate {
+  main .new .contentWrapper .newSwiper .productWrapper li .priceWrapper .priceContainer .discountRate {
     color: #FF2108;
-  }
-  main .new .contentWrapper .productWrapper li:nth-child(1) {
-    margin: 0 50px;
-    transform: translateY(200px);
-  }
-  main .new .contentWrapper .productWrapper li:nth-child(1) img {
-    transform: rotate(-6deg) scale(1.2);
-  }
-  main .new .contentWrapper .productWrapper li:nth-child(1) .priceWrapper {
-    transform: rotate(6deg) translate(130px, -50px);
-  }
-  main .new .contentWrapper .productWrapper li:nth-child(2) {
-    margin: 0 50px;
-    transform: translateY(80px);
-  }
-  main .new .contentWrapper .productWrapper li:nth-child(2) img {
-    transform: rotate(6deg) scale(1.2);
-  }
-  main .new .contentWrapper .productWrapper li:nth-child(2) .priceWrapper {
-    transform: rotate(-3deg) translate(0px, 0px);
-  }
-  main .new .contentWrapper .productWrapper li:nth-child(3) {
-    transform: translateY(230px);
-  }
-  main .new .contentWrapper .productWrapper li:nth-child(3) img {
-    transform: rotate(6deg) scale(1.2);
-  }
-  main .new .contentWrapper .productWrapper li:nth-child(3) .priceWrapper {
-    transform: rotate(-3deg) translate(50px, -400px);
-  }
-  main .new .contentWrapper .productWrapper li:nth-child(4) {
-    transform: translateY(0px);
-  }
-  main .new .contentWrapper .productWrapper li:nth-child(4) img {
-    transform: rotate(6deg);
-  }
-  main .new .contentWrapper .productWrapper li:nth-child(4) .priceWrapper {
-    transform: rotate(5deg) translate(0px, -200px);
   }
   main .cutePuppy {
     width: 100%;
