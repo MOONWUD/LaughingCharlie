@@ -390,7 +390,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 4200px;
+    width: 4500px;
     animation: walkLeft 20s linear infinite;
   }
   @keyframes walkLeft {
@@ -398,11 +398,11 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-2100px);
+      transform: translateX(-2250px);
     }
   }
   main .walk .left .textWrapper .slideWrapper .slide {
-    width: 700px;
+    width: 750px;
     border-top: 1px solid #111111;
     border-bottom: 1px solid #111111;
     background-color: #fff;
@@ -466,7 +466,7 @@
     display: flex;
     text-wrap: nowrap;
     gap: 10px;
-    width: 456px;
+    width: 540px;
     animation: walk 20s linear infinite;
   }
   @keyframes walk {
@@ -474,7 +474,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-228px);
+      transform: translateX(-270px);
     }
   }
   main .walk .right .product .imgWrapper .slideArea .slideContainer .slideItem {
@@ -482,7 +482,7 @@
     font-size: 14px;
     font-weight: 600;
     color: #111111;
-    width: 76px;
+    width: 90px;
   }
   main .walk .right .product .textWrapper {
     padding-left: 10px;
@@ -571,7 +571,7 @@
     display: flex;
     text-wrap: nowrap;
     gap: 10px;
-    width: 456px;
+    width: 540px;
     animation: walk 20s linear infinite;
   }
   @keyframes walk {
@@ -579,7 +579,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-228px);
+      transform: translateX(-270px);
     }
   }
   main .pogle .left .product .imgWrapper .slideArea .slideContainer .slideItem {
@@ -587,7 +587,7 @@
     font-size: 14px;
     font-weight: 600;
     color: #111111;
-    width: 76px;
+    width: 90px;
   }
   main .pogle .left .product .textWrapper {
     padding-left: 10px;
@@ -649,7 +649,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 4200px;
+    width: 4500px;
     animation: pogleRight 20s linear infinite;
   }
   @keyframes pogleRight {
@@ -657,11 +657,11 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-2100px);
+      transform: translateX(-2250px);
     }
   }
   main .pogle .right .textWrapper .slideWrapper .slide {
-    width: 700px;
+    width: 750px;
     border-top: 1px solid #111111;
     border-bottom: 1px solid #111111;
     background-color: #fff;

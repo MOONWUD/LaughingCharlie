@@ -27,9 +27,12 @@ header {
       .hmbrgMenu {
         transition: $transition;
         justify-self: start;
-  
+        position: relative;
+
         .hmbrgBtn {
-  
+          position: absolute;
+          top: 0;
+          left: 0;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
@@ -43,6 +46,57 @@ header {
   
             &:last-child {
               width: 25px;
+            }
+          }
+        }
+
+        .hmbrgMenuBox {
+          z-index: 9999;
+          position: absolute;
+          top: -40px;
+          left: -$margin;
+          width: 100vw;
+          margin: 0 $margin;
+          padding: 50px 0;
+          border-radius: 0 0 20px 20px;
+          background-color: rgba(255, 255, 255, 0.7);
+          backdrop-filter: blur(20px);
+          height: 450px;
+          display: grid;
+          place-items: center;
+          display: none;
+          .menuList {
+            display: flex;
+            align-items: end;
+            justify-content: space-around;
+            gap: 40px;
+            li {
+              display: grid;
+              place-items: center;
+              grid-template-rows: 1fr 30px;
+              &:nth-child(1) {
+                img {
+                  width: 90px;
+                }
+              }
+              &:nth-child(2) {
+                img {
+                  width: 120px;
+                }
+              }
+              &:nth-child(3) {
+                img {
+                  width: 90px;
+                }
+              }
+              &:nth-child(4) {
+                img {
+                  width: 150px;
+                }
+              }
+              h2 {
+                @include titleFont ($s_xl)
+              }
             }
           }
         }
@@ -510,12 +564,11 @@ main {
         height: 763px;
         border-radius: 600px;
         text-align: center;
-
         .slideWrapper {
           display: flex;
           justify-content: center;
           align-items: center;
-          width: calc(700px * 6);
+          width: calc(750px * 6);
 
           @keyframes walkLeft {
             0% {
@@ -523,14 +576,14 @@ main {
             }
 
             100% {
-              transform: translateX(calc(-700px * 3))
+              transform: translateX(calc(-750px * 3))
             }
           }
 
           animation: walkLeft 20s linear infinite;
 
           .slide {
-            width: 700px;
+            width: 750px;
             border-top: 1px solid $textColor;
             border-bottom: 1px solid $textColor;
             background-color: #fff;
@@ -595,7 +648,7 @@ main {
               display: flex;
               text-wrap: nowrap;
               gap: 10px;
-              width: calc(76px * 6);
+              width: calc(90px * 6);
 
               @keyframes walk {
                 0% {
@@ -603,7 +656,7 @@ main {
                 }
 
                 100% {
-                  transform: translateX(calc(-76px * 3))
+                  transform: translateX(calc(-90px * 3))
                 }
               }
 
@@ -611,7 +664,7 @@ main {
 
               .slideItem {
                 @include mainFont ($s_sm, $w_xl);
-                width: 76px;
+                width: 90px;
               }
             }
           }
@@ -708,7 +761,7 @@ main {
               display: flex;
               text-wrap: nowrap;
               gap: 10px;
-              width: calc(76px * 6);
+              width: calc(90px * 6);
 
               @keyframes walk {
                 0% {
@@ -716,7 +769,7 @@ main {
                 }
 
                 100% {
-                  transform: translateX(calc(-76px * 3))
+                  transform: translateX(calc(-90px * 3))
                 }
               }
 
@@ -724,7 +777,7 @@ main {
 
               .slideItem {
                 @include mainFont ($s_sm, $w_xl);
-                width: 76px;
+                width: 90px;
               }
             }
           }
@@ -791,7 +844,7 @@ main {
           display: flex;
           justify-content: center;
           align-items: center;
-          width: calc(700px * 6);
+          width: calc(750px * 6);
 
           @keyframes pogleRight {
             0% {
@@ -799,14 +852,14 @@ main {
             }
 
             100% {
-              transform: translateX(calc(-700px * 3))
+              transform: translateX(calc(-750px * 3))
             }
           }
 
           animation: pogleRight 20s linear infinite;
 
           .slide {
-            width: 700px;
+            width: 750px;
             border-top: 1px solid $textColor;
             border-bottom: 1px solid $textColor;
             background-color: #fff;

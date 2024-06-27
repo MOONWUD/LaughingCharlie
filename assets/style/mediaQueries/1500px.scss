@@ -493,7 +493,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: calc(700px * 6);
+            width: calc(750px * 6);
 
             @keyframes walkLeft {
               0% {
@@ -501,14 +501,14 @@
               }
 
               100% {
-                transform: translateX(calc(-700px * 3))
+                transform: translateX(calc(-750px * 3))
               }
             }
 
             animation: walkLeft 20s linear infinite;
 
             .slide {
-              width: 700px;
+              width: 750px;
               border-top: 1px solid $textColor;
               border-bottom: 1px solid $textColor;
               background-color: #fff;
@@ -572,7 +572,7 @@
                 display: flex;
                 text-wrap: nowrap;
                 gap: 10px;
-                width: calc(76px * 6);
+                width: calc(90px * 6);
 
                 @keyframes walk {
                   0% {
@@ -580,7 +580,7 @@
                   }
 
                   100% {
-                    transform: translateX(calc(-76px * 3))
+                    transform: translateX(calc(-90px * 3))
                   }
                 }
 
@@ -588,7 +588,7 @@
 
                 .slideItem {
                   @include mainFont ($s_sm, $w_xl);
-                  width: 76px;
+                  width: 90px;
                 }
               }
             }
@@ -683,7 +683,7 @@
                 display: flex;
                 text-wrap: nowrap;
                 gap: 10px;
-                width: calc(76px * 6);
+                width: calc(90px * 6);
 
                 @keyframes walk {
                   0% {
@@ -691,7 +691,7 @@
                   }
 
                   100% {
-                    transform: translateX(calc(-76px * 3))
+                    transform: translateX(calc(-90px * 3))
                   }
                 }
 
@@ -699,7 +699,7 @@
 
                 .slideItem {
                   @include mainFont ($s_sm, $w_xl);
-                  width: 76px;
+                  width: 90px;
                 }
               }
             }
@@ -763,7 +763,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: calc(700px * 6);
+            width: calc(750px * 6);
 
             @keyframes pogleRight {
               0% {
@@ -771,14 +771,14 @@
               }
 
               100% {
-                transform: translateX(calc(-700px * 3))
+                transform: translateX(calc(-750px * 3))
               }
             }
 
             animation: pogleRight 20s linear infinite;
 
             .slide {
-              width: 700px;
+              width: 750px;
               border-top: 1px solid $textColor;
               border-bottom: 1px solid $textColor;
               background-color: #fff;
