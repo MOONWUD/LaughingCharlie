@@ -1,3 +1,29 @@
+# Laughing Charlie 🐶 #
+
+        
+## Overview 🎁
+        
+       
+## Design     
+  🍅 Keyword 
+       
+  🍅 Color   
+            
+  🍅 Font  
+
+          
+## Publishing
+
+             
+## Probloem & Solution
+
+                       
+## Review 🤸
+
+
+
+
+                          
 ### 240628_금 
   - pc 스와이퍼 이벤트 넣기 완료! (walk, pogle)
   - cutePuppy도 허전한 거 같아 다시 고려해보기               
