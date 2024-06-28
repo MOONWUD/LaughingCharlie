@@ -30,6 +30,8 @@ header {
         position: relative;
 
         .hmbrgBtn {
+          cursor: pointer;
+          transition: $transition;
           position: absolute;
           top: 0;
           left: 0;
@@ -37,8 +39,11 @@ header {
           flex-direction: column;
           justify-content: flex-start;
           gap: 12px;
-  
+          z-index: 9999;
+          width: 40px;
+          height: 40px;
           li {
+            transition: $transition;
             width: 30px;
             height: 3px;
             border-radius: 3px;
@@ -51,20 +56,22 @@ header {
         }
 
         .hmbrgMenuBox {
-          z-index: 9999;
+          transition: $transition;
+          z-index: 999;
           position: absolute;
-          top: -40px;
+          top: -90px;
           left: -$margin;
           width: 100vw;
-          margin: 0 $margin;
+          margin: 0;
           padding: 50px 0;
           border-radius: 0 0 20px 20px;
-          background-color: rgba(255, 255, 255, 0.7);
+          background-color: rgba(255, 255, 255, 0.6);
           backdrop-filter: blur(20px);
-          height: 450px;
+          height: 400px;
           display: grid;
-          place-items: center;
-          display: none;
+          justify-content: center;
+          align-items: end;
+          transform: translateY(-450px);
           .menuList {
             display: flex;
             align-items: end;
@@ -100,6 +107,29 @@ header {
             }
           }
         }
+
+        &.active {
+          .hmbrgBtn {
+            display: grid;
+            li {
+              &:first-child {
+                transform: rotate(45deg);
+                grid-row: 1 / 2;
+                grid-column: 1 / 2;
+              }
+              &:last-child {
+                width: 30px;
+                transform: rotate(-45deg);
+                grid-row: 1 / 2;
+                grid-column: 1 / 2;
+              }
+            }
+          }
+
+          .hmbrgMenuBox {
+            transform: translateY(0);
+          }
+        }
       }
   
       .logo {
@@ -120,6 +150,7 @@ header {
         justify-self: end;
         display: flex;
         gap: 45px;
+        z-index: 9999;
       }
     }
   
@@ -336,20 +367,27 @@ header {
           justify-self: end;
           display: flex;
           gap: 45px;
+          z-index: 9999;
           // transition: $transition;
         }
   
         .hmbrgMenu {
+          align-self: center;
           justify-self: start;
           display: block;
-          // transition: $transition;
+          transition: $transition;
+          position: relative;
           .hmbrgBtn {
+            cursor: pointer;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: center;
             gap: 12px;
-  
+            width: 30px;
+            height: 20px;
             li {
+              transition: $transition;
+              z-index: 99999;
               width: 30px;
               height: 3px;
               border-radius: 3px;
@@ -358,6 +396,83 @@ header {
               &:last-child {
                 width: 25px;
               }
+            }
+          }
+
+          .hmbrgMenuBox {
+            transition: $transition;
+            z-index: 999;
+            position: absolute;
+            top: -90px;
+            left: -$margin;
+            width: 100vw;
+            margin: 0;
+            padding: 50px 0;
+            border-radius: 0 0 20px 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            height: 400px;
+            display: grid;
+            justify-content: center;
+            align-items: end;
+            transform: translateY(-450px);
+            .menuList {
+              display: flex;
+              align-items: end;
+              justify-content: space-around;
+              gap: 40px;
+              li {
+                display: grid;
+                place-items: center;
+                grid-template-rows: 1fr 30px;
+                &:nth-child(1) {
+                  img {
+                    width: 90px;
+                  }
+                }
+                &:nth-child(2) {
+                  img {
+                    width: 120px;
+                  }
+                }
+                &:nth-child(3) {
+                  img {
+                    width: 90px;
+                  }
+                }
+                &:nth-child(4) {
+                  img {
+                    width: 150px;
+                  }
+                }
+                h2 {
+                  @include titleFont ($s_xl)
+                }
+              }
+            }
+          }
+
+          &.active {
+            .hmbrgBtn {
+              display: grid;
+              padding-top: 10px;
+              li {
+                &:first-child {
+                  transform: rotate(45deg);
+                  grid-row: 1 / 2;
+                  grid-column: 1 / 2;
+                }
+                &:last-child {
+                  width: 30px;
+                  transform: rotate(-45deg);
+                  grid-row: 1 / 2;
+                  grid-column: 1 / 2;
+                }
+              }
+            }
+  
+            .hmbrgMenuBox {
+              transform: translateY(0);
             }
           }
         }
@@ -612,98 +727,95 @@ main {
       grid-template-columns: repeat(1fr 1fr);
       grid-template-rows: 30px 1fr;
       gap: 1vw;
+      overflow: hidden;
 
       .btnWrapper {
         display: flex;
         gap: 20px;
       }
-
-      .product {
-        width: 100%;
-
-        .imgWrapper {
-          margin-bottom: 25px;
-          width: 100%;
-          position: relative;
-
-          img {
+      .productList {
+        display: flex;
+        gap: 1vw;
+        width: 200%;
+        .product {
+          width: 50%;
+  
+          .imgWrapper {
+            margin-bottom: 25px;
             width: 100%;
-          }
-
-          .slideArea {
-            position: absolute;
-            top: 20px;
-            left: 15px;
-            border-radius: 50%;
-            border: 1px solid $textColor;
-            background-color: $mainColor;
-            width: 60px;
-            height: 30px;
-            transform: rotate(-30deg);
-            overflow: hidden;
-
-            .slideContainer {
+            position: relative;
+  
+            img {
+              width: 100%;
+            }
+  
+            .slideArea {
+              position: absolute;
+              top: 20px;
+              left: 15px;
+              border-radius: 50%;
+              border: 1px solid $textColor;
+              background-color: $mainColor;
+              width: 60px;
               height: 30px;
-              align-items: center;
+              transform: rotate(-30deg);
+              overflow: hidden;
+  
+              .slideContainer {
+                height: 30px;
+                align-items: center;
+                display: flex;
+                text-wrap: nowrap;
+                gap: 10px;
+                width: calc(90px * 6);
+  
+                @keyframes walk {
+                  0% {
+                    transform: translateX(0);
+                  }
+  
+                  100% {
+                    transform: translateX(calc(-90px * 3))
+                  }
+                }
+  
+                animation: walk 20s linear infinite;
+  
+                .slideItem {
+                  @include mainFont ($s_sm, $w_xl);
+                  width: 90px;
+                }
+              }
+            }
+          }
+  
+          .textWrapper {
+            padding-left: 10px;
+  
+            .category {
+              @include mainFont ($s_sm, $w_md);
+              margin-bottom: 4px;
+            }
+  
+            .name {
+              @include mainFont ($s_md, $w_xl);
+              margin-bottom: 10px;
+            }
+  
+            .priceContainer {
               display: flex;
-              text-wrap: nowrap;
               gap: 10px;
-              width: calc(90px * 6);
-
-              @keyframes walk {
-                0% {
-                  transform: translateX(0);
-                }
-
-                100% {
-                  transform: translateX(calc(-90px * 3))
-                }
-              }
-
-              animation: walk 20s linear infinite;
-
-              .slideItem {
-                @include mainFont ($s_sm, $w_xl);
-                width: 90px;
+              @include mainFont ($s_xl, $w_xl);
+  
+              .discountRate {
+                color: $pointColor;
               }
             }
           }
         }
-
-        .textWrapper {
-          padding-left: 10px;
-
-          .category {
-            @include mainFont ($s_sm, $w_md);
-            margin-bottom: 4px;
-          }
-
-          .name {
-            @include mainFont ($s_md, $w_xl);
-            margin-bottom: 10px;
-          }
-
-          .priceContainer {
-            display: flex;
-            gap: 10px;
-            @include mainFont ($s_xl, $w_xl);
-
-            .discountRate {
-              color: $pointColor;
-            }
-          }
-        }
       }
 
-      .firstProduct {
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
-      }
 
-      .lastProduct {
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-      }
     }
     .bottom {
       display: none;
@@ -718,8 +830,8 @@ main {
     display: grid;
     gap: 1vw;
     grid-template-columns: 1fr minmax(440px, 580px);
-
     .left {
+      overflow: hidden;
       transition: $transition;
       display: grid;
       grid-template-columns: repeat(1fr 1fr);
@@ -731,91 +843,86 @@ main {
         gap: 20px;
       }
 
-      .product {
-        width: 100%;
-
-        .imgWrapper {
-          margin-bottom: 25px;
-          width: 100%;
-          position: relative;
-
-          img {
+      .productList {
+        display: flex;
+        gap: 1vw;
+        width: 200%;
+        .product {
+          width: 50%;
+  
+          .imgWrapper {
+            margin-bottom: 25px;
             width: 100%;
-          }
-
-          .slideArea {
-            position: absolute;
-            top: 20px;
-            left: 15px;
-            border-radius: 50%;
-            border: 1px solid $textColor;
-            background-color: $mainColor;
-            width: 60px;
-            height: 30px;
-            transform: rotate(-30deg);
-            overflow: hidden;
-
-            .slideContainer {
+            position: relative;
+  
+            img {
+              width: 100%;
+            }
+  
+            .slideArea {
+              position: absolute;
+              top: 20px;
+              left: 15px;
+              border-radius: 50%;
+              border: 1px solid $textColor;
+              background-color: $mainColor;
+              width: 60px;
               height: 30px;
-              align-items: center;
+              transform: rotate(-30deg);
+              overflow: hidden;
+  
+              .slideContainer {
+                height: 30px;
+                align-items: center;
+                display: flex;
+                text-wrap: nowrap;
+                gap: 10px;
+                width: calc(90px * 6);
+  
+                @keyframes walk {
+                  0% {
+                    transform: translateX(0);
+                  }
+  
+                  100% {
+                    transform: translateX(calc(-90px * 3))
+                  }
+                }
+  
+                animation: walk 20s linear infinite;
+  
+                .slideItem {
+                  @include mainFont ($s_sm, $w_xl);
+                  width: 90px;
+                }
+              }
+            }
+          }
+  
+          .textWrapper {
+            padding-left: 10px;
+  
+            .category {
+              @include mainFont ($s_sm, $w_md);
+              margin-bottom: 4px;
+            }
+  
+            .name {
+              @include mainFont ($s_md, $w_xl);
+              margin-bottom: 10px;
+            }
+  
+            .priceContainer {
               display: flex;
-              text-wrap: nowrap;
               gap: 10px;
-              width: calc(90px * 6);
-
-              @keyframes walk {
-                0% {
-                  transform: translateX(0);
-                }
-
-                100% {
-                  transform: translateX(calc(-90px * 3))
-                }
-              }
-
-              animation: walk 20s linear infinite;
-
-              .slideItem {
-                @include mainFont ($s_sm, $w_xl);
-                width: 90px;
+              @include mainFont ($s_xl, $w_xl);
+  
+              .discountRate {
+                color: $pointColor;
               }
             }
           }
         }
-
-        .textWrapper {
-          padding-left: 10px;
-
-          .category {
-            @include mainFont ($s_sm, $w_md);
-            margin-bottom: 4px;
-          }
-
-          .name {
-            @include mainFont ($s_md, $w_xl);
-            margin-bottom: 10px;
-          }
-
-          .priceContainer {
-            display: flex;
-            gap: 10px;
-            @include mainFont ($s_xl, $w_xl);
-
-            .discountRate {
-              color: $pointColor;
-            }
-          }
-        }
-      }
-
-      .firstProduct {
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
-      }
-
-      .lastProduct {
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
       }
     }
 
@@ -1207,7 +1314,7 @@ main {
     margin: 0 $margin 100px;
 
     .titleWrapper {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
 
       p {
         @include mainFont ($s_lg, $w_md);
@@ -1297,6 +1404,7 @@ main {
       }
     }
   }
+
   .new {
     transition: $transition;
     user-select: none;
@@ -1395,10 +1503,10 @@ main {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-
-    img {
-      width: 200px;
-      transform: rotate(-10deg) translate(70vw, 250px);
+    position: relative;
+    .puppy {
+      width: 300px;
+      transform: rotate(-10deg) translate(70vw, 250px) ;
     }
   }
 

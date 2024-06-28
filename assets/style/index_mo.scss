@@ -26,15 +26,22 @@
         justify-content: space-between;
 
         .hmbrgMenu {
+          transition: $transition;
           justify-self: start;
-
+          position: relative;
           .hmbrgBtn {
+            position: absolute;
+            top: 0;
+            left: 0;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             gap: 8px;
+            z-index: 9999;
+            transition: $transition;
 
             li {
+              transition: $transition;
               width: 20px;
               height: 2px;
               border-radius: 3px;
@@ -43,6 +50,58 @@
               &:last-child {
                 width: 16px;
               }
+            }
+          }
+          .hmbrgMenuBox {
+            transition: $transition;
+            position: absolute;
+            top: -90px;
+            left: -2vw;
+            width: 100vw;
+            height: 350px;
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 0 0 20px 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            z-index: 999;
+            padding: 40px 60px;
+            transform: translateY(-350px);
+            img {
+              width: 120px;
+              align-self: end;
+            }
+            .menuList {
+              display: flex;
+              flex-direction: column;
+              text-align: right;
+              gap: 30px;
+              justify-content: end;
+              @include titleFont ($s_md)
+            }
+          }
+          &.active {
+            .hmbrgBtn {
+              display: grid;
+              top: -40px;
+              left: 10px;
+              li {
+                &:first-child {
+                  transform: rotate(45deg);
+                  grid-row: 1 / 2;
+                  grid-column: 1 / 2;
+                }
+                &:last-child {
+                  width: 20px;
+                  transform: rotate(-45deg);
+                  grid-row: 1 / 2;
+                  grid-column: 1 / 2;
+                }
+              }
+            }
+  
+            .hmbrgMenuBox {
+              transform: translateY(0);
             }
           }
         }
@@ -488,11 +547,11 @@
 
     /*========== section walk */
     .walk {
-      margin: 0 $margin 100px;
+      margin: 0 $margin 20px;
       display: grid;
       gap: 2vw;
       grid-template-columns: 1fr;
-      grid-template-rows: 1.3fr 1fr 1fr;
+      grid-template-rows: 1.4fr 1fr 1fr;
 
       .left {
         display: grid;
@@ -556,14 +615,103 @@
 
       .right {
         display: flex;
-        margin-bottom: 30px;
+        margin-bottom: 0px;
 
         .btnWrapper {
           gap: 20px;
           display: none;
         }
+        .productList {
+          .product {
+            &.moNone {
+              display: none;
+            }
+            width: 100%;
+  
+            .imgWrapper {
+              margin-bottom: 25px;
+              width: 100%;
+              position: relative;
+  
+              img {
+                width: 100%;
+              }
+  
+              .slideArea {
+                position: absolute;
+                top: 13px;
+                left: 10px;
+                border-radius: 50%;
+                border: 1px solid $textColor;
+                background-color: $mainColor;
+                width: 35px;
+                height: 20px;
+                transform: rotate(-30deg);
+                overflow: hidden;
+  
+                .slideContainer {
+                  height: 20px;
+                  align-items: center;
+                  display: flex;
+                  text-wrap: nowrap;
+                  gap: 10px;
+                  width: calc(36px * 6);
+  
+                  @keyframes walk {
+                    0% {
+                      transform: translateX(0);
+                    }
+  
+                    100% {
+                      transform: translateX(calc(-36px * 3))
+                    }
+                  }
+  
+                  animation: walk 20s linear infinite;
+  
+                  .slideItem {
+                    @include mainFont (8px, $w_xl);
+                    width: 76px;
+                  }
+                }
+              }
+            }
+  
+            .textWrapper {
+              margin-top: 15px;
+              padding-left: 10px;
+  
+              .category {
+                @include mainFont ($s_xs, $w_md);
+                margin-bottom: 4px;
+              }
+  
+              .name {
+                @include mainFont ($s_sm, $w_xl);
+                margin-bottom: 10px;
+  
+                span {
+                  display: none;
+                }
+              }
+  
+              .priceContainer {
+                display: flex;
+                gap: 10px;
+                @include mainFont ($s_md, $w_xl);
+  
+                .discountRate {
+                  color: $pointColor;
+                }
+              }
+            }
+          }
+        }
 
         .product {
+          &.moNone {
+            display: none;
+          }
           width: 100%;
 
           .imgWrapper {
@@ -650,16 +798,16 @@
 
     /*========== section pogle */
     .pogle {
-      margin: 0 $margin 100px;
+      margin: 0 $margin 20px;
       display: grid;
       gap: 2vw;
       grid-template-columns: 1fr;
-      grid-template-rows: 1.3fr 1fr 1fr;
+      grid-template-rows: 1.4fr 1fr 1fr;
 
       
       .top {
         grid-row: 2 / 3;
-        margin-bottom: 30px;
+        margin-bottom: 0px;
       }
       
       .bottom {
@@ -672,8 +820,10 @@
         .btnWrapper {
           display: none;
         }
-
         .product {
+          &.moNone {
+            display: none;
+          }
           width: 100%;
 
           .imgWrapper {
@@ -750,6 +900,93 @@
 
               .discountRate {
                 color: $pointColor;
+              }
+            }
+          }
+        }
+        
+        .productList {
+          .product {
+            &.moNone {
+              display: none;
+            }
+            width: 100%;
+  
+            .imgWrapper {
+              margin-bottom: 25px;
+              width: 100%;
+              position: relative;
+  
+              img {
+                width: 100%;
+              }
+  
+              .slideArea {
+                position: absolute;
+                top: 13px;
+                left: 10px;
+                border-radius: 50%;
+                border: 1px solid $textColor;
+                background-color: $mainColor;
+                width: 35px;
+                height: 20px;
+                transform: rotate(-30deg);
+                overflow: hidden;
+  
+                .slideContainer {
+                  height: 20px;
+                  align-items: center;
+                  display: flex;
+                  text-wrap: nowrap;
+                  gap: 10px;
+                  width: calc(36px * 6);
+  
+                  @keyframes walk {
+                    0% {
+                      transform: translateX(0);
+                    }
+  
+                    100% {
+                      transform: translateX(calc(-36px * 3))
+                    }
+                  }
+  
+                  animation: walk 20s linear infinite;
+  
+                  .slideItem {
+                    @include mainFont (8px, $w_xl);
+                    width: 76px;
+                  }
+                }
+              }
+            }
+  
+            .textWrapper {
+              margin-top: 15px;
+              padding-left: 10px;
+  
+              .category {
+                @include mainFont ($s_xs, $w_md);
+                margin-bottom: 4px;
+              }
+  
+              .name {
+                @include mainFont ($s_sm, $w_xl);
+                margin-bottom: 10px;
+  
+                span {
+                  display: none;
+                }
+              }
+  
+              .priceContainer {
+                display: flex;
+                gap: 10px;
+                @include mainFont ($s_md, $w_xl);
+  
+                .discountRate {
+                  color: $pointColor;
+                }
               }
             }
           }
@@ -1371,7 +1608,7 @@
       overflow: hidden;
 
       img {
-        width: 96px;
+        width: 180px;
         transform: rotate(-10deg) translate(80vw, 150px);
       }
     }

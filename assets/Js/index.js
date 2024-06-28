@@ -22,6 +22,12 @@ const navSwiper = new Swiper(".navSwiper", {
   mousewheel: false,
 });
 
+$(function () {
+  $('.hmbrgMenu .hmbrgBtn').on('click', () => {
+    $('.hmbrgMenu').toggleClass('active');
+  });
+});
+
 
 /*========== section main */
 const swiper = new Swiper(".mySwiper", {
@@ -114,11 +120,29 @@ gsap.to(".textSlide .lastText img", {
 
 
 /*========== section walk  */
-
+$(function () {
+  $('.walk .right .btnWrapper .left').on('click', () => {
+    // 제일 마지막에 있는 이미지가 제일 처음으로 이동
+    $('.walk .right .productList .product').last().prependTo('.walk .right .productList');
+  });
+  $('.walk .right .btnWrapper .right').on('click', () => {
+    // 제일 처음에 있는 이미지가 제일 마지막으로 이동
+    $('.walk .right .productList .product').first().appendTo('.walk .right .productList');
+  });
+});
 
 
 /*========== section pogle */
-
+$(function () {
+  $('.pogle .left .btnWrapper .left').on('click', () => {
+    // 제일 마지막에 있는 이미지가 제일 처음으로 이동
+    $('.pogle .left .productList .product').last().prependTo('.pogle .left .productList');
+  });
+  $('.pogle .left .btnWrapper .right').on('click', () => {
+    // 제일 처음에 있는 이미지가 제일 마지막으로 이동
+    $('.pogle .left .productList .product').first().appendTo('.pogle .left .productList');
+  });
+});
 
 
 /*========== section textAni */
@@ -176,7 +200,7 @@ img_slide.forEach(link =>{
 
 
 /*========== section cutePuppy */
-gsap.to(".cutePuppy img", {
+gsap.to(".cutePuppy .puppy", {
   scrollTrigger: {
     trigger: '.cutePuppy',
     start: "0% 50%",
@@ -186,6 +210,7 @@ gsap.to(".cutePuppy img", {
   },
   x: 0,
   y: `80vh`,
+  scle: 1.2,
 });
 
 
