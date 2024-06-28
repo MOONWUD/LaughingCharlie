@@ -120,29 +120,106 @@ gsap.to(".textSlide .lastText img", {
 
 
 /*========== section walk  */
-$(function () {
-  $('.walk .right .btnWrapper .left').on('click', () => {
-    // 제일 마지막에 있는 이미지가 제일 처음으로 이동
-    $('.walk .right .productList .product').last().prependTo('.walk .right .productList');
+function walk() {
+  let imgWt = $(".walk .right .productList .product").width() + 10;
+  let currentMarginLeft = 0;
+  let rightClickCount = 0;
+  let leftClickCount = 0;
+
+  // 오른쪽 버튼 클릭 이벤트 핸들러
+  $('.walk .right .btnWrapper .right').on('click', function() {
+    if (rightClickCount < 2) { // 두 번 클릭까지만 허용
+      rightClickCount++;
+      currentMarginLeft -= imgWt;
+      $('.walk .right .productList').animate({ marginLeft: currentMarginLeft + 'px' }, 'linear');
+    }
+    
+    if (rightClickCount === leftClickCount) { // 클릭 수가 같으면 .left 버튼 다시 활성화
+      $('.walk .right .btnWrapper .left').on('click', leftButtonClickHandler);
+    }
+
+    if (rightClickCount === 2) { // 오른쪽 버튼은 한 번만 실행 후 비활성화
+      $(this).off('click');
+    }
   });
-  $('.walk .right .btnWrapper .right').on('click', () => {
-    // 제일 처음에 있는 이미지가 제일 마지막으로 이동
-    $('.walk .right .productList .product').first().appendTo('.walk .right .productList');
-  });
-});
+  
+  // 왼쪽 버튼 클릭 이벤트 핸들러
+  function leftButtonClickHandler() {
+    if (leftClickCount < 2) { // 두 번 클릭까지만 허용
+      leftClickCount++;
+      currentMarginLeft += imgWt;
+      $('.walk .right .productList').animate({ marginLeft: currentMarginLeft + 'px' }, 'linear');
+    }
+    
+    if (leftClickCount === rightClickCount) { // 클릭 수가 같으면 .right 버튼 다시 활성화
+      $('.walk .right .btnWrapper .right').on('click', rightButtonClickHandler);
+    }
+
+    if (leftClickCount === 2) { // 왼쪽 버튼은 한 번만 실행 후 비활성화
+      $(this).off('click');
+    }
+  }
+
+  // 처음에 .left 버튼 클릭 이벤트 핸들러 등록
+  $('.walk .right .btnWrapper .left').on('click', leftButtonClickHandler);
+  
+}
+
+walk();
+
+
+
 
 
 /*========== section pogle */
-$(function () {
-  $('.pogle .left .btnWrapper .left').on('click', () => {
-    // 제일 마지막에 있는 이미지가 제일 처음으로 이동
-    $('.pogle .left .productList .product').last().prependTo('.pogle .left .productList');
+function pogle() {
+  let imgWt = $(".pogle .left .productList .product").width() + 10;
+  let currentMarginLeft = 0;
+  let rightClickCount = 0;
+  let leftClickCount = 0;
+
+  // 오른쪽 버튼 클릭 이벤트 핸들러
+  $('.pogle .left .btnWrapper .right').on('click', function() {
+    if (rightClickCount < 2) { // 두 번 클릭까지만 허용
+      rightClickCount++;
+      currentMarginLeft -= imgWt;
+      $('.pogle .left .productList').animate({ marginLeft: currentMarginLeft + 'px' }, 'linear');
+    }
+    
+    if (rightClickCount === leftClickCount) { // 클릭 수가 같으면 .left 버튼 다시 활성화
+      $('.pogle .left .btnWrapper .left').on('click', leftButtonClickHandler);
+    }
+
+    if (rightClickCount === 2) { // 오른쪽 버튼은 한 번만 실행 후 비활성화
+      $(this).off('click');
+    }
   });
-  $('.pogle .left .btnWrapper .right').on('click', () => {
-    // 제일 처음에 있는 이미지가 제일 마지막으로 이동
-    $('.pogle .left .productList .product').first().appendTo('.pogle .left .productList');
-  });
-});
+  
+  // 왼쪽 버튼 클릭 이벤트 핸들러
+  function leftButtonClickHandler() {
+    if (leftClickCount < 2) { // 두 번 클릭까지만 허용
+      leftClickCount++;
+      currentMarginLeft += imgWt;
+      $('.pogle .left .productList').animate({ marginLeft: currentMarginLeft + 'px' }, 'linear');
+    }
+    
+    if (leftClickCount === rightClickCount) { // 클릭 수가 같으면 .right 버튼 다시 활성화
+      $('.pogle .left .btnWrapper .right').on('click', rightButtonClickHandler);
+    }
+
+    if (leftClickCount === 2) { // 왼쪽 버튼은 한 번만 실행 후 비활성화
+      $(this).off('click');
+    }
+  }
+
+  // 처음에 .left 버튼 클릭 이벤트 핸들러 등록
+  $('.pogle .left .btnWrapper .left').on('click', leftButtonClickHandler);
+}
+
+ pogle();
+
+
+
 
 
 /*========== section textAni */
@@ -212,6 +289,44 @@ gsap.to(".cutePuppy .puppy", {
   y: `80vh`,
   scle: 1.2,
 });
+
+
+$(window).on('scroll', () => {
+  let footprint1Ht = $('.cutePuppy .footprintWrapper .footprint1').offset().top - 300;
+  if (scrollY > footprint1Ht) {
+    $('.cutePuppy .footprintWrapper .footprint1').addClass('show');
+    
+  } else {
+    $('.cutePuppy .footprintWrapper .footprint1').removeClass('show');
+  }
+})
+$(window).on('scroll', () => {
+  let footprint2Ht = $('.cutePuppy .footprintWrapper .footprint2').offset().top - 300;
+  if (scrollY > footprint2Ht) {
+    $('.cutePuppy .footprintWrapper .footprint2').addClass('show');
+    
+  } else {
+    $('.cutePuppy .footprintWrapper .footprint2').removeClass('show');
+  }
+})
+$(window).on('scroll', () => {
+  let footprint3Ht = $('.cutePuppy .footprintWrapper .footprint3').offset().top - 300;
+  if (scrollY > footprint3Ht) {
+    $('.cutePuppy .footprintWrapper .footprint3').addClass('show');
+    
+  } else {
+    $('.cutePuppy .footprintWrapper .footprint3').removeClass('show');
+  }
+})
+$(window).on('scroll', () => {
+  let footprint4Ht = $('.cutePuppy .footprintWrapper .footprint4').offset().top - 300;
+  if (scrollY > footprint4Ht) {
+    $('.cutePuppy .footprintWrapper .footprint4').addClass('show');
+    
+  } else {
+    $('.cutePuppy .footprintWrapper .footprint4').removeClass('show');
+  }
+})
 
 
 

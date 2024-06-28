@@ -11,7 +11,7 @@
       width: 100%;
       margin-bottom: 20px;
       z-index: 999999;
-  
+
       .header {
         transition: $transition;
         margin: 20px $margin 40px;
@@ -19,12 +19,12 @@
         grid-template-columns: minmax(300px, 50px) 1fr minmax(300px, 50px);
         align-items: center;
         justify-content: space-between;
-  
+
         .hmbrgMenu {
           transition: $transition;
           justify-self: start;
           position: relative;
-  
+
           .hmbrgBtn {
             cursor: pointer;
             transition: $transition;
@@ -38,19 +38,20 @@
             z-index: 9999;
             width: 40px;
             height: 40px;
+
             li {
               transition: $transition;
               width: 30px;
               height: 3px;
               border-radius: 3px;
               background-color: $textColor;
-    
+
               &:last-child {
                 width: 25px;
               }
             }
           }
-  
+
           .hmbrgMenuBox {
             transition: $transition;
             z-index: 999;
@@ -68,51 +69,60 @@
             justify-content: center;
             align-items: end;
             transform: translateY(-450px);
+
             .menuList {
               display: flex;
               align-items: end;
               justify-content: space-around;
               gap: 40px;
+
               li {
                 display: grid;
                 place-items: center;
                 grid-template-rows: 1fr 30px;
+
                 &:nth-child(1) {
                   img {
                     width: 90px;
                   }
                 }
+
                 &:nth-child(2) {
                   img {
                     width: 120px;
                   }
                 }
+
                 &:nth-child(3) {
                   img {
                     width: 90px;
                   }
                 }
+
                 &:nth-child(4) {
                   img {
                     width: 150px;
                   }
                 }
+
                 h2 {
                   @include titleFont ($s_xl)
                 }
               }
             }
           }
-  
+
           &.active {
             .hmbrgBtn {
               display: grid;
+
               li {
                 &:first-child {
                   transform: rotate(45deg);
                   grid-row: 1 / 2;
                   grid-column: 1 / 2;
                 }
+
                 &:last-child {
                   width: 30px;
                   transform: rotate(-45deg);
@@ -121,45 +131,45 @@
                 }
               }
             }
-  
+
             .hmbrgMenuBox {
               transform: translateY(0);
             }
           }
         }
-  
+
         .logo {
           justify-self: center;
           max-width: 150px;
           min-width: 100px;
-  
+
           a {
             img {
               width: 100%;
             }
           }
         }
-  
+
         .headerIcon {
           justify-self: end;
           display: flex;
           gap: 45px;
         }
       }
-  
+
       .nav {
         width: 100%;
         margin-bottom: 20px;
         transition: 0.1s;
-  
+
         .hmbrgMenu {
           display: none;
         }
-  
+
         .headerIcon {
           display: none;
         }
-  
+
         .slideWrap {
           .slideContainer {
             .gnb {
@@ -168,7 +178,7 @@
               justify-content: center;
               gap: 50px;
               @include titleFont ();
-  
+
               li {
                 &:hover {
                   &:nth-child(2) {
@@ -178,7 +188,7 @@
                       }
                     }
                   }
-  
+
                   &:nth-child(3) {
                     a {
                       p {
@@ -186,7 +196,7 @@
                       }
                     }
                   }
-  
+
                   &:nth-child(4) {
                     a {
                       p {
@@ -194,7 +204,7 @@
                       }
                     }
                   }
-  
+
                   &:nth-child(5) {
                     a {
                       p {
@@ -202,7 +212,7 @@
                       }
                     }
                   }
-  
+
                   &:nth-child(6) {
                     a {
                       p {
@@ -210,7 +220,7 @@
                       }
                     }
                   }
-  
+
                   &:nth-child(7) {
                     a {
                       p {
@@ -219,29 +229,29 @@
                       }
                     }
                   }
-  
+
                   a {
                     p {
                       border-color: #000;
                       animation: menu 0.5s infinite;
-  
+
                       @keyframes menu {
                         0% {
                           transform: rotate(3deg);
                         }
-  
+
                         20% {
                           transform: rotate(2deg);
                         }
-  
+
                         50% {
                           transform: rotate(-2deg);
                         }
-  
+
                         80% {
                           transform: rotate(0deg);
                         }
-  
+
                         100% {
                           transform: rotate(3deg);
                         }
@@ -249,20 +259,20 @@
                     }
                   }
                 }
-  
+
                 &:nth-child(1) {
                   a {
                     p {
                       border: 2px solid #000;
                       background-color: $mainColor;
                     }
-  
+
                     img {
                       width: 85px;
                     }
                   }
                 }
-  
+
                 &:nth-child(2) {
                   a {
                     img {
@@ -270,7 +280,7 @@
                     }
                   }
                 }
-  
+
                 &:nth-child(3) {
                   a {
                     img {
@@ -278,7 +288,7 @@
                     }
                   }
                 }
-  
+
                 &:nth-child(4) {
                   a {
                     img {
@@ -286,7 +296,7 @@
                     }
                   }
                 }
-  
+
                 &:nth-child(5) {
                   a {
                     img {
@@ -294,7 +304,7 @@
                     }
                   }
                 }
-  
+
                 &:nth-child(6) {
                   a {
                     img {
@@ -302,24 +312,24 @@
                     }
                   }
                 }
-  
+
                 &:nth-child(7) {
                   a {
                     p {
                       color: $pointColor;
                     }
-  
+
                     img {
                       width: 63px;
                     }
                   }
                 }
-  
+
                 a {
                   display: grid;
                   grid-template-rows: 70px 1fr;
                   place-items: center;
-  
+
                   p {
                     margin-top: 5px;
                     border-radius: 30px;
@@ -333,17 +343,17 @@
           }
         }
       }
-  
+
       &.active {
         transition: 0.8s;
         position: fixed;
         top: 0;
         left: 0;
-  
+
         .header {
           display: none;
         }
-  
+
         .nav {
           box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.16);
           padding: 5px $margin;
@@ -353,20 +363,21 @@
           justify-content: space-between;
           background-color: rgba(255, 255, 255, 0.7);
           backdrop-filter: blur(20px);
-  
+
           .headerIcon {
             display: block;
             justify-self: end;
             display: flex;
             gap: 45px;
           }
-  
+
           .hmbrgMenu {
             align-self: center;
             justify-self: start;
             display: block;
             transition: $transition;
             position: relative;
+
             .hmbrgBtn {
               cursor: pointer;
               display: flex;
@@ -375,6 +386,7 @@
               gap: 12px;
               width: 30px;
               height: 20px;
+
               li {
                 transition: $transition;
                 z-index: 99999;
@@ -382,13 +394,13 @@
                 height: 3px;
                 border-radius: 3px;
                 background-color: $textColor;
-    
+
                 &:last-child {
                   width: 25px;
                 }
               }
             }
-  
+
             .hmbrgMenuBox {
               transition: $transition;
               z-index: 999;
@@ -406,52 +418,61 @@
               justify-content: center;
               align-items: end;
               transform: translateY(-450px);
+
               .menuList {
                 display: flex;
                 align-items: end;
                 justify-content: space-around;
                 gap: 40px;
+
                 li {
                   display: grid;
                   place-items: center;
                   grid-template-rows: 1fr 30px;
+
                   &:nth-child(1) {
                     img {
                       width: 90px;
                     }
                   }
+
                   &:nth-child(2) {
                     img {
                       width: 120px;
                     }
                   }
+
                   &:nth-child(3) {
                     img {
                       width: 90px;
                     }
                   }
+
                   &:nth-child(4) {
                     img {
                       width: 150px;
                     }
                   }
+
                   h2 {
                     @include titleFont ($s_xl)
                   }
                 }
               }
             }
-  
+
             &.active {
               .hmbrgBtn {
                 display: grid;
                 padding-top: 10px;
+
                 li {
                   &:first-child {
                     transform: rotate(45deg);
                     grid-row: 1 / 2;
                     grid-column: 1 / 2;
                   }
+
                   &:last-child {
                     width: 30px;
                     transform: rotate(-45deg);
@@ -460,18 +481,18 @@
                   }
                 }
               }
-    
+
               .hmbrgMenuBox {
                 transform: translateY(0);
               }
             }
           }
-  
+
           .slideWrap {
             .slideContainer {
               .gnb {
                 gap: 30px;
-  
+
                 li {
                   a {
                     img {
@@ -703,7 +724,7 @@
         display: grid;
         grid-template-columns: repeat(1fr 1fr);
         grid-template-rows: 30px 1fr;
-        gap: 1vw;
+        gap: 10px;
 
         .btnWrapper {
           display: flex;
@@ -797,6 +818,7 @@
           grid-row: 2 / 3;
         }
       }
+
       .bottom {
         display: none;
       }
@@ -814,7 +836,7 @@
         display: grid;
         grid-template-columns: repeat(1fr 1fr);
         grid-template-rows: 30px 1fr;
-        gap: 1vw;
+        gap: 10px;
 
         .btnWrapper {
           display: flex;
@@ -1475,13 +1497,59 @@
     }
 
 
+
     /*========== section cutePuppy */
     .cutePuppy {
       width: 100%;
       height: 100vh;
       overflow: hidden;
+      position: relative;
 
-      img {
+      .footprintWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        justify-content: center;
+        align-items: end;
+
+        .footprint {
+          transition: $transition;
+          opacity: 0;
+          transform: rotate(45deg);
+          width: 90px;
+
+          &.show {
+            opacity: 0.8;
+          }
+        }
+
+        .footprint1 {
+          grid-column: 5 / 6;
+          grid-row: 1 / 2;
+        }
+
+        .footprint2 {
+          grid-column: 4 / 5;
+          grid-row: 2 / 3;
+        }
+
+        .footprint3 {
+          grid-column: 3 / 4;
+          grid-row: 3 / 4;
+        }
+
+        .footprint4 {
+          grid-column: 2 / 3;
+          grid-row: 4 / 5;
+        }
+      }
+
+      .puppy {
         width: 300px;
         transform: rotate(-10deg) translate(70vw, 250px);
       }
