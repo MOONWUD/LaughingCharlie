@@ -292,7 +292,7 @@ gsap.to(".cutePuppy .puppy", {
 
 
 $(window).on('scroll', () => {
-  let footprint1Ht = $('.cutePuppy .footprintWrapper .footprint1').offset().top - 300;
+  let footprint1Ht = $('.cutePuppy .footprintWrapper .footprint1').offset().top - 400;
   if (scrollY > footprint1Ht) {
     $('.cutePuppy .footprintWrapper .footprint1').addClass('show');
     
@@ -301,7 +301,7 @@ $(window).on('scroll', () => {
   }
 })
 $(window).on('scroll', () => {
-  let footprint2Ht = $('.cutePuppy .footprintWrapper .footprint2').offset().top - 300;
+  let footprint2Ht = $('.cutePuppy .footprintWrapper .footprint2').offset().top - 400;
   if (scrollY > footprint2Ht) {
     $('.cutePuppy .footprintWrapper .footprint2').addClass('show');
     
@@ -310,7 +310,7 @@ $(window).on('scroll', () => {
   }
 })
 $(window).on('scroll', () => {
-  let footprint3Ht = $('.cutePuppy .footprintWrapper .footprint3').offset().top - 300;
+  let footprint3Ht = $('.cutePuppy .footprintWrapper .footprint3').offset().top - 400;
   if (scrollY > footprint3Ht) {
     $('.cutePuppy .footprintWrapper .footprint3').addClass('show');
     
@@ -319,7 +319,7 @@ $(window).on('scroll', () => {
   }
 })
 $(window).on('scroll', () => {
-  let footprint4Ht = $('.cutePuppy .footprintWrapper .footprint4').offset().top - 300;
+  let footprint4Ht = $('.cutePuppy .footprintWrapper .footprint4').offset().top - 400;
   if (scrollY > footprint4Ht) {
     $('.cutePuppy .footprintWrapper .footprint4').addClass('show');
     
